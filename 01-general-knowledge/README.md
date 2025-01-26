@@ -4,36 +4,34 @@ This project provides a comprehensive Makefile for building a C program. It incl
 
 ## Project Structure
 
-\+--- project
-\|   +--- bin
-\|   |   +--- use-shared-library
-\|   |   +--- use-static-library
-\|   +--- inc
-\|   |   +--- hello.h
-\|   +--- lib
-\|   |   +--- hello.h
-\|   |   +--- shared
-\|   |   |   +--- libhello.so
-\|   |   +--- static
-\|   |   |   +--- libhello.a
-\|   +--- Makefile
-\|   +--- obj
-\|   |   +--- hellolinux.i
-\|   |   +--- hellolinux.o
-\|   |   +--- hellolinux.s
-\|   |   +--- helloworld.i
-\|   |   +--- helloworld.o
-\|   |   +--- helloworld.s
-\|   |   +--- main.i
-\|   |   +--- main.o
-\|   |   +--- main.s
-\|   +--- out
-\|   |   +--- output
-\|   +--- src
-\|   |   +--- hellolinux.c
-\|   |   +--- helloworld.c
-\|   |   +--- main.c
-\+--- README.md
+├── inc/                 
+│   └── hello.h          
+├── src/                 
+│   ├── main.c           
+│   ├── hellolinux.c     
+│   └── helloworld.c     
+├── lib/                 
+│   ├── shared/          
+│   │   └── libhello.so  
+│   └── static/          
+│       └── libhello.a   
+├── obj/                 
+│   ├── hellolinux.i     
+│   ├── hellolinux.o     
+│   ├── hellolinux.s     
+│   ├── helloworld.i     
+│   ├── helloworld.o     
+│   ├── helloworld.s     
+│   ├── main.i           
+│   ├── main.o           
+│   └── main.s           
+├── bin/                 
+│   ├── use-shared-library  
+│   └── use-static-library  
+├── out/                 
+│   └── output           
+├── Makefile             
+└── README.md 
 
 ---
 
