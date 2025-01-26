@@ -4,37 +4,43 @@ This project provides a comprehensive Makefile for building a C program. It incl
 
 ## Project Structure
 
-+--- 01-general-knowledge
-|   +--- Makefile
-|   +--- project
-|   |   +--- bin
-|   |   |   +--- use-shared-library
-|   |   |   +--- use-static-library
-|   |   +--- inc
-|   |   |   +--- hello.h
-|   |   +--- lib
-|   |   |   +--- hello.h
-|   |   |   +--- shared
-|   |   |   |   +--- libhello.so
-|   |   |   +--- static
-|   |   |   |   +--- libhello.a
-|   |   +--- Makefile
-|   |   +--- obj
-|   |   |   +--- hellolinux.i
-|   |   |   +--- hellolinux.o
-|   |   |   +--- hellolinux.s
-|   |   |   +--- helloworld.i
-|   |   |   +--- helloworld.o
-|   |   |   +--- helloworld.s
-|   |   |   +--- main.i
-|   |   |   +--- main.o
-|   |   |   +--- main.s
-|   |   +--- out
-|   |   |   +--- output
-|   |   +--- src
-|   |   |   +--- hellolinux.c
-|   |   |   +--- helloworld.c
-|   |   |   +--- main.c
+project
+|
++--- bin
+|   +--- use-shared-library
+|   +--- use-static-library
+|
++--- inc
+|   +--- hello.h
+|
++--- lib
+|   +--- hello.h
+|   +--- shared
+|       +--- libhello.so
+|   +--- static
+|       +--- libhello.a
+|
++--- Makefile
+|
++--- obj
+|   +--- hellolinux.i
+|   +--- hellolinux.o
+|   +--- hellolinux.s
+|   +--- helloworld.i
+|   +--- helloworld.o
+|   +--- helloworld.s
+|   +--- main.i
+|   +--- main.o
+|   +--- main.s
+|
++--- out
+|   +--- output
+|
++--- src
+|   +--- hellolinux.c
+|   +--- helloworld.c
+|   +--- main.c
+|
 +--- README.md
 
 ---
