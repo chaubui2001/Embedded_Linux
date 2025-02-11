@@ -1,0 +1,5 @@
+Dữ liệu "No data found" và "Exercise 1" sẽ xuất hiện nối tiếp nhau ở cuối file, tạo thành "No data foundExercise 1". 
+
+Lý do:
+- Cờ O_APPEND: Khi mở file với cờ O_APPEND, mọi thao tác ghi (write) đều được thực hiện ở cuối file, bất kể vị trí hiện tại của con trỏ file.
+=> lseek không ảnh hưởng: Lệnh lseek(fd, 0, SEEK_SET) có di chuyển con trỏ file về đầu file, nhưng vì O_APPEND vẫn đang có hiệu lực, lệnh write tiếp theo vẫn ghi vào cuối file, bỏ qua vị trí con trỏ.
