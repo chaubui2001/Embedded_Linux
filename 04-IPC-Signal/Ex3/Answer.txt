@@ -1,0 +1,5 @@
+kill() có thể được sử dụng để gửi bất kỳ tín hiệu nào đến bất kỳ nhóm tiến trình hoặc tiến trình nào:
+- Nếu pid là số dương, thì tín hiệu sig được gửi đến tiến trình có ID được chỉ định bởi pid. (Tức là gửi cho một tiến trình cụ thể).
+- Nếu pid bằng 0, thì sig được gửi đến mọi tiến trình trong nhóm tiến trình của tiến trình gọi (tiến trình đang thực hiện lệnh kill()). (Tức là gửi cho tất cả tiến trình con, cháu,... của tiến trình hiện tại).
+- Nếu pid bằng -1, thì sig được gửi đến mọi tiến trình mà tiến trình gọi có quyền gửi tín hiệu, ngoại trừ tiến trình 1 (init), nhưng xem thêm giải thích ở dưới. (Tức là gửi cho gần như tất cả các tiến trình trên hệ thống, trừ init và các tiến trình mà tiến trình gọi không có quyền).
+- Nếu pid nhỏ hơn -1, thì sig được gửi đến mọi tiến trình trong nhóm tiến trình có ID bằng -pid. (Ví dụ, nếu pid là -123, thì tín hiệu sẽ được gửi đến tất cả các tiến trình trong nhóm tiến trình có ID là 123).

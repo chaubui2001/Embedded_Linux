@@ -1,0 +1,3 @@
+Không gọi lại hàm alarm(1) bên trong hàm xử lý tín hiệu alarm_handler
+=> Tín hiệu SIGALRM sẽ chỉ được gửi đến một lần duy nhất và bộ đếm thời gian sẽ dừng lại ngay sau giây đầu tiên.
+=> Chương trình quay trở lại vòng lặp while trong hàm main() và chờ đợi vô thời hạn.

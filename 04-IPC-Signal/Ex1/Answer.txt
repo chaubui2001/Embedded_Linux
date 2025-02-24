@@ -1,0 +1,1 @@
+Nếu bỏ qua tín hiệu SIGINT, thì khi nhấn Ctrl+C, chương trình sẽ không bị kết thúc như bình thường mà sẽ tiếp tục chạy như không có chuyện gì xảy ra.

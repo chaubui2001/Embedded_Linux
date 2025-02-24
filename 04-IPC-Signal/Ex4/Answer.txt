@@ -1,0 +1,2 @@
+Nếu không xử lý tín hiệu SIGTSTP và người dùng nhấn Ctrl+Z
+=> Tiến trình sẽ bị tạm dừng (dừng lại), không kết thúc, nhưng sẽ ngừng thực thi
