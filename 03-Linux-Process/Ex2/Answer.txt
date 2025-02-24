@@ -1,0 +1,1 @@
+The original process (usually the child process) is completely replaced. Its code, data, heap, and stack are overwritten by the new program. That process becomes the new program, with the same PID, but running entirely different code. The code after the exec command in the original process will never be executed. The parent process is not affected.

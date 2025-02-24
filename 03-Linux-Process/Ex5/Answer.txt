@@ -1,0 +1,2 @@
+Zombie: Xuất hiện khi tiến trình con kết thúc, nhưng tiến trình cha chưa gọi wait() hoặc waitpid() để lấy thông tin trạng thái kết thúc của con.
+Orphan: Xuất hiện khi tiến trình cha kết thúc trước tiến trình con.
