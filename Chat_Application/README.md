@@ -12,8 +12,11 @@ This project is a simple chat application that allows multiple peers (connection
 - Terminate specific connections  
 - Exit the application safely with connection cleanup  
 
-## Project tree
+## Project Structure
 
+The project is organized into the following directories and files:
+
+```
 +--- inc
 |   +--- client.h
 |   +--- connection_manager.h
@@ -27,6 +30,7 @@ This project is a simple chat application that allows multiple peers (connection
 |   +--- connection_manager.c
 |   +--- server.c
 |   +--- utils.c
+```
 
 ## How to Build the Project
 
