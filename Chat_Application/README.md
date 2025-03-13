@@ -14,18 +14,19 @@ This project is a simple chat application that allows multiple peers (connection
 
 ## Project tree
 
-├── inc
-│   ├── client.h
-│   ├── connection_manager.h
-│   ├── server.h
-│   └── utils.h
-├── Makefile
-└── src
-    ├── chat.c
-    ├── client.c
-    ├── connection_manager.c
-    ├── server.c
-    └── utils.c
++--- inc
+|   +--- client.h
+|   +--- connection_manager.h
+|   +--- server.h
+|   +--- utils.h
++--- Makefile
++--- README.md
++--- src
+|   +--- chat.c
+|   +--- client.c
+|   +--- connection_manager.c
+|   +--- server.c
+|   +--- utils.c
 
 ## How to Build the Project
 
