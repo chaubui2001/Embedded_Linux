@@ -1,4 +1,4 @@
-/* Include standard libraries */
+/* --- Include Standard Libraries --- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,37 +13,42 @@
 #include <stdbool.h>
 #include <fcntl.h>
 
-/* Include project-specific headers */
+/* --- Include Project-Specific Headers --- */
 #include "config.h"
-#include "common.h"     // Assumes original client_info_t (no SSL*)
-#include "sbuffer.h"
-#include "logger.h"     // Assumes updated logger.h
-#include "conmgt.h"
+#include "common.h"     /* Contains client_info_t structure */
+#include "sbuffer.h"    /* Shared buffer for sensor data */
+#include "logger.h"     /* Logging utility */
+#include "conmgt.h"     /* Header for connection manager */
 
 /* --- Local Macros --- */
-#define MAX_CONNECTIONS 100       /* Max simultaneous client connections */
-#define SELECT_TIMEOUT_SEC 1        /* Timeout for select() in seconds */
-#define EXPECTED_PACKET_SIZE (sizeof(uint16_t) + sizeof(double)) /* Expected size of data packet */
+#define MAX_CONNECTIONS 100       /* Maximum number of simultaneous client connections */
+#define SELECT_TIMEOUT_SEC 1      /* Timeout for select() in seconds */
+#define EXPECTED_PACKET_SIZE (sizeof(uint16_t) + sizeof(double)) /* Expected size of a data packet */
 
 /* --- Static Variables (Module State) --- */
-static client_info_t client_sockets[MAX_CONNECTIONS]; /* Array to store client info */
-static int num_clients = 0;                           /* Number of active clients */
+static client_info_t client_sockets[MAX_CONNECTIONS]; /* Array to store client information */
+static int num_clients = 0;                           /* Number of active client connections */
 static int server_sd = -1;                            /* Server socket descriptor */
 static int shutdown_pipe_fd[2] = {-1, -1};            /* Pipe for shutdown signal: [0]=read, [1]=write */
 static volatile bool stop_requested = false;          /* Flag to prevent multiple stop actions */
-pthread_mutex_t conmgt_mutex; /* Mutex for thread safety in conmgt */
+pthread_mutex_t conmgt_mutex;                         /* Mutex for thread safety in connection manager */
 
 /* --- Forward Declarations (Internal Helper Functions) --- */
-
-static gateway_error_t setup_server_socket(int port);
-static void handle_new_connection(int *max_sd);
-static void handle_client_data(int client_index, fd_set *read_fds, sbuffer_t *buffer);
-static void check_sensor_timeouts(fd_set *read_fds);
-static void add_client(int client_sd, struct sockaddr_in *client_addr);
-static void remove_client(int client_index, fd_set *read_fds);
+static gateway_error_t setup_server_socket(int port); /* Sets up the server socket */
+static void handle_new_connection(int *max_sd);       /* Handles new incoming connections */
+static void handle_client_data(int client_index, fd_set *read_fds, sbuffer_t *buffer); /* Processes data from clients */
+static void check_sensor_timeouts(fd_set *read_fds);  /* Checks for inactive clients and removes them */
+static void add_client(int client_sd, struct sockaddr_in *client_addr); /* Adds a new client to the list */
+static void remove_client(int client_index, fd_set *read_fds); /* Removes a client from the list */
 
 /* --- Main Thread Function Implementation --- */
 
+/**
+ * @brief Main function for the connection manager thread.
+ * Handles incoming connections, data processing, and client management.
+ * @param arg Pointer to the arguments for the connection manager.
+ * @return NULL when the thread exits.
+ */
 void *conmgt_run(void *arg) {
     conmgt_args_t *args = (conmgt_args_t *)arg;
     sbuffer_t *buffer = args->buffer;
@@ -250,18 +255,16 @@ void conmgt_stop(void) {
     }
 }
 
-
-/* --- Implementation of internal helper functions --- */
+/* --- Implementation of Internal Helper Functions --- */
 
 /**
- * @brief Sets up the server listening socket. (Uses static server_sd)
+ * @brief Sets up the server listening socket.
  * @param port The port number to listen on.
  * @return GATEWAY_SUCCESS on success, error code otherwise.
  */
 static gateway_error_t setup_server_socket(int port) {
     struct sockaddr_in server_addr;
     int opt = 1;
-    // char log_buf[LOG_BUFFER_SIZE]; // No longer needed
 
     if ((server_sd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
         log_message(LOG_LEVEL_ERROR, "Failed to create server socket: %s", strerror(errno)); 
@@ -294,12 +297,11 @@ static gateway_error_t setup_server_socket(int port) {
         return CONNMGR_SOCKET_LISTEN_ERR;
     }
 
-    // Log success implicitly handled by caller log
     return GATEWAY_SUCCESS;
 }
 
 /**
- * @brief Handles a new incoming connection request. (Uses static server_sd)
+ * @brief Handles a new incoming connection request.
  * @param max_sd Pointer to the maximum socket descriptor value (will be updated).
  */
 static void handle_new_connection(int *max_sd) {
@@ -351,20 +353,19 @@ static void handle_new_connection(int *max_sd) {
     add_client(client_sd, &client_addr); // add_client logs internally
     pthread_mutex_unlock(&conmgt_mutex);
 
-
     if (client_sd > *max_sd) {
         *max_sd = client_sd;
     }
 }
 
 /**
- * @brief Handles incoming data from a specific client. Reads data, parses it,
- * updates timestamp, inserts into buffer, and handles disconnections/errors.
+ * @brief Handles incoming data from a specific client.
+ * Reads data, parses it, updates timestamp, inserts into buffer, and handles disconnections/errors.
  * @param client_index The index of the client in the client_sockets array.
  * @param read_fds The set of read descriptors (needed by remove_client).
  * @param buffer Pointer to the shared buffer.
  */
- static void handle_client_data(int client_index, fd_set *read_fds, sbuffer_t *buffer) {
+static void handle_client_data(int client_index, fd_set *read_fds, sbuffer_t *buffer) {
     /* Ensure client_index is valid */
     if (client_index < 0 || client_index >= MAX_CONNECTIONS || client_sockets[client_index].socket_fd == -1) {
         return; 
@@ -455,9 +456,9 @@ static void handle_new_connection(int *max_sd) {
     }
 }
 
-
 /**
  * @brief Checks all active clients for inactivity timeouts.
+ * Removes clients that have been inactive for too long.
  * @param read_fds The set of read descriptors (will be modified by remove_client).
  */
 static void check_sensor_timeouts(fd_set *read_fds) {
@@ -549,7 +550,6 @@ static void remove_client(int client_index, fd_set *read_fds) {
     client_sockets[client_index].client_ip[0] = '\0';
     client_sockets[client_index].sensor_id = 0;
 
-
     /* Compaction */
     int last_valid_index = -1;
     for(int j = num_clients - 1; j >= 0; --j) { if(client_sockets[j].socket_fd != -1) { last_valid_index = j; break; } }
@@ -575,7 +575,7 @@ static void remove_client(int client_index, fd_set *read_fds) {
  * @param size The maximum size of the output buffer.
  * @return The number of active connections formatted, or -1 on error (e.g., buffer too small).
  */
- int conmgt_get_connection_stats(char *output_buffer, size_t buffer_size) {
+int conmgt_get_connection_stats(char *output_buffer, size_t buffer_size) {
     if (output_buffer == NULL || buffer_size == 0) {
         return -1;
     }
@@ -635,7 +635,7 @@ buffer_full:
  * @brief Gets the current number of active client connections. Thread-safe.
  * @return The number of active connections.
  */
- int conmgt_get_active_connections() {
+int conmgt_get_active_connections() {
     int count;
     pthread_mutex_lock(&conmgt_mutex);
     count = num_clients;

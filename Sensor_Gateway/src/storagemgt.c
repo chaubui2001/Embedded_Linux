@@ -18,8 +18,12 @@
 #include "storagemgt.h" /* For function declarations */
 
 /* --- Local Macros --- */
-#define SHORT_SLEEP_MS 100              /* Sleep interval in milliseconds for interruptible sleep */
-#define RETRY_QUEUE_INITIAL_CAPACITY 20 /* Initial capacity for the local retry queue */
+
+/* Sleep interval in milliseconds for interruptible sleep */
+#define SHORT_SLEEP_MS 100
+
+/* Initial capacity for the local retry queue */
+#define RETRY_QUEUE_INITIAL_CAPACITY 20
 
 /* --- Local Structures --- */
 
@@ -39,6 +43,7 @@ typedef struct {
 
 /* The local retry queue instance */
 static local_retry_queue_t retry_queue;
+
 /* Flag indicating if the retry queue has been initialized */
 static bool queue_initialized = false;
 
@@ -276,8 +281,8 @@ cleanup_exit_storagemgt: /* Label for cleanup and exit */
     return NULL;
 }
 
-
 /* --- Shutdown Function Implementation --- */
+
 /**
  * @brief Signals the Storage Manager thread to stop gracefully.
  * (Currently relies on terminate_flag being checked in the run loop).
@@ -287,12 +292,12 @@ void storagemgt_stop(void) {
     // Actual stop happens when terminate_flag is checked in the run loop
 }
 
-
 /* --- Implementation of Internal Helper Functions --- */
 
 /**
  * @brief Sleeps for a specified duration, checking the termination flag periodically.
  * Uses nanosleep for better interruptibility.
+ * 
  * @param seconds Total seconds to sleep.
  */
 static void interruptible_sleep(unsigned int seconds) {
@@ -332,6 +337,7 @@ static void interruptible_sleep(unsigned int seconds) {
 
 /**
  * @brief Initializes the local retry queue.
+ * 
  * @param initial_capacity The initial size of the queue.
  * @return GATEWAY_SUCCESS or GATEWAY_ERROR_NOMEM.
  */
@@ -351,7 +357,9 @@ static gateway_error_t init_retry_queue(int initial_capacity) {
     return GATEWAY_SUCCESS;
 }
 
-/** @brief Frees the memory used by the retry queue. */
+/**
+ * @brief Frees the memory used by the retry queue.
+ */
 static void free_retry_queue(void) {
     if (queue_initialized && retry_queue.items != NULL) {
         free(retry_queue.items);
@@ -361,12 +369,20 @@ static void free_retry_queue(void) {
     }
 }
 
-/** @brief Checks if the retry queue is empty. */
+/**
+ * @brief Checks if the retry queue is empty.
+ * 
+ * @return True if the queue is empty, false otherwise.
+ */
 static bool is_retry_queue_empty(void) {
     return (!queue_initialized || retry_queue.count == 0);
 }
 
-/** @brief Checks if the retry queue is full. */
+/**
+ * @brief Checks if the retry queue is full.
+ * 
+ * @return True if the queue is full, false otherwise.
+ */
 static bool is_retry_queue_full(void) {
     return (queue_initialized && retry_queue.count >= retry_queue.capacity);
 }
@@ -374,6 +390,7 @@ static bool is_retry_queue_full(void) {
 /**
  * @brief Adds an item to the tail of the retry queue.
  * If the queue is full, it currently drops the oldest item.
+ * 
  * @param data Pointer to the sensor data item to add.
  * @return GATEWAY_SUCCESS, or GATEWAY_ERROR if not initialized or enqueue fails.
  */
@@ -403,6 +420,7 @@ static gateway_error_t enqueue_retry_item(const sensor_data_t *data) {
 
 /**
  * @brief Removes the oldest item (at head) from the retry queue.
+ * 
  * @param data Pointer to store the removed item's data.
  * @return GATEWAY_SUCCESS, or GATEWAY_ERROR_INVALID_ARG if queue is empty or not initialized.
  */
@@ -423,6 +441,7 @@ static gateway_error_t dequeue_retry_item(sensor_data_t *data) {
 
 /**
  * @brief Gets a copy of the oldest item (at head) without removing it.
+ * 
  * @param data Pointer to store the peeked item's data.
  * @return GATEWAY_SUCCESS, or GATEWAY_ERROR_INVALID_ARG if queue is empty or not initialized.
  */

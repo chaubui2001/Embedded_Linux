@@ -18,19 +18,21 @@
 /**
  * @brief Connects to the SQLite database.
  * Creates the database file and the required table if they don't exist.
+ * 
  * @param db_name The filename of the database.
  * @param db A pointer to a sqlite3* variable where the database handle will be stored.
  * @return GATEWAY_SUCCESS on success, an error code otherwise.
  */
 gateway_error_t db_connect(const char *db_name, sqlite3 **db) {
-    char *err_msg = NULL;
-    int rc;
-    char sql_create_table[SQL_BUFFER_SIZE_SML];
+    char *err_msg = NULL; /* Pointer to store error messages from SQLite */
+    int rc; /* Return code for SQLite operations */
+    char sql_create_table[SQL_BUFFER_SIZE_SML]; /* Buffer for SQL CREATE TABLE statement */
 
     /* Attempt to open the database file */
     /* sqlite3_open will create the file if it doesn't exist */
     rc = sqlite3_open(db_name, db);
     if (rc != SQLITE_OK) {
+        /* Log error if database cannot be opened */
         log_message(LOG_LEVEL_ERROR, "Cannot open database %s: %s",
                     db_name, sqlite3_errmsg(*db));
         sqlite3_close(*db); /* Close handle even on error */
@@ -47,14 +49,14 @@ gateway_error_t db_connect(const char *db_name, sqlite3 **db) {
             "RecordID INTEGER PRIMARY KEY AUTOINCREMENT, " /* Auto-incrementing primary key */
             "SensorID INTEGER NOT NULL, "                /* Sensor ID */
             "Timestamp INTEGER NOT NULL, "               /* Unix timestamp (seconds) */
-            "Value REAL NOT NULL"                        /* Temperature value */
+            "Value REAL NOT NULL"                        /* Sensor value (e.g., temperature) */
             ");",
             DB_TABLE_NAME);
 
     /* Execute the CREATE TABLE statement */
     rc = sqlite3_exec(*db, sql_create_table, 0, 0, &err_msg);
     if (rc != SQLITE_OK) {
-         
+        /* Log error if table creation fails */
         log_message(LOG_LEVEL_ERROR, "Failed to create table %s: %s",
                     DB_TABLE_NAME, err_msg);
         sqlite3_free(err_msg); /* Free error message */
@@ -62,8 +64,7 @@ gateway_error_t db_connect(const char *db_name, sqlite3 **db) {
         *db = NULL;
         return DB_TABLE_CREATE_ERROR;
     } else {
-        /* Log table creation/existence check */
-        
+        /* Log successful table creation or existence check */
         log_message(LOG_LEVEL_INFO, "Table %s checked/created successfully.", DB_TABLE_NAME);
     }
 
@@ -72,28 +73,28 @@ gateway_error_t db_connect(const char *db_name, sqlite3 **db) {
 
 /**
  * @brief Disconnects from the SQLite database.
+ * 
  * @param db The sqlite3 database handle to disconnect.
  * @return GATEWAY_SUCCESS on success, DB_DISCONNECT_ERROR otherwise.
  */
 gateway_error_t db_disconnect(sqlite3 *db) {
-    int rc;
+    int rc; /* Return code for SQLite operations */
 
     if (db == NULL) {
-        return GATEWAY_SUCCESS; /* Nothing to disconnect */
+        /* If database handle is NULL, nothing to disconnect */
+        return GATEWAY_SUCCESS;
     }
 
+    /* Attempt to close the database */
     rc = sqlite3_close(db);
     if (rc != SQLITE_OK) {
-        /* Error likely means there are unfinalized statements or active transactions */
-        
+        /* Log error if database cannot be closed */
         log_message(LOG_LEVEL_ERROR, "Failed to close database: %s", sqlite3_errmsg(db));
-        /* Depending on the error, the handle might still be partially valid or invalid */
-        /* Returning error signifies potential resource leak or issue */
-        return DB_DISCONNECT_ERROR; 
+        return DB_DISCONNECT_ERROR;
     }
 
     /* Log successful disconnection */
-    log_message(LOG_LEVEL_INFO, "Disconnected from SQL server."); // Use new log_message
+    log_message(LOG_LEVEL_INFO, "Disconnected from SQL server.");
 
     return GATEWAY_SUCCESS;
 }
@@ -101,17 +102,19 @@ gateway_error_t db_disconnect(sqlite3 *db) {
 /**
  * @brief Inserts sensor data into the specified table in the database.
  * Uses prepared statements for safety and efficiency.
+ * 
  * @param db The sqlite3 database handle.
  * @param data A pointer to the sensor_data_t struct containing the data to insert.
  * @return GATEWAY_SUCCESS on success, DB_INSERT_ERROR otherwise.
  */
 gateway_error_t db_insert_sensor_data(sqlite3 *db, const sensor_data_t *data) {
-    sqlite3_stmt *stmt = NULL;
-    char sql_insert[SQL_BUFFER_SIZE_SML];
-    int rc;
-    gateway_error_t result = GATEWAY_SUCCESS;
+    sqlite3_stmt *stmt = NULL; /* Prepared statement handle */
+    char sql_insert[SQL_BUFFER_SIZE_SML]; /* Buffer for SQL INSERT statement */
+    int rc; /* Return code for SQLite operations */
+    gateway_error_t result = GATEWAY_SUCCESS; /* Result of the operation */
 
     if (db == NULL || data == NULL) {
+        /* Return error if invalid arguments are provided */
         return GATEWAY_ERROR_INVALID_ARG;
     }
 
@@ -122,17 +125,16 @@ gateway_error_t db_insert_sensor_data(sqlite3 *db, const sensor_data_t *data) {
 
     rc = sqlite3_prepare_v2(db, sql_insert, -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
-         
+        /* Log error if statement preparation fails */
         log_message(LOG_LEVEL_ERROR, "Failed to prepare insert statement: %s", sqlite3_errmsg(db));
         result = DB_INSERT_ERROR;
         goto cleanup; /* Use goto for single cleanup point */
     }
 
     /* Bind values to the prepared statement parameters */
-    /* Index starts from 1 */
     rc = sqlite3_bind_int(stmt, 1, data->id); /* Bind SensorID as INT */
     if (rc != SQLITE_OK) {
-         
+        /* Log error if binding SensorID fails */
         log_message(LOG_LEVEL_ERROR, "Failed to bind SensorID (%d): %s", data->id, sqlite3_errmsg(db));
         result = DB_INSERT_ERROR;
         goto cleanup;
@@ -140,7 +142,7 @@ gateway_error_t db_insert_sensor_data(sqlite3 *db, const sensor_data_t *data) {
 
     rc = sqlite3_bind_int64(stmt, 2, data->ts); /* Bind Timestamp as INT64 */
     if (rc != SQLITE_OK) {
-         
+        /* Log error if binding Timestamp fails */
         log_message(LOG_LEVEL_ERROR, "Failed to bind Timestamp (%ld) for sensor %d: %s", data->ts, data->id, sqlite3_errmsg(db));
         result = DB_INSERT_ERROR;
         goto cleanup;
@@ -148,7 +150,7 @@ gateway_error_t db_insert_sensor_data(sqlite3 *db, const sensor_data_t *data) {
 
     rc = sqlite3_bind_double(stmt, 3, data->value); /* Bind Value as DOUBLE */
     if (rc != SQLITE_OK) {
-         
+        /* Log error if binding Value fails */
         log_message(LOG_LEVEL_ERROR, "Failed to bind Value (%.2f) for sensor %d: %s", data->value, data->id, sqlite3_errmsg(db));
         result = DB_INSERT_ERROR;
         goto cleanup;
@@ -157,14 +159,13 @@ gateway_error_t db_insert_sensor_data(sqlite3 *db, const sensor_data_t *data) {
     /* Execute the prepared statement */
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE) {
-         
+        /* Log error if execution fails */
         log_message(LOG_LEVEL_ERROR, "Failed to execute insert statement for sensor %d: %s", data->id, sqlite3_errmsg(db));
         result = DB_INSERT_ERROR;
         goto cleanup;
     }
 
     /* Log successful insertion */
-     
     log_message(LOG_LEVEL_DEBUG, "Inserted SensorID %d, TS %ld, Value %.2f into DB",
                 data->id, data->ts, data->value);
 

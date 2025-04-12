@@ -16,8 +16,8 @@
 #include "sysmon.h" // To get system stats
 
 /* Define buffer sizes for command and response handling */
-#define CMD_BUFFER_SIZE 128
-#define RESPONSE_BUFFER_SIZE 4096 // Adjust as needed for stats output
+#define CMD_BUFFER_SIZE 128 /* Buffer size for incoming commands */
+#define RESPONSE_BUFFER_SIZE 4096 /* Buffer size for outgoing responses */
 
 /* Global flag to signal shutdown */
 static volatile int cmdif_terminate_flag = 0;
@@ -25,7 +25,12 @@ static volatile int cmdif_terminate_flag = 0;
 /* Listening socket descriptor */
 static int listen_sd = -1;
 
-/* Function to stop the command interface */
+/* 
+ * Function: cmdif_stop
+ * --------------------
+ * Stops the command interface by signaling the termination flag, 
+ * closing the listening socket, and cleaning up the socket file.
+ */
 void cmdif_stop(void) {
     /* Set the flag to signal the loop to exit */
     cmdif_terminate_flag = 1;
@@ -45,13 +50,24 @@ void cmdif_stop(void) {
     printf("INFO: Command interface stop requested.\n");
 }
 
-/* Function to run the command interface in a separate thread */
+/* 
+ * Function: cmdif_run
+ * -------------------
+ * Runs the command interface in a separate thread. It listens for incoming 
+ * client connections, processes commands, and sends appropriate responses.
+ * 
+ * Parameters:
+ *   arg - Pointer to cmdif_args_t structure containing configuration arguments.
+ * 
+ * Returns:
+ *   NULL - Always returns NULL when the thread exits.
+ */
 void *cmdif_run(void *arg) {
     int client_sd;
     struct sockaddr_un server_addr, client_addr;
     socklen_t client_len = sizeof(client_addr);
-    char command_buffer[CMD_BUFFER_SIZE];
-    char response_buffer[RESPONSE_BUFFER_SIZE];
+    char command_buffer[CMD_BUFFER_SIZE]; /* Buffer to store incoming commands */
+    char response_buffer[RESPONSE_BUFFER_SIZE]; /* Buffer to store responses */
 
     /* Parse arguments for socket path */
     cmdif_args_t *args = (cmdif_args_t *)arg;

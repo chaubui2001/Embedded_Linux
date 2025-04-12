@@ -18,13 +18,13 @@
 /* Static variables for the logger module */
 static int fifo_fd = -1;            /* File descriptor for writing to the FIFO */
 static pthread_mutex_t log_mutex;   /* Mutex to ensure thread-safe writes to FIFO */
-static bool mutex_initialized = false; /* Track mutex init status */
-static bool fifo_created = false;     /* Track FIFO creation attempt */
+static bool mutex_initialized = false; /* Tracks whether the mutex has been initialized */
+static bool fifo_created = false;     /* Tracks whether the FIFO has been created */
 
 /* Define permissions for the FIFO (owner read/write, group read/write) */
 #define FIFO_PERMISSIONS 0660
 
-/* Map log levels to strings */
+/* Map log levels to their corresponding string representations */
 static const char* log_level_strings[] = {
     "[FATAL]  ",
     "[ERROR]  ",
@@ -34,103 +34,113 @@ static const char* log_level_strings[] = {
 };
 
 /**
- * @brief Initializes the mutex and creates the FIFO (if necessary).
- * Does NOT open the FIFO for writing.
- * @return GATEWAY_SUCCESS on success, an error code otherwise.
+ * @brief Initializes the logger module.
+ * 
+ * This function initializes the mutex and creates the FIFO if it does not already exist.
+ * It does NOT open the FIFO for writing.
+ * 
+ * @return GATEWAY_SUCCESS on success, or an appropriate error code on failure.
  */
- gateway_error_t logger_init(void) {
-
-    /* 1. Initialize the mutex */
+gateway_error_t logger_init(void) {
+    /* Initialize the mutex */
     if (pthread_mutex_init(&log_mutex, NULL) != 0) {
         perror("Logger ERROR: Failed to initialize mutex");
         return THREAD_MUTEX_INIT_ERR;
     }
     mutex_initialized = true;
 
-    /* 2. Create the FIFO */
+    /* Create the FIFO */
     if (mkfifo(LOG_FIFO_NAME, FIFO_PERMISSIONS) == -1) {
         if (errno != EEXIST) {
             perror("Logger ERROR: Failed to create FIFO");
-            /* Don't destroy mutex here, main might still need cleanup */
             return LOGGER_FIFO_CREATE_ERR;
         }
         fprintf(stderr, "Logger INFO: FIFO '%s' already exists.\n", LOG_FIFO_NAME);
     } else {
         fprintf(stderr, "Logger INFO: FIFO '%s' created successfully.\n", LOG_FIFO_NAME);
     }
-    fifo_created = true; /* Mark that creation was attempted/successful */
+    fifo_created = true;
 
     return GATEWAY_SUCCESS;
 }
 
 /**
- * @brief Opens the FIFO for writing. Called by the main process AFTER fork().
- * @return GATEWAY_SUCCESS on success, LOGGER_FIFO_OPEN_ERR otherwise.
+ * @brief Opens the FIFO for writing.
+ * 
+ * This function should be called by the main process after a fork operation.
+ * 
+ * @return GATEWAY_SUCCESS on success, or LOGGER_FIFO_OPEN_ERR on failure.
  */
 gateway_error_t logger_open_write_fifo(void) {
+    /* Check if the FIFO is already open */
     if (fifo_fd >= 0) {
-        return GATEWAY_SUCCESS; // Already open
+        return GATEWAY_SUCCESS;
     }
+
+    /* Ensure the FIFO has been created */
     if (!fifo_created) {
         fprintf(stderr, "Logger ERROR: Cannot open FIFO write end before FIFO is created (call logger_init first).\n");
-        return LOGGER_ERROR; // Or a specific error
+        return LOGGER_ERROR;
     }
 
     fprintf(stderr, "Logger INFO: Opening FIFO '%s' for writing...\n", LOG_FIFO_NAME);
-    /* Open the FIFO for writing, blocking if no reader is present */
+
+    /* Open the FIFO for writing */
     fifo_fd = open(LOG_FIFO_NAME, O_WRONLY);
     if (fifo_fd == -1) {
         perror("Logger ERROR: Failed to open FIFO for writing");
         return LOGGER_FIFO_OPEN_ERR;
     }
+
     fprintf(stderr, "Logger INFO: FIFO '%s' opened successfully for writing.\n", LOG_FIFO_NAME);
     return GATEWAY_SUCCESS;
 }
 
 /**
- * @brief Logs a formatted message with a specific log level to the FIFO. (Thread-safe).
+ * @brief Logs a formatted message with a specific log level to the FIFO.
+ * 
+ * This function is thread-safe and ensures that log messages are written atomically.
+ * 
+ * @param level The log level (e.g., LOG_LEVEL_FATAL, LOG_LEVEL_ERROR).
+ * @param format The format string for the log message (similar to printf).
  */
- void log_message(log_level_t level, const char *format, ...) {
-    /* Basic checks */
+void log_message(log_level_t level, const char *format, ...) {
+    /* Validate input parameters */
     if (fifo_fd < 0 || format == NULL) {
         fprintf(stderr, "Logger ERROR: FIFO not open or invalid format. Log attempt ignored.\n");
         return;
     }
-    if (!mutex_initialized) { 
+    if (!mutex_initialized) {
         fprintf(stderr, "Logger ERROR: Mutex not initialized. Log attempt ignored.\n");
         return;
     }
     if (level < LOG_LEVEL_FATAL || level > LOG_LEVEL_DEBUG) {
-        level = LOG_LEVEL_INFO; // Default to INFO if level is invalid
+        level = LOG_LEVEL_INFO; /* Default to INFO if the level is invalid */
         fprintf(stderr, "Logger WARN: Invalid log level provided, defaulting to INFO.\n");
     }
 
-
-    char user_message[PIPE_BUF / 2]; // Buffer for the user's formatted message
-    char final_buffer[PIPE_BUF];   // Final buffer including timestamp, level, and message
+    /* Buffers for the log message */
+    char user_message[PIPE_BUF / 2]; /* Buffer for the user's formatted message */
+    char final_buffer[PIPE_BUF];    /* Final buffer including timestamp, level, and message */
     va_list args;
 
     /* Format the user message */
     va_start(args, format);
-    /* Use vsnprintf for safe formatting into user_message buffer */
     int user_msg_len = vsnprintf(user_message, sizeof(user_message), format, args);
     va_end(args);
 
     if (user_msg_len < 0) {
         fprintf(stderr, "Logger ERROR: vsnprintf formatting failed. Log attempt ignored.\n");
-        return; // Formatting error
+        return;
     }
 
-
-    /* Get current time for timestamp */
+    /* Get the current time for the timestamp */
     time_t now = time(NULL);
     struct tm *local_time = localtime(&now);
-    char time_str[30]; // Buffer for "YYYY-MM-DD HH:MM:SS"
+    char time_str[30]; /* Buffer for "YYYY-MM-DD HH:MM:SS" */
     strftime(time_str, sizeof(time_str), "%Y-%m-%d %H:%M:%S", local_time);
 
-
-    /* Construct the final log entry: Timestamp Level Message */
-    /* Ensure enough space for timestamp, level prefix, message, space, newline, and null terminator */
+    /* Construct the final log entry */
     int final_len = snprintf(final_buffer, sizeof(final_buffer), "%s %s%s\n",
                              time_str,
                              log_level_strings[level],
@@ -138,66 +148,65 @@ gateway_error_t logger_open_write_fifo(void) {
 
     if (final_len < 0) {
         fprintf(stderr, "Logger ERROR: snprintf failed constructing final log entry. Log attempt ignored.\n");
-        return; /* Formatting error */
+        return;
     }
-     if ((size_t)final_len >= sizeof(final_buffer)) {
+    if ((size_t)final_len >= sizeof(final_buffer)) {
         fprintf(stderr, "Logger WARN: Final log message truncated before writing to FIFO.\n");
-        /* Ensure null termination if truncated exactly at the end */
-        final_buffer[sizeof(final_buffer) - 1] = '\n'; // Make sure it ends with newline
-        final_buffer[sizeof(final_buffer) - 2] = '.'; // Indicate truncation visually
+        final_buffer[sizeof(final_buffer) - 1] = '\n';
+        final_buffer[sizeof(final_buffer) - 2] = '.';
         final_buffer[sizeof(final_buffer) - 3] = '.';
         final_buffer[sizeof(final_buffer) - 4] = '.';
-        final_len = sizeof(final_buffer) -1; // Use the maximum possible length (excluding null term)
-        // Note: PIPE_BUF guarantees atomicity up to PIPE_BUF bytes, but the message itself might be truncated here.
+        final_len = sizeof(final_buffer) - 1;
     }
 
-    /* Lock mutex */
+    /* Lock the mutex */
     if (pthread_mutex_lock(&log_mutex) != 0) {
         perror("Logger CRITICAL: Failed to lock log mutex");
         fprintf(stderr, "Logger CRITICAL: Dropped log message due to mutex lock failure: %s", final_buffer);
         return;
     }
 
-    /* Write to FIFO */
-    ssize_t bytes_written = write(fifo_fd, final_buffer, final_len); // Use final_buffer and final_len modified write call
+    /* Write the log message to the FIFO */
+    ssize_t bytes_written = write(fifo_fd, final_buffer, final_len);
 
-    /* Unlock mutex */
-    if (pthread_mutex_unlock(&log_mutex) != 0) { //
+    /* Unlock the mutex */
+    if (pthread_mutex_unlock(&log_mutex) != 0) {
         perror("Logger CRITICAL: Failed to unlock log mutex");
     }
 
-    /* Check write result */
-    if (bytes_written == -1) { 
-        if (errno == EPIPE) { 
+    /* Check the result of the write operation */
+    if (bytes_written == -1) {
+        if (errno == EPIPE) {
             fprintf(stderr, "Logger ERROR: FIFO write failed (Broken pipe - log process likely dead).\n");
-            close(fifo_fd); 
-            fifo_fd = -1; 
+            close(fifo_fd);
+            fifo_fd = -1;
         } else {
-            perror("Logger ERROR: Failed to write to FIFO"); 
+            perror("Logger ERROR: Failed to write to FIFO");
         }
-    } else if (bytes_written < final_len) { // Modified comparison
+    } else if (bytes_written < final_len) {
         fprintf(stderr, "Logger WARN: Partial write to FIFO (%zd/%d bytes).\n", bytes_written, final_len);
     }
 }
 
 /**
- * @brief Cleans up logging resources used by the main process.
+ * @brief Cleans up resources used by the logger module.
+ * 
+ * This function closes the FIFO, destroys the mutex, and removes the FIFO file from the filesystem.
  */
 void logger_cleanup(void) {
     fprintf(stderr, "Logger INFO: Cleaning up logger resources...\n");
 
-    /* Close the FIFO write end if open */
+    /* Close the FIFO write end if it is open */
     if (fifo_fd >= 0) {
         if (close(fifo_fd) == -1) {
             perror("Logger WARN: Failed to close FIFO write end");
         }
-        fifo_fd = -1; /* Mark as closed */
-    }
-    else{
+        fifo_fd = -1;
+    } else {
         fprintf(stderr, "Logger INFO: FIFO write end already closed or not opened.\n");
     }
 
-    /* Destroy the mutex if initialized */
+    /* Destroy the mutex if it has been initialized */
     if (mutex_initialized) {
         if (pthread_mutex_destroy(&log_mutex) != 0) {
             perror("Logger WARN: Failed to destroy log mutex");
@@ -206,16 +215,15 @@ void logger_cleanup(void) {
     }
 
     /* Remove the FIFO file from the filesystem */
-    /* Only attempt unlink if we know creation was attempted/successful */
     if (fifo_created) {
         if (unlink(LOG_FIFO_NAME) == -1) {
-            if (errno != ENOENT) { /* ENOENT (No such file or directory) is okay */
+            if (errno != ENOENT) {
                 perror("Logger WARN: Failed to remove FIFO file");
             }
         } else {
             fprintf(stderr, "Logger INFO: FIFO '%s' removed.\n", LOG_FIFO_NAME);
         }
-        fifo_created = false; /* Reset flag */
+        fifo_created = false;
     }
 
     fprintf(stderr, "Logger INFO: Logger cleanup complete.\n");

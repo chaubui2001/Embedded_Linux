@@ -17,47 +17,47 @@
 
 /* --- Local Macros --- */
 
-/* Define temperature thresholds if not already in config.h */
+/* Define temperature thresholds if not already defined in config.h */
 #ifndef TEMP_TOO_HOT_THRESHOLD
-#define TEMP_TOO_HOT_THRESHOLD 28.0 /* Example threshold */
+#define TEMP_TOO_HOT_THRESHOLD 28.0 /* Threshold for too hot temperature */
 #endif
 #ifndef TEMP_TOO_COLD_THRESHOLD
-#define TEMP_TOO_COLD_THRESHOLD 15.0 /* Example threshold */
+#define TEMP_TOO_COLD_THRESHOLD 15.0 /* Threshold for too cold temperature */
 #endif
 
-#define INITIAL_SENSOR_LIST_CAPACITY 10 /* Initial capacity for sensor statistics list */
-#define INVALID_SENSOR_ID 0             /* Define an invalid sensor ID for checks */
-#define BUSY_WAIT_SLEEP_SEC 1           /* Sleep time for loop on unexpected error */
-#define MAP_INITIAL_CAPACITY 10         /* Initial capacity for room-sensor map */
-#define MAP_LINE_BUFFER_SIZE 100        /* Buffer size for reading map file lines */
+#define INITIAL_SENSOR_LIST_CAPACITY 10 /* Initial capacity for the sensor statistics list */
+#define INVALID_SENSOR_ID 0             /* Define an invalid sensor ID for validation */
+#define BUSY_WAIT_SLEEP_SEC 1           /* Sleep duration for unexpected errors in the loop */
+#define MAP_INITIAL_CAPACITY 10         /* Initial capacity for the room-sensor map */
+#define MAP_LINE_BUFFER_SIZE 100        /* Buffer size for reading lines from the map file */
 
 /* --- Local Structures --- */
 
-/* Enum for sensor temperature state */
+/* Enum to represent the temperature state of a sensor */
 typedef enum {
-    TEMP_STATE_NORMAL,
-    TEMP_STATE_TOO_COLD,
-    TEMP_STATE_TOO_HOT
+    TEMP_STATE_NORMAL,    /* Temperature is within normal range */
+    TEMP_STATE_TOO_COLD,  /* Temperature is below the cold threshold */
+    TEMP_STATE_TOO_HOT    /* Temperature is above the hot threshold */
 } temp_state_t;
 
 /* Structure to store statistics for each sensor */
 typedef struct {
-    sensor_id_t id;
-    double total_value_sum;
-    uint64_t reading_count;
-    temp_state_t last_logged_state;
+    sensor_id_t id;              /* Unique identifier for the sensor */
+    double total_value_sum;      /* Sum of all temperature readings */
+    uint64_t reading_count;      /* Total number of readings received */
+    temp_state_t last_logged_state; /* Last logged temperature state */
 } sensor_stats_t;
 
 /* Dynamic array structure to hold sensor statistics */
 typedef struct {
-    sensor_stats_t *data;
-    int size;
-    int capacity;
+    sensor_stats_t *data; /* Pointer to the array of sensor statistics */
+    int size;             /* Current number of sensors in the list */
+    int capacity;         /* Maximum capacity of the list */
 } sensor_stats_list_t;
 
 /* --- Static Variables --- */
 
-/* Global list to store sensor stats (access is single-threaded within this module) */
+/* Global list to store sensor statistics (access is single-threaded within this module) */
 static sensor_stats_list_t sensor_list = {NULL, 0, 0};
 
 /* --- External Variables --- */
@@ -67,22 +67,27 @@ extern volatile sig_atomic_t terminate_flag;
 
 /* --- Forward Declarations (Internal Helper Functions) --- */
 
-static gateway_error_t init_sensor_stats_list(int initial_capacity);
-static void free_sensor_stats_list(void);
-static sensor_stats_t* find_or_create_sensor(sensor_id_t id);
-static void update_sensor_stats(sensor_stats_t *stats, double value);
-static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_map_t *map); // Added map parameter
-static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map); // Helper to lookup room
+static gateway_error_t init_sensor_stats_list(int initial_capacity); /* Initialize the sensor statistics list */
+static void free_sensor_stats_list(void);                            /* Free memory allocated for the sensor list */
+static sensor_stats_t* find_or_create_sensor(sensor_id_t id);        /* Find or create a sensor entry */
+static void update_sensor_stats(sensor_stats_t *stats, double value); /* Update statistics for a sensor */
+static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_map_t *map); /* Check temperature thresholds */
+static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map); /* Get room ID for a sensor */
 
 /* --- Main Thread Function Implementation --- */
 
+/**
+ * @brief Main function for the data management thread.
+ *        Processes sensor data from the shared buffer and updates statistics.
+ */
 void *datamgt_run(void *arg) {
     datamgt_args_t *args = (datamgt_args_t *)arg;
-    sbuffer_t *buffer = args->buffer;
-    room_sensor_map_t *map = args->map; // Get map pointer
-    sensor_data_t data;
-    gateway_error_t sbuf_ret;
+    sbuffer_t *buffer = args->buffer; /* Shared buffer for sensor data */
+    room_sensor_map_t *map = args->map; /* Room-sensor mapping */
+    sensor_data_t data; /* Structure to hold sensor data */
+    gateway_error_t sbuf_ret; /* Return status from sbuffer operations */
 
+    /* Initialize the sensor statistics list */
     if (init_sensor_stats_list(INITIAL_SENSOR_LIST_CAPACITY) != GATEWAY_SUCCESS) {
         log_message(LOG_LEVEL_FATAL, "Data manager failed to initialize sensor list. Exiting thread."); 
         return NULL;
@@ -104,11 +109,11 @@ void *datamgt_run(void *arg) {
             break;
         }
         else if (sbuf_ret != GATEWAY_SUCCESS) {
-            if (sbuf_ret == SBUFFER_EMPTY) { /* Assuming buffer might return this on free/shutdown */
+            if (sbuf_ret == SBUFFER_EMPTY) { /* Handle empty buffer case */
                 log_message(LOG_LEVEL_INFO, "Data manager buffer remove returned empty/error, likely shutting down."); 
                 break; /* Exit loop */
             } else {
-                 log_message(LOG_LEVEL_ERROR, "Data manager failed to remove data from buffer (Error %d)", sbuf_ret); 
+                log_message(LOG_LEVEL_ERROR, "Data manager failed to remove data from buffer (Error %d)", sbuf_ret); 
                 sleep(BUSY_WAIT_SLEEP_SEC); /* Avoid busy loop on unexpected error */
                 continue;
             }
@@ -116,32 +121,32 @@ void *datamgt_run(void *arg) {
 
         /* Data Validation: Check for invalid sensor ID */
         if (data.id == INVALID_SENSOR_ID) {
-             log_message(LOG_LEVEL_WARNING, "Received sensor data with invalid sensor node ID %d", data.id); 
+            log_message(LOG_LEVEL_WARNING, "Received sensor data with invalid sensor node ID %d", data.id); 
             continue;
         }
 
         /* 2. Find or create statistics entry for this sensor ID */
         sensor_stats_t *stats = find_or_create_sensor(data.id);
         if (stats == NULL) {
-             log_message(LOG_LEVEL_ERROR, "Failed to find or create stats for sensor ID %d (Memory issue?)", data.id); 
+            log_message(LOG_LEVEL_ERROR, "Failed to find or create stats for sensor ID %d (Memory issue?)", data.id); 
             continue;
         }
 
         /* 3. Update statistics */
         update_sensor_stats(stats, data.value);
 
-        /* 4. Calculate running average and check thresholds/log alerts (pass map) */
+        /* 4. Calculate running average and check thresholds/log alerts */
         check_temperature_alerts(stats, map);
 
         /* DEBUG Log */
-         log_message(LOG_LEVEL_DEBUG, "Processed Sensor ID: %d, Value: %.2f, Count: %lu, Avg: %.2f", 
-                     stats->id, data.value, stats->reading_count,
-                     stats->reading_count > 0 ? (stats->total_value_sum / stats->reading_count) : 0.0); // Avoid division by zero
+        log_message(LOG_LEVEL_DEBUG, "Processed Sensor ID: %d, Value: %.2f, Count: %lu, Avg: %.2f", 
+                    stats->id, data.value, stats->reading_count,
+                    stats->reading_count > 0 ? (stats->total_value_sum / stats->reading_count) : 0.0); /* Avoid division by zero */
+    }
 
-    } /* End of main while loop */
-
+    /* Cleanup and shutdown */
     log_message(LOG_LEVEL_INFO, "Data manager thread shutting down..."); 
-    free_sensor_stats_list(); /* Clean up sensor stats list */
+    free_sensor_stats_list(); /* Free memory allocated for the sensor list */
     log_message(LOG_LEVEL_INFO, "Data manager finished cleanup."); 
 
     return NULL;
@@ -151,25 +156,23 @@ void *datamgt_run(void *arg) {
 
 /**
  * @brief Signals the Data Manager thread to stop gracefully.
- * (Currently relies on terminate_flag being checked in the run loop).
+ *        Relies on the terminate_flag being checked in the run loop.
  */
 void datamgt_stop(void) {
-    // The actual stop relies on terminate_flag set by the signal handler
-    // and checked within the datamgt_run loop.
     log_message(LOG_LEVEL_INFO, "Data Manager stop requested (flag will be checked in loop)."); 
 }
-
 
 /* --- Implementation of Internal Helper Functions --- */
 
 /**
  * @brief Initializes the dynamic array for sensor statistics.
+ *        Allocates memory and sets initial capacity.
  */
 static gateway_error_t init_sensor_stats_list(int initial_capacity) {
     if (initial_capacity <= 0) initial_capacity = INITIAL_SENSOR_LIST_CAPACITY;
     sensor_list.data = malloc(initial_capacity * sizeof(sensor_stats_t));
     if (sensor_list.data == NULL) {
-         log_message(LOG_LEVEL_ERROR, "Failed to allocate memory for initial sensor stats list: %s", strerror(errno)); 
+        log_message(LOG_LEVEL_ERROR, "Failed to allocate memory for initial sensor stats list: %s", strerror(errno)); 
         return GATEWAY_ERROR_NOMEM;
     }
     sensor_list.size = 0;
@@ -180,6 +183,7 @@ static gateway_error_t init_sensor_stats_list(int initial_capacity) {
 
 /**
  * @brief Frees the memory allocated for the sensor statistics list.
+ *        Resets the list to an empty state.
  */
 static void free_sensor_stats_list(void) {
     if (sensor_list.data != NULL) {
@@ -193,6 +197,7 @@ static void free_sensor_stats_list(void) {
 
 /**
  * @brief Finds an existing sensor_stats entry by ID or creates a new one if not found.
+ *        Resizes the list if necessary.
  */
 static sensor_stats_t* find_or_create_sensor(sensor_id_t id) {
     /* Search for existing sensor */
@@ -221,7 +226,7 @@ static sensor_stats_t* find_or_create_sensor(sensor_id_t id) {
     new_sensor->id = id;
     new_sensor->total_value_sum = 0.0;
     new_sensor->reading_count = 0;
-    new_sensor->last_logged_state = TEMP_STATE_NORMAL; // Initial state
+    new_sensor->last_logged_state = TEMP_STATE_NORMAL; /* Initial state */
 
     sensor_list.size++;
     return new_sensor;
@@ -229,15 +234,17 @@ static sensor_stats_t* find_or_create_sensor(sensor_id_t id) {
 
 /**
  * @brief Updates the statistics for a given sensor with a new reading.
+ *        Adds the value to the total and increments the count.
  */
 static void update_sensor_stats(sensor_stats_t *stats, double value) {
     stats->total_value_sum += value;
     stats->reading_count++;
-    // No logging here, happens in check_temperature_alerts or main loop DEBUG log
+    /* No logging here, happens in check_temperature_alerts or main loop DEBUG log */
 }
 
 /**
  * @brief Calculates running average, checks thresholds, and logs alerts if state changes.
+ *        Uses the room-sensor map to include room information in logs.
  */
 static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_map_t *map) {
 
@@ -247,13 +254,12 @@ static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_ma
 
     double running_avg = stats->total_value_sum / stats->reading_count;
     temp_state_t current_state = TEMP_STATE_NORMAL;
-    int room_id = -1; // Default room ID if not found
+    int room_id = -1; /* Default room ID if not found */
 
     /* Find room ID from map if map exists */
     if (map != NULL) {
         room_id = get_room_id(stats->id, map);
     }
-
 
     if (running_avg < TEMP_TOO_COLD_THRESHOLD) {
         current_state = TEMP_STATE_TOO_COLD;
@@ -268,17 +274,17 @@ static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_ma
 
         switch (current_state) {
             case TEMP_STATE_TOO_COLD:
-                log_message(LOG_LEVEL_WARNING, // Changed from ALERT to WARNING, ALERT is not a defined level
+                log_message(LOG_LEVEL_WARNING, /* Changed from ALERT to WARNING, ALERT is not a defined level */
                             "Sensor node %d (%s %d) reports it's too cold (running avg temperature = %.2f)",
                             stats->id, room_info_str, id_to_log, running_avg); 
                 break;
             case TEMP_STATE_TOO_HOT:
-                log_message(LOG_LEVEL_WARNING, // Changed from ALERT to WARNING
+                log_message(LOG_LEVEL_WARNING, /* Changed from ALERT to WARNING */
                             "Sensor node %d (%s %d) reports it's too hot (running avg temperature = %.2f)",
                             stats->id, room_info_str, id_to_log, running_avg); 
                 break;
             case TEMP_STATE_NORMAL:
-                 /* Log when temperature returns to normal */
+                /* Log when temperature returns to normal */
                 log_message(LOG_LEVEL_INFO,
                             "Sensor node %d (%s %d) temperature has returned to normal (running avg temperature = %.2f)",
                             stats->id, room_info_str, id_to_log, running_avg); 
@@ -288,11 +294,11 @@ static void check_temperature_alerts(sensor_stats_t *stats, const room_sensor_ma
     }
 }
 
-
 /* --- Implementation of Room-Sensor Map Functions --- */
 
 /**
  * @brief Helper function to find room ID for a given sensor ID.
+ *        Searches the room-sensor map for the corresponding room ID.
  */
 static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     if (map == NULL || map->entries == NULL) {
@@ -306,11 +312,11 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     return -1; /* Not found */
 }
 
-
 /**
  * @brief Loads the room-to-sensor mapping from a file.
+ *        Allocates memory and parses the file to populate the map.
  */
- gateway_error_t datamgt_load_room_sensor_map(const char* filename, room_sensor_map_t** map) {
+gateway_error_t datamgt_load_room_sensor_map(const char* filename, room_sensor_map_t** map) {
     if (filename == NULL || map == NULL) {
         return GATEWAY_ERROR_INVALID_ARG;
     }
@@ -324,7 +330,7 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     /* Allocate map structure */
     loaded_map = malloc(sizeof(room_sensor_map_t));
     if (loaded_map == NULL) {
-        // **** Use fprintf instead of log_message ****
+        /* Use fprintf instead of log_message */
         fprintf(stderr, "ERROR: Failed to allocate memory for room sensor map struct: %s\n", strerror(errno));
         return GATEWAY_ERROR_NOMEM;
     }
@@ -335,7 +341,7 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     /* Allocate initial entries */
     loaded_map->entries = malloc(MAP_INITIAL_CAPACITY * sizeof(room_sensor_entry_t));
     if (loaded_map->entries == NULL) {
-        // **** Use fprintf instead of log_message ****
+        /* Use fprintf instead of log_message */
         fprintf(stderr, "ERROR: Failed to allocate memory for initial map entries: %s\n", strerror(errno));
         free(loaded_map);
         return GATEWAY_ERROR_NOMEM;
@@ -345,11 +351,11 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     /* Open file */
     fp = fopen(filename, "r");
     if (fp == NULL) {
-        // **** Use fprintf instead of log_message ****
+        /* Use fprintf instead of log_message */
         fprintf(stderr, "ERROR: Cannot open room_sensor map file '%s': %s\n", filename, strerror(errno));
         free(loaded_map->entries);
         free(loaded_map);
-        return GATEWAY_ERROR; // Or specific file error
+        return GATEWAY_ERROR; /* Or specific file error */
     }
 
     /* Read file line by line */
@@ -360,15 +366,15 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
         int sensor_id_val;
 
         while (isspace((unsigned char)*line_ptr)) line_ptr++;
-        if (*line_ptr == '\0' || *line_ptr == '#') continue; // Skip empty lines and comments
+        if (*line_ptr == '\0' || *line_ptr == '#') continue; /* Skip empty lines and comments */
 
         if (sscanf(line_ptr, "%d , %d", &room_id_val, &sensor_id_val) != 2) {
-            // **** Use fprintf instead of log_message ****
-            fprintf(stderr, "WARN: Invalid format in map file '%s' at line %d: %s", filename, line_num, line_ptr); // Keep newline from fgets
+            /* Use fprintf instead of log_message */
+            fprintf(stderr, "WARN: Invalid format in map file '%s' at line %d: %s", filename, line_num, line_ptr); /* Keep newline from fgets */
             continue;
         }
         if (sensor_id_val < 0 || sensor_id_val > UINT16_MAX) {
-            // **** Use fprintf instead of log_message ****
+            /* Use fprintf instead of log_message */
             fprintf(stderr, "WARN: Invalid sensor_id %d in map file '%s' at line %d. Skipping.\n", sensor_id_val, filename, line_num);
             continue;
         }
@@ -376,11 +382,11 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
         /* Resize if needed */
         if (loaded_map->count >= loaded_map->capacity) {
             int new_capacity = loaded_map->capacity * 2;
-            // **** Use fprintf instead of log_message ****
+            /* Use fprintf instead of log_message */
             fprintf(stderr, "DEBUG: Resizing room sensor map from %d to %d\n", loaded_map->capacity, new_capacity);
             room_sensor_entry_t *new_entries = realloc(loaded_map->entries, new_capacity * sizeof(room_sensor_entry_t));
             if (new_entries == NULL) {
-                // **** Use fprintf instead of log_message ****
+                /* Use fprintf instead of log_message */
                 fprintf(stderr, "ERROR: Failed to reallocate memory for map entries: %s\n", strerror(errno));
                 status = GATEWAY_ERROR_NOMEM;
                 goto cleanup_map_load;
@@ -396,9 +402,9 @@ static int get_room_id(sensor_id_t sensor_id, const room_sensor_map_t *map) {
     }
 
     if (ferror(fp)) {
-        // **** Use fprintf instead of log_message ****
+        /* Use fprintf instead of log_message */
         fprintf(stderr, "ERROR: Error reading from map file '%s': %s\n", filename, strerror(errno));
-        status = GATEWAY_ERROR; // Or specific file read error
+        status = GATEWAY_ERROR; /* Or specific file read error */
     }
 
 cleanup_map_load:
@@ -406,8 +412,8 @@ cleanup_map_load:
 
     if (status == GATEWAY_SUCCESS) {
         *map = loaded_map;
-        // **** Use fprintf instead of log_message ****
-        // Log success to stderr as well, as logger might not be ready when this is called in main
+        /* Use fprintf instead of log_message */
+        /* Log success to stderr as well, as logger might not be ready when this is called in main */
         fprintf(stderr, "INFO: Loaded %d entries from room sensor map '%s'.\n", loaded_map->count, filename);
     } else {
         if (loaded_map != NULL) {
@@ -415,19 +421,20 @@ cleanup_map_load:
             free(loaded_map);
         }
         *map = NULL;
-        // Error logged previously
+        /* Error logged previously */
     }
     return status;
 }
 
 /**
- * @brief Frees the memory allocated for the room-sensor map. Logs to stderr.
+ * @brief Frees the memory allocated for the room-sensor map.
+ *        Logs to stderr.
  */
 void datamgt_free_room_sensor_map(room_sensor_map_t** map) {
     if (map == NULL || *map == NULL) return;
     if ((*map)->entries != NULL) free((*map)->entries);
     free(*map);
     *map = NULL;
-    // **** Use fprintf instead of log_message ****
+    /* Use fprintf instead of log_message */
     fprintf(stderr, "INFO: Room sensor map freed.\n");
 }

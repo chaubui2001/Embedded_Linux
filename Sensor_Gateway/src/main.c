@@ -1,25 +1,25 @@
 #define _GNU_SOURCE         /* Needed for pthread_timedjoin_np, strsignal */
-#include <stdio.h>      /* Standard I/O */
-#include <stdlib.h>     /* Standard Library (exit, atoi, etc.) */
-#include <unistd.h>     /* POSIX API (fork, sleep, write, etc.) */
-#include <pthread.h>    /* POSIX Threads */
-#include <signal.h>     /* Signal handling (sigaction, sigwaitinfo, sigprocmask etc.) */
-#include <sys/wait.h>   /* For waitpid */
-#include <errno.h>      /* For errno */
-#include <string.h>     /* For strerror, strlen, memset */
-#include <limits.h>     /* For LONG_MAX, LONG_MIN */
-#include <time.h>       /* For clock_gettime */
-#include <stdbool.h>    /* For bool type */
+#include <stdio.h>          /* Standard I/O */
+#include <stdlib.h>         /* Standard Library (exit, atoi, etc.) */
+#include <unistd.h>         /* POSIX API (fork, sleep, write, etc.) */
+#include <pthread.h>        /* POSIX Threads */
+#include <signal.h>         /* Signal handling (sigaction, sigwaitinfo, sigprocmask etc.) */
+#include <sys/wait.h>       /* For waitpid */
+#include <errno.h>          /* For errno */
+#include <string.h>         /* For strerror, strlen, memset */
+#include <limits.h>         /* For LONG_MAX, LONG_MIN */
+#include <time.h>           /* For clock_gettime */
+#include <stdbool.h>        /* For bool type */
 
 /* Include project headers */
-#include "config.h"
-#include "common.h"
-#include "sbuffer.h"
-#include "logger.h"     // Assumes updated logger.h
-#include "conmgt.h"
-#include "datamgt.h"
-#include "storagemgt.h"
-#include "cmdif.h"
+#include "config.h"         /* Configuration definitions */
+#include "common.h"         /* Common utility functions and definitions */
+#include "sbuffer.h"        /* Shared buffer implementation */
+#include "logger.h"         /* Logger module for logging messages */
+#include "conmgt.h"         /* Connection Manager module */
+#include "datamgt.h"        /* Data Manager module */
+#include "storagemgt.h"     /* Storage Manager module */
+#include "cmdif.h"          /* Command Interface module */
 
 /* --- Local Macros --- */
 #define MIN_PORT 1           /* Minimum valid port number */
@@ -31,7 +31,17 @@
 volatile sig_atomic_t terminate_flag = 0;
 
 /* --- Function Prototypes --- */
+
+/**
+ * @brief Prints command line usage instructions.
+ * @param prog_name Name of the program (argv[0]).
+ */
 static void print_usage(const char *prog_name);
+
+/**
+ * @brief Signal handler for termination signals.
+ * @param sig Signal number received.
+ */
 static void signal_handler(int sig);
 
 /* --- Main Function --- */
@@ -40,38 +50,38 @@ int main(int argc, char *argv[]) {
     /* --- Variable Declarations --- */
 
     /* Configuration & Arguments */
-    int server_port;                        // Port number from command line argument
-    const char *map_filename = MAP_FILE_NAME; // Default filename for room-sensor map
+    int server_port;                        /* Port number from command line argument */
+    const char *map_filename = MAP_FILE_NAME; /* Default filename for room-sensor map */
 
     /* Process & Thread Management */
-    pid_t log_pid = -1;                     // Process ID of the logger child process
-    pthread_t conmgt_thread_id = 0;         // Thread ID for Connection Manager
-    pthread_t datamgt_thread_id = 0;        // Thread ID for Data Manager
-    pthread_t storagemgt_thread_id = 0;     // Thread ID for Storage Manager
-    pthread_t cmdif_thread_id = 0;          // Thread ID for Command Interface
-    bool conmgt_created = false;            // Flag: Connection Manager thread created
-    bool datamgt_created = false;           // Flag: Data Manager thread created
-    bool storagemgt_created = false;        // Flag: Storage Manager thread created
-    bool cmdif_created = false;             // Flag: Command Interface thread created
+    pid_t log_pid = -1;                     /* Process ID of the logger child process */
+    pthread_t conmgt_thread_id = 0;         /* Thread ID for Connection Manager */
+    pthread_t datamgt_thread_id = 0;        /* Thread ID for Data Manager */
+    pthread_t storagemgt_thread_id = 0;     /* Thread ID for Storage Manager */
+    pthread_t cmdif_thread_id = 0;          /* Thread ID for Command Interface */
+    bool conmgt_created = false;            /* Flag: Connection Manager thread created */
+    bool datamgt_created = false;           /* Flag: Data Manager thread created */
+    bool storagemgt_created = false;        /* Flag: Storage Manager thread created */
+    bool cmdif_created = false;             /* Flag: Command Interface thread created */
 
     /* Thread Argument Structures */
-    conmgt_args_t conmgt_args;              // Arguments for Connection Manager thread
-    datamgt_args_t datamgt_args;            // Arguments for Data Manager thread
-    storagemgt_args_t storagemgt_args;      // Arguments for Storage Manager thread
-    cmdif_args_t cmdif_args;                // Arguments for Command Interface thread
+    conmgt_args_t conmgt_args;              /* Arguments for Connection Manager thread */
+    datamgt_args_t datamgt_args;            /* Arguments for Data Manager thread */
+    storagemgt_args_t storagemgt_args;      /* Arguments for Storage Manager thread */
+    cmdif_args_t cmdif_args;                /* Arguments for Command Interface thread */
 
     /* Shared Resources */
-    sbuffer_t *buffer = NULL;               // Pointer to the shared sensor data buffer
-    room_sensor_map_t *room_map = NULL;     // Pointer to the loaded room-sensor map
+    sbuffer_t *buffer = NULL;               /* Pointer to the shared sensor data buffer */
+    room_sensor_map_t *room_map = NULL;     /* Pointer to the loaded room-sensor map */
 
     /* Control Flow & Status */
-    gateway_error_t ret;                    // Return value from gateway functions
-    void *thread_result = NULL;             // Placeholder for pthread_join result (not currently used)
-    sigset_t wait_mask;                     // Signal set for sigwaitinfo
-    int signum_received = 0;                // Signal number received by sigwaitinfo
+    gateway_error_t ret;                    /* Return value from gateway functions */
+    void *thread_result = NULL;             /* Placeholder for pthread_join result (not currently used) */
+    sigset_t wait_mask;                     /* Signal set for sigwaitinfo */
+    int signum_received = 0;                /* Signal number received by sigwaitinfo */
 
     /* Initialization specific to cmdif_args */
-    cmdif_args.socket_path = CMD_SOCKET_PATH; // Set command socket path
+    cmdif_args.socket_path = CMD_SOCKET_PATH; /* Set command socket path */
 
     /* --- End of Variable Declarations --- */
 
@@ -92,7 +102,12 @@ int main(int argc, char *argv[]) {
     char *endptr;
     errno = 0;
     long port_long = strtol(argv[1], &endptr, 10);
-    if ((errno == ERANGE && (port_long == LONG_MAX || port_long == LONG_MIN)) || (errno != 0 && port_long == 0) || endptr == argv[1] || *endptr != '\0' || port_long < MIN_PORT || port_long > MAX_PORT) {
+    if ((errno == ERANGE && (port_long == LONG_MAX || port_long == LONG_MIN)) || 
+        (errno != 0 && port_long == 0) || 
+        endptr == argv[1] || 
+        *endptr != '\0' || 
+        port_long < MIN_PORT || 
+        port_long > MAX_PORT) {
         fprintf(stderr, "Error: Invalid port number '%s'. Must be between %d and %d.\n", argv[1], MIN_PORT, MAX_PORT);
         print_usage(argv[0]);
         return EXIT_FAILURE;
@@ -392,6 +407,8 @@ immediate_cleanup_on_create_fail:
 } /* End of main */
 
 
+/* --- Function Definitions --- */
+
 /**
  * @brief Prints command line usage instructions.
  */
@@ -401,7 +418,7 @@ static void print_usage(const char *prog_name) {
 }
 
 /**
- * @brief Signal handler for user
+ * @brief Signal handler for user signals.
  * IMPORTANT: Only use async-signal-safe functions inside!
  */
 static void signal_handler(int sig) {

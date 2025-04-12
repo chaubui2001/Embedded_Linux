@@ -1,57 +1,57 @@
-#include <stdio.h>      /* For standard I/O functions like snprintf, fopen, fprintf, fclose */
+#include <stdio.h>      /* Standard I/O functions like snprintf, fopen, fprintf, fclose */
 #include <stdlib.h>     /* For exit, EXIT_FAILURE, EXIT_SUCCESS, malloc, free */
-#include <string.h>     /* For strerror, strlen, memset, memchr, memcpy, memmove */
-#include <fcntl.h>      /* For file control options (O_RDONLY) */
-#include <unistd.h>     /* For POSIX functions like read, write, close */
-#include <sys/stat.h>   /* For FIFO related constants if needed */
-#include <time.h>       /* For time(), localtime(), strftime() */
-#include <errno.h>      /* For errno */
-#include <stdbool.h>    /* For bool type */
-#include <signal.h>     /* For sig_atomic_t (if using terminate_flag here) */
+#include <string.h>     /* String manipulation functions like strerror, strlen, memset, etc. */
+#include <fcntl.h>      /* File control options (e.g., O_RDONLY) */
+#include <unistd.h>     /* POSIX functions like read, write, close */
+#include <sys/stat.h>   /* For FIFO-related constants if needed */
+#include <time.h>       /* Time-related functions like time(), localtime(), strftime() */
+#include <errno.h>      /* For errno to handle error codes */
+#include <stdbool.h>    /* For boolean type (true/false) */
+#include <signal.h>     /* For signal handling (e.g., sig_atomic_t) */
 
 /* Include project-specific headers */
-#include "config.h"     /* For LOG_FIFO_NAME, LOG_FILE_NAME */
-#include "common.h"     /* For gateway_error_t */
+#include "config.h"     /* Contains definitions like LOG_FIFO_NAME, LOG_FILE_NAME */
+#include "common.h"     /* Contains common definitions like gateway_error_t */
 #include "logger.h"     /* Contains the declaration for run_log_process */
 
 /* --- Local Macros --- */
-#define FIFO_READ_BUFFER_SIZE 512 /* Size of buffer for each read() call */
+#define FIFO_READ_BUFFER_SIZE 512 /* Size of the buffer for each read() call */
 #define ASSEMBLY_BUFFER_SIZE (FIFO_READ_BUFFER_SIZE * 4) /* Buffer to assemble potentially partial lines */
 #define TIMESTAMP_BUFFER_SIZE 100 /* Buffer size for formatted timestamp */
 #define LOG_LINE_BUFFER_SIZE (ASSEMBLY_BUFFER_SIZE + TIMESTAMP_BUFFER_SIZE + 50) /* Max size for final log line */
 #define TIMESTAMP_FORMAT "%Y-%m-%d %H:%M:%S" /* Format for timestamps */
-#define INITIAL_SEQUENCE_NUMBER 1
+#define INITIAL_SEQUENCE_NUMBER 1 /* Initial sequence number for log entries */
 
 /* --- Main Function for Log Process --- */
 
 /**
- * @brief The main function for the dedicated log process.
- * Reads log messages from the FIFO, handling partial reads by assembling lines,
- * and writes them to the log file with sequence number and timestamp prepended.
- * This function runs indefinitely until the FIFO's write end is closed
- * or an unrecoverable error occurs.
+ * @brief Main function for the dedicated log process.
+ * 
+ * This function reads log messages from a FIFO, handles partial reads by assembling lines,
+ * and writes them to a log file with a sequence number and timestamp prepended.
+ * It runs indefinitely until the FIFO's write end is closed or an unrecoverable error occurs.
  */
 void run_log_process(void) {
-    int fifo_fd = -1;
-    FILE *log_file = NULL;
-    char read_buffer[FIFO_READ_BUFFER_SIZE];      /* Temporary buffer for read() */
-    char *assembly_buffer = NULL;                 /* Dynamically allocated buffer to assemble lines */
-    int assembly_buffer_len = 0;                  /* Current length of data in assembly_buffer */
-    char timestamp_buffer[TIMESTAMP_BUFFER_SIZE];
-    char log_line_buffer[LOG_LINE_BUFFER_SIZE];
-    ssize_t bytes_read;
-    uint64_t sequence_number = INITIAL_SEQUENCE_NUMBER;
-    time_t current_time;
-    struct tm *local_time;
-    bool fifo_closed = false; // Flag to indicate EOF was reached
+    int fifo_fd = -1; /* File descriptor for the FIFO */
+    FILE *log_file = NULL; /* File pointer for the log file */
+    char read_buffer[FIFO_READ_BUFFER_SIZE]; /* Temporary buffer for read() */
+    char *assembly_buffer = NULL; /* Dynamically allocated buffer to assemble lines */
+    int assembly_buffer_len = 0; /* Current length of data in the assembly buffer */
+    char timestamp_buffer[TIMESTAMP_BUFFER_SIZE]; /* Buffer for formatted timestamps */
+    char log_line_buffer[LOG_LINE_BUFFER_SIZE]; /* Buffer for the final log line */
+    ssize_t bytes_read; /* Number of bytes read from the FIFO */
+    uint64_t sequence_number = INITIAL_SEQUENCE_NUMBER; /* Sequence number for log entries */
+    time_t current_time; /* Current time */
+    struct tm *local_time; /* Local time structure */
+    bool fifo_closed = false; /* Flag to indicate if the FIFO's write end is closed */
 
-    /* Allocate assembly buffer */
+    /* Allocate memory for the assembly buffer */
     assembly_buffer = malloc(ASSEMBLY_BUFFER_SIZE);
     if (assembly_buffer == NULL) {
         perror("Log Process CRITICAL: Failed to allocate assembly buffer");
         exit(EXIT_FAILURE);
     }
-    assembly_buffer[0] = '\0'; // Ensure it's initially empty
+    assembly_buffer[0] = '\0'; /* Ensure the buffer is initially empty */
 
     /* 1. Open the FIFO for reading */
     fifo_fd = open(LOG_FIFO_NAME, O_RDONLY);
@@ -70,26 +70,26 @@ void run_log_process(void) {
         exit(EXIT_FAILURE);
     }
 
-    /* Log startup message */
+    /* Log a startup message */
     time(&current_time);
     local_time = localtime(&current_time);
     strftime(timestamp_buffer, sizeof(timestamp_buffer), TIMESTAMP_FORMAT, local_time);
     fprintf(log_file, "0 %s Log process started.\n", timestamp_buffer);
     fflush(log_file);
 
-    fprintf(stderr, "Log process started. Reading from %s, writing to %s\n", LOG_FIFO_NAME, LOG_FILE_NAME); // Info output
+    fprintf(stderr, "Log process started. Reading from %s, writing to %s\n", LOG_FIFO_NAME, LOG_FILE_NAME); /* Info output */
 
-    /* 3. Main loop: Read, Assemble, Process Lines */
+    /* 3. Main loop: Read, assemble, and process lines */
     while (!fifo_closed) {
+        /* Read data from the FIFO */
         bytes_read = read(fifo_fd, read_buffer, sizeof(read_buffer));
 
         if (bytes_read > 0) {
-            /* Append read data to assembly buffer, checking for overflow */
+            /* Append read data to the assembly buffer, checking for overflow */
             if (assembly_buffer_len + bytes_read >= ASSEMBLY_BUFFER_SIZE) {
-                /* Handle overflow: log error, potentially discard assembly buffer and new data */
+                /* Handle overflow: log error and reset the buffer */
                 fprintf(stderr, "Log Process ERROR: Assembly buffer overflow. Log messages might be lost/corrupted.\n");
-                 /* Maybe log to file as well */
-                fprintf(log_file, "0 %s Log Process ERROR: Assembly buffer overflow.\n", timestamp_buffer); // Use last known timestamp
+                fprintf(log_file, "0 %s Log Process ERROR: Assembly buffer overflow.\n", timestamp_buffer); /* Use last known timestamp */
                 fflush(log_file);
                 assembly_buffer_len = 0; /* Reset buffer */
                 continue; /* Skip processing this chunk */
@@ -99,7 +99,7 @@ void run_log_process(void) {
 
         } else if (bytes_read == 0) {
             /* End of File - FIFO write end closed */
-            fprintf(stderr, "Log Process: FIFO write end closed.\n"); // Info output
+            fprintf(stderr, "Log Process: FIFO write end closed.\n"); /* Info output */
             fifo_closed = true; /* Set flag to process remaining buffer and exit */
 
         } else { /* bytes_read < 0 */
@@ -107,7 +107,7 @@ void run_log_process(void) {
                 continue; /* Interrupted system call, retry read */
             } else {
                 perror("Log Process ERROR: Failed to read from FIFO");
-                /* Try to log error to file before exiting */
+                /* Log error to file before exiting */
                 time(&current_time);
                 local_time = localtime(&current_time);
                 strftime(timestamp_buffer, sizeof(timestamp_buffer), TIMESTAMP_FORMAT, local_time);
@@ -126,10 +126,10 @@ void run_log_process(void) {
         while ((newline_pos = memchr(current_pos, '\n', assembly_buffer_len - processed_len)) != NULL) {
             int line_len = newline_pos - current_pos; /* Length excluding newline */
 
-            /* Ensure line fits in log_line_buffer (should generally fit if ASSEMBLY_BUFFER is large enough) */
+            /* Ensure the line fits in the log_line_buffer */
             if (line_len >= LOG_LINE_BUFFER_SIZE - TIMESTAMP_BUFFER_SIZE - 50) {
                 fprintf(stderr, "Log Process WARN: Assembled line too long, potential truncation.\n");
-                line_len = LOG_LINE_BUFFER_SIZE - TIMESTAMP_BUFFER_SIZE - 50 - 1; // Truncate
+                line_len = LOG_LINE_BUFFER_SIZE - TIMESTAMP_BUFFER_SIZE - 50 - 1; /* Truncate */
             }
 
             /* Format and write the complete line */
@@ -137,7 +137,7 @@ void run_log_process(void) {
             local_time = localtime(&current_time);
             strftime(timestamp_buffer, sizeof(timestamp_buffer), TIMESTAMP_FORMAT, local_time);
 
-            /* Use memcpy to avoid issues if line_len is 0, and null terminate */
+            /* Copy the message part and null-terminate it */
             char message_part[line_len + 1];
             memcpy(message_part, current_pos, line_len);
             message_part[line_len] = '\0';
@@ -150,27 +150,26 @@ void run_log_process(void) {
 
             if (fprintf(log_file, "%s\n", log_line_buffer) < 0) {
                 perror("Log Process ERROR: Failed to write to log file");
-                fprintf(stderr,"Log Process ERROR: Failed to write: %s\n", log_line_buffer);
+                fprintf(stderr, "Log Process ERROR: Failed to write: %s\n", log_line_buffer);
             } else {
                 fflush(log_file);
             }
 
             sequence_number++;
             processed_len += (line_len + 1); /* Update total processed length including newline */
-            current_pos = newline_pos + 1;   /* Move start position past the newline */
+            current_pos = newline_pos + 1; /* Move start position past the newline */
         }
 
-        /* Remove processed data from assembly buffer by shifting remaining data */
+        /* Remove processed data from the assembly buffer by shifting remaining data */
         if (processed_len > 0) {
             assembly_buffer_len -= processed_len;
-            /* Use memmove for potentially overlapping regions */
-            memmove(assembly_buffer, current_pos, assembly_buffer_len);
+            memmove(assembly_buffer, current_pos, assembly_buffer_len); /* Use memmove for overlapping regions */
         }
     } /* End of main while loop */
 
     /* Process any remaining data in the assembly buffer after EOF */
     if (assembly_buffer_len > 0) {
-        fprintf(stderr, "Log Process WARN: Processing remaining partial message after FIFO closed.\n"); // Info
+        fprintf(stderr, "Log Process WARN: Processing remaining partial message after FIFO closed.\n"); /* Info */
         assembly_buffer[assembly_buffer_len] = '\0'; /* Null-terminate */
 
         time(&current_time);
@@ -188,14 +187,13 @@ void run_log_process(void) {
         sequence_number++;
     }
 
-
     /* 4. Cleanup */
     fprintf(stderr, "Log process cleaning up...\n");
     if (fifo_fd != -1) {
         close(fifo_fd);
     }
     if (log_file != NULL) {
-        fprintf(log_file, "%lu %s Log process finished.\n", sequence_number, timestamp_buffer); // Final log message
+        fprintf(log_file, "%lu %s Log process finished.\n", sequence_number, timestamp_buffer); /* Final log message */
         fclose(log_file);
     }
     if (assembly_buffer != NULL) {
