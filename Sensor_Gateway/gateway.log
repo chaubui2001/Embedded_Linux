@@ -1,0 +1,1616 @@
+0 2025-04-12 23:34:55 Log process started.
+1 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Main process logger FIFO opened successfully.
+2 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Main process PID: 6094, Log process PID: 6095
+3 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Room sensor map 'room_sensor.map' loaded (1 entries).
+4 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Shared buffer initialized.
+5 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Signal mask set, main thread will use sigwaitinfo() to wait for termination signals.
+6 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Creating manager threads...
+7 2025-04-12 23:34:55 2025-04-12 23:34:55 [DEBUG]  Connection Manager thread created (ID: 140401693517504).
+8 2025-04-12 23:34:55 2025-04-12 23:34:55 [DEBUG]  Data Manager thread created (ID: 140401685124800).
+9 2025-04-12 23:34:55 2025-04-12 23:34:55 [DEBUG]  Storage Manager thread created (ID: 140401676732096).
+10 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   All manager threads created successfully.
+11 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Creating command interface thread...
+12 2025-04-12 23:34:55 2025-04-12 23:34:55 [DEBUG]  Initialized sensor stats list with capacity 10
+13 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Data manager thread started.
+14 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Command interface thread created (ID: 140401532991168).
+15 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Main thread waiting for termination signal (SIGINT/SIGTERM)...
+16 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Storage manager thread started.
+17 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Local retry queue initialized with capacity 20.
+18 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Server socket listening on port 1234
+19 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Connection to SQL server sensordata.db established.
+20 2025-04-12 23:34:55 2025-04-12 23:34:55 [INFO]   Table SensorData checked/created successfully.
+21 2025-04-12 23:35:31 2025-04-12 23:35:31 [INFO]   New connection accepted from 127.0.0.1:59016 (socket 10). Current connections from this IP: 0
+22 2025-04-12 23:35:31 2025-04-12 23:35:31 [DEBUG]  Added client 127.0.0.1:59016 (socket 10) at index 0. Total clients: 1
+23 2025-04-12 23:35:31 2025-04-12 23:35:31 [INFO]   Sensor node 102 has opened a new connection (socket 10)
+24 2025-04-12 23:35:31 2025-04-12 23:35:31 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+25 2025-04-12 23:35:31 2025-04-12 23:35:31 [DEBUG]  Creating new stats entry for sensor ID 102 at index 0
+26 2025-04-12 23:35:31 2025-04-12 23:35:31 [WARNING]Sensor node 102 (for sensor 102) reports it's too hot (running avg temperature = 99.87)
+27 2025-04-12 23:35:31 2025-04-12 23:35:31 [DEBUG]  Processed Sensor ID: 102, Value: 99.87, Count: 1, Avg: 99.87
+28 2025-04-12 23:35:33 2025-04-12 23:35:33 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+29 2025-04-12 23:35:33 2025-04-12 23:35:33 [DEBUG]  Read new item from sbuffer (Sensor 102)
+30 2025-04-12 23:35:33 2025-04-12 23:35:33 [DEBUG]  Inserted SensorID 102, TS 1744475733, Value 101.15 into DB
+31 2025-04-12 23:35:35 2025-04-12 23:35:35 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+32 2025-04-12 23:35:35 2025-04-12 23:35:35 [DEBUG]  Processed Sensor ID: 102, Value: 101.66, Count: 2, Avg: 100.77
+33 2025-04-12 23:35:37 2025-04-12 23:35:37 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+34 2025-04-12 23:35:37 2025-04-12 23:35:37 [DEBUG]  Read new item from sbuffer (Sensor 102)
+35 2025-04-12 23:35:37 2025-04-12 23:35:37 [DEBUG]  Inserted SensorID 102, TS 1744475737, Value 99.15 into DB
+36 2025-04-12 23:35:38 2025-04-12 23:35:38 [INFO]   New connection accepted from 127.0.0.1:44022 (socket 11). Current connections from this IP: 1
+37 2025-04-12 23:35:38 2025-04-12 23:35:38 [DEBUG]  Added client 127.0.0.1:44022 (socket 11) at index 1. Total clients: 2
+38 2025-04-12 23:35:38 2025-04-12 23:35:38 [INFO]   Sensor node 101 has opened a new connection (socket 11)
+39 2025-04-12 23:35:38 2025-04-12 23:35:38 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+40 2025-04-12 23:35:38 2025-04-12 23:35:38 [DEBUG]  Creating new stats entry for sensor ID 101 at index 1
+41 2025-04-12 23:35:38 2025-04-12 23:35:38 [WARNING]Sensor node 101 (for sensor 101) reports it's too hot (running avg temperature = 99.07)
+42 2025-04-12 23:35:38 2025-04-12 23:35:38 [DEBUG]  Processed Sensor ID: 101, Value: 99.07, Count: 1, Avg: 99.07
+43 2025-04-12 23:35:39 2025-04-12 23:35:39 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+44 2025-04-12 23:35:39 2025-04-12 23:35:39 [DEBUG]  Read new item from sbuffer (Sensor 102)
+45 2025-04-12 23:35:39 2025-04-12 23:35:39 [DEBUG]  Inserted SensorID 102, TS 1744475739, Value 102.31 into DB
+46 2025-04-12 23:35:39 2025-04-12 23:35:39 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+47 2025-04-12 23:35:39 2025-04-12 23:35:39 [DEBUG]  Processed Sensor ID: 101, Value: 98.69, Count: 2, Avg: 98.88
+48 2025-04-12 23:35:40 2025-04-12 23:35:40 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+49 2025-04-12 23:35:40 2025-04-12 23:35:40 [DEBUG]  Read new item from sbuffer (Sensor 101)
+50 2025-04-12 23:35:40 2025-04-12 23:35:40 [DEBUG]  Inserted SensorID 101, TS 1744475740, Value 97.52 into DB
+51 2025-04-12 23:35:41 2025-04-12 23:35:41 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+52 2025-04-12 23:35:41 2025-04-12 23:35:41 [DEBUG]  Processed Sensor ID: 102, Value: 103.78, Count: 3, Avg: 101.77
+53 2025-04-12 23:35:41 2025-04-12 23:35:41 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+54 2025-04-12 23:35:41 2025-04-12 23:35:41 [DEBUG]  Read new item from sbuffer (Sensor 101)
+55 2025-04-12 23:35:41 2025-04-12 23:35:41 [DEBUG]  Inserted SensorID 101, TS 1744475741, Value 99.49 into DB
+56 2025-04-12 23:35:42 2025-04-12 23:35:42 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+57 2025-04-12 23:35:42 2025-04-12 23:35:42 [DEBUG]  Processed Sensor ID: 101, Value: 99.22, Count: 3, Avg: 98.99
+58 2025-04-12 23:35:43 2025-04-12 23:35:43 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+59 2025-04-12 23:35:43 2025-04-12 23:35:43 [DEBUG]  Read new item from sbuffer (Sensor 102)
+60 2025-04-12 23:35:43 2025-04-12 23:35:43 [DEBUG]  Inserted SensorID 102, TS 1744475743, Value 101.62 into DB
+61 2025-04-12 23:35:43 2025-04-12 23:35:43 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+62 2025-04-12 23:35:43 2025-04-12 23:35:43 [DEBUG]  Processed Sensor ID: 101, Value: 97.08, Count: 4, Avg: 98.51
+63 2025-04-12 23:35:44 2025-04-12 23:35:44 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+64 2025-04-12 23:35:44 2025-04-12 23:35:44 [DEBUG]  Read new item from sbuffer (Sensor 101)
+65 2025-04-12 23:35:44 2025-04-12 23:35:44 [DEBUG]  Inserted SensorID 101, TS 1744475744, Value 95.72 into DB
+66 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+67 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Processed Sensor ID: 102, Value: 104.12, Count: 4, Avg: 102.36
+68 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+69 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Read new item from sbuffer (Sensor 101)
+70 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Inserted SensorID 101, TS 1744475745, Value 100.19 into DB
+71 2025-04-12 23:35:45 2025-04-12 23:35:45 [INFO]   New connection accepted from 127.0.0.1:44354 (socket 12). Current connections from this IP: 2
+72 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Added client 127.0.0.1:44354 (socket 12) at index 2. Total clients: 3
+73 2025-04-12 23:35:45 2025-04-12 23:35:45 [INFO]   Sensor node 103 has opened a new connection (socket 12)
+74 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+75 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Creating new stats entry for sensor ID 103 at index 2
+76 2025-04-12 23:35:45 2025-04-12 23:35:45 [WARNING]Sensor node 103 (for sensor 103) reports it's too hot (running avg temperature = 98.37)
+77 2025-04-12 23:35:45 2025-04-12 23:35:45 [DEBUG]  Processed Sensor ID: 103, Value: 98.37, Count: 1, Avg: 98.37
+78 2025-04-12 23:35:46 2025-04-12 23:35:46 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+79 2025-04-12 23:35:46 2025-04-12 23:35:46 [DEBUG]  Read new item from sbuffer (Sensor 101)
+80 2025-04-12 23:35:46 2025-04-12 23:35:46 [DEBUG]  Inserted SensorID 101, TS 1744475746, Value 96.79 into DB
+81 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+82 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Processed Sensor ID: 102, Value: 101.04, Count: 5, Avg: 102.09
+83 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+84 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Read new item from sbuffer (Sensor 101)
+85 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Inserted SensorID 101, TS 1744475747, Value 103.90 into DB
+86 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+87 2025-04-12 23:35:47 2025-04-12 23:35:47 [DEBUG]  Processed Sensor ID: 103, Value: 99.17, Count: 2, Avg: 98.77
+88 2025-04-12 23:35:48 2025-04-12 23:35:48 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+89 2025-04-12 23:35:48 2025-04-12 23:35:48 [DEBUG]  Read new item from sbuffer (Sensor 101)
+90 2025-04-12 23:35:48 2025-04-12 23:35:48 [DEBUG]  Inserted SensorID 101, TS 1744475748, Value 98.34 into DB
+91 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+92 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Processed Sensor ID: 102, Value: 101.52, Count: 6, Avg: 102.00
+93 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+94 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Read new item from sbuffer (Sensor 101)
+95 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Inserted SensorID 101, TS 1744475749, Value 101.22 into DB
+96 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+97 2025-04-12 23:35:49 2025-04-12 23:35:49 [DEBUG]  Processed Sensor ID: 103, Value: 100.07, Count: 3, Avg: 99.20
+98 2025-04-12 23:35:50 2025-04-12 23:35:50 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+99 2025-04-12 23:35:50 2025-04-12 23:35:50 [DEBUG]  Read new item from sbuffer (Sensor 101)
+100 2025-04-12 23:35:50 2025-04-12 23:35:50 [DEBUG]  Inserted SensorID 101, TS 1744475750, Value 100.49 into DB
+101 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+102 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Processed Sensor ID: 102, Value: 98.73, Count: 7, Avg: 101.53
+103 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+104 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Read new item from sbuffer (Sensor 101)
+105 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Inserted SensorID 101, TS 1744475751, Value 101.48 into DB
+106 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+107 2025-04-12 23:35:51 2025-04-12 23:35:51 [DEBUG]  Processed Sensor ID: 103, Value: 101.99, Count: 4, Avg: 99.90
+108 2025-04-12 23:35:52 2025-04-12 23:35:52 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+109 2025-04-12 23:35:52 2025-04-12 23:35:52 [DEBUG]  Read new item from sbuffer (Sensor 101)
+110 2025-04-12 23:35:52 2025-04-12 23:35:52 [DEBUG]  Inserted SensorID 101, TS 1744475752, Value 99.07 into DB
+111 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+112 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Processed Sensor ID: 102, Value: 96.18, Count: 8, Avg: 100.86
+113 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+114 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Read new item from sbuffer (Sensor 101)
+115 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Inserted SensorID 101, TS 1744475753, Value 102.51 into DB
+116 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+117 2025-04-12 23:35:53 2025-04-12 23:35:53 [DEBUG]  Processed Sensor ID: 103, Value: 101.65, Count: 5, Avg: 100.25
+118 2025-04-12 23:35:54 2025-04-12 23:35:54 [INFO]   New connection accepted from 127.0.0.1:44360 (socket 13). Current connections from this IP: 3
+119 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Added client 127.0.0.1:44360 (socket 13) at index 3. Total clients: 4
+120 2025-04-12 23:35:54 2025-04-12 23:35:54 [INFO]   Sensor node 104 has opened a new connection (socket 13)
+121 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+122 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Read new item from sbuffer (Sensor 104)
+123 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Inserted SensorID 104, TS 1744475754, Value 95.59 into DB
+124 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+125 2025-04-12 23:35:54 2025-04-12 23:35:54 [DEBUG]  Processed Sensor ID: 101, Value: 102.27, Count: 5, Avg: 99.27
+126 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+127 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Read new item from sbuffer (Sensor 102)
+128 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Inserted SensorID 102, TS 1744475755, Value 102.63 into DB
+129 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+130 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Processed Sensor ID: 101, Value: 101.19, Count: 6, Avg: 99.59
+131 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+132 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Read new item from sbuffer (Sensor 103)
+133 2025-04-12 23:35:55 2025-04-12 23:35:55 [DEBUG]  Inserted SensorID 103, TS 1744475755, Value 102.99 into DB
+134 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+135 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Creating new stats entry for sensor ID 104 at index 3
+136 2025-04-12 23:35:56 2025-04-12 23:35:56 [WARNING]Sensor node 104 (for sensor 104) reports it's too hot (running avg temperature = 98.52)
+137 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Processed Sensor ID: 104, Value: 98.52, Count: 1, Avg: 98.52
+138 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+139 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Read new item from sbuffer (Sensor 101)
+140 2025-04-12 23:35:56 2025-04-12 23:35:56 [DEBUG]  Inserted SensorID 101, TS 1744475756, Value 102.54 into DB
+141 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+142 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Processed Sensor ID: 102, Value: 103.15, Count: 9, Avg: 101.12
+143 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+144 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Read new item from sbuffer (Sensor 101)
+145 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Inserted SensorID 101, TS 1744475757, Value 100.51 into DB
+146 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+147 2025-04-12 23:35:57 2025-04-12 23:35:57 [DEBUG]  Processed Sensor ID: 103, Value: 101.54, Count: 6, Avg: 100.47
+148 2025-04-12 23:35:58 2025-04-12 23:35:58 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+149 2025-04-12 23:35:58 2025-04-12 23:35:58 [DEBUG]  Read new item from sbuffer (Sensor 104)
+150 2025-04-12 23:35:58 2025-04-12 23:35:58 [DEBUG]  Inserted SensorID 104, TS 1744475758, Value 95.71 into DB
+151 2025-04-12 23:35:58 2025-04-12 23:35:58 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+152 2025-04-12 23:35:58 2025-04-12 23:35:58 [DEBUG]  Processed Sensor ID: 101, Value: 102.65, Count: 7, Avg: 100.02
+153 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+154 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Read new item from sbuffer (Sensor 102)
+155 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Inserted SensorID 102, TS 1744475759, Value 103.95 into DB
+156 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+157 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Processed Sensor ID: 101, Value: 102.57, Count: 8, Avg: 100.34
+158 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+159 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Read new item from sbuffer (Sensor 103)
+160 2025-04-12 23:35:59 2025-04-12 23:35:59 [DEBUG]  Inserted SensorID 103, TS 1744475759, Value 103.39 into DB
+161 2025-04-12 23:36:00 2025-04-12 23:36:00 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+162 2025-04-12 23:36:00 2025-04-12 23:36:00 [DEBUG]  Processed Sensor ID: 104, Value: 103.71, Count: 2, Avg: 101.12
+163 2025-04-12 23:36:00 2025-04-12 23:36:00 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+164 2025-04-12 23:36:00 2025-04-12 23:36:00 [DEBUG]  Read new item from sbuffer (Sensor 101)
+165 2025-04-12 23:36:00 2025-04-12 23:36:00 [DEBUG]  Inserted SensorID 101, TS 1744475760, Value 101.28 into DB
+166 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+167 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Processed Sensor ID: 102, Value: 101.42, Count: 10, Avg: 101.15
+168 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+169 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Read new item from sbuffer (Sensor 101)
+170 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Inserted SensorID 101, TS 1744475761, Value 101.67 into DB
+171 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+172 2025-04-12 23:36:01 2025-04-12 23:36:01 [DEBUG]  Processed Sensor ID: 103, Value: 95.97, Count: 7, Avg: 99.82
+173 2025-04-12 23:36:02 2025-04-12 23:36:02 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+174 2025-04-12 23:36:02 2025-04-12 23:36:02 [DEBUG]  Read new item from sbuffer (Sensor 104)
+175 2025-04-12 23:36:02 2025-04-12 23:36:02 [DEBUG]  Inserted SensorID 104, TS 1744475762, Value 100.31 into DB
+176 2025-04-12 23:36:02 2025-04-12 23:36:02 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+177 2025-04-12 23:36:02 2025-04-12 23:36:02 [DEBUG]  Processed Sensor ID: 101, Value: 96.90, Count: 9, Avg: 99.96
+178 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+179 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Read new item from sbuffer (Sensor 102)
+180 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Inserted SensorID 102, TS 1744475763, Value 102.86 into DB
+181 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+182 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Processed Sensor ID: 101, Value: 99.35, Count: 10, Avg: 99.90
+183 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+184 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Read new item from sbuffer (Sensor 103)
+185 2025-04-12 23:36:03 2025-04-12 23:36:03 [DEBUG]  Inserted SensorID 103, TS 1744475763, Value 97.22 into DB
+186 2025-04-12 23:36:04 2025-04-12 23:36:04 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+187 2025-04-12 23:36:04 2025-04-12 23:36:04 [DEBUG]  Processed Sensor ID: 104, Value: 100.36, Count: 3, Avg: 100.86
+188 2025-04-12 23:36:04 2025-04-12 23:36:04 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+189 2025-04-12 23:36:04 2025-04-12 23:36:04 [DEBUG]  Read new item from sbuffer (Sensor 101)
+190 2025-04-12 23:36:04 2025-04-12 23:36:04 [DEBUG]  Inserted SensorID 101, TS 1744475764, Value 95.34 into DB
+191 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+192 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Processed Sensor ID: 102, Value: 99.28, Count: 11, Avg: 100.98
+193 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+194 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Read new item from sbuffer (Sensor 101)
+195 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Inserted SensorID 101, TS 1744475765, Value 99.40 into DB
+196 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+197 2025-04-12 23:36:05 2025-04-12 23:36:05 [DEBUG]  Processed Sensor ID: 103, Value: 98.79, Count: 8, Avg: 99.69
+198 2025-04-12 23:36:06 2025-04-12 23:36:06 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+199 2025-04-12 23:36:06 2025-04-12 23:36:06 [DEBUG]  Read new item from sbuffer (Sensor 104)
+200 2025-04-12 23:36:06 2025-04-12 23:36:06 [DEBUG]  Inserted SensorID 104, TS 1744475766, Value 102.40 into DB
+201 2025-04-12 23:36:06 2025-04-12 23:36:06 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+202 2025-04-12 23:36:06 2025-04-12 23:36:06 [DEBUG]  Processed Sensor ID: 101, Value: 98.86, Count: 11, Avg: 99.80
+203 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+204 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Read new item from sbuffer (Sensor 102)
+205 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Inserted SensorID 102, TS 1744475767, Value 103.48 into DB
+206 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+207 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Processed Sensor ID: 101, Value: 101.04, Count: 12, Avg: 99.91
+208 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+209 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Read new item from sbuffer (Sensor 103)
+210 2025-04-12 23:36:07 2025-04-12 23:36:07 [DEBUG]  Inserted SensorID 103, TS 1744475767, Value 98.57 into DB
+211 2025-04-12 23:36:08 2025-04-12 23:36:08 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+212 2025-04-12 23:36:08 2025-04-12 23:36:08 [DEBUG]  Processed Sensor ID: 104, Value: 102.95, Count: 4, Avg: 101.39
+213 2025-04-12 23:36:08 2025-04-12 23:36:08 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+214 2025-04-12 23:36:08 2025-04-12 23:36:08 [DEBUG]  Read new item from sbuffer (Sensor 101)
+215 2025-04-12 23:36:08 2025-04-12 23:36:08 [DEBUG]  Inserted SensorID 101, TS 1744475768, Value 95.99 into DB
+216 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+217 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Processed Sensor ID: 102, Value: 100.53, Count: 12, Avg: 100.94
+218 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+219 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Read new item from sbuffer (Sensor 101)
+220 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Inserted SensorID 101, TS 1744475769, Value 102.93 into DB
+221 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+222 2025-04-12 23:36:09 2025-04-12 23:36:09 [DEBUG]  Processed Sensor ID: 103, Value: 104.31, Count: 9, Avg: 100.21
+223 2025-04-12 23:36:10 2025-04-12 23:36:10 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+224 2025-04-12 23:36:10 2025-04-12 23:36:10 [DEBUG]  Read new item from sbuffer (Sensor 104)
+225 2025-04-12 23:36:10 2025-04-12 23:36:10 [DEBUG]  Inserted SensorID 104, TS 1744475770, Value 95.16 into DB
+226 2025-04-12 23:36:10 2025-04-12 23:36:10 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+227 2025-04-12 23:36:10 2025-04-12 23:36:10 [DEBUG]  Processed Sensor ID: 101, Value: 104.73, Count: 13, Avg: 100.28
+228 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+229 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Read new item from sbuffer (Sensor 102)
+230 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Inserted SensorID 102, TS 1744475771, Value 100.01 into DB
+231 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+232 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Processed Sensor ID: 101, Value: 98.51, Count: 14, Avg: 100.15
+233 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+234 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Read new item from sbuffer (Sensor 103)
+235 2025-04-12 23:36:11 2025-04-12 23:36:11 [DEBUG]  Inserted SensorID 103, TS 1744475771, Value 101.05 into DB
+236 2025-04-12 23:36:12 2025-04-12 23:36:12 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+237 2025-04-12 23:36:12 2025-04-12 23:36:12 [DEBUG]  Processed Sensor ID: 104, Value: 104.00, Count: 5, Avg: 101.91
+238 2025-04-12 23:36:12 2025-04-12 23:36:12 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+239 2025-04-12 23:36:12 2025-04-12 23:36:12 [DEBUG]  Read new item from sbuffer (Sensor 101)
+240 2025-04-12 23:36:12 2025-04-12 23:36:12 [DEBUG]  Inserted SensorID 101, TS 1744475772, Value 97.42 into DB
+241 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+242 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Processed Sensor ID: 102, Value: 96.87, Count: 13, Avg: 100.63
+243 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+244 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Read new item from sbuffer (Sensor 101)
+245 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Inserted SensorID 101, TS 1744475773, Value 98.95 into DB
+246 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+247 2025-04-12 23:36:13 2025-04-12 23:36:13 [DEBUG]  Processed Sensor ID: 103, Value: 104.37, Count: 10, Avg: 100.62
+248 2025-04-12 23:36:14 2025-04-12 23:36:14 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+249 2025-04-12 23:36:14 2025-04-12 23:36:14 [DEBUG]  Read new item from sbuffer (Sensor 104)
+250 2025-04-12 23:36:14 2025-04-12 23:36:14 [DEBUG]  Inserted SensorID 104, TS 1744475774, Value 98.98 into DB
+251 2025-04-12 23:36:14 2025-04-12 23:36:14 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+252 2025-04-12 23:36:14 2025-04-12 23:36:14 [DEBUG]  Processed Sensor ID: 101, Value: 100.59, Count: 15, Avg: 100.18
+253 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+254 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Read new item from sbuffer (Sensor 102)
+255 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Inserted SensorID 102, TS 1744475775, Value 97.56 into DB
+256 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+257 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Processed Sensor ID: 101, Value: 98.13, Count: 16, Avg: 100.05
+258 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+259 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Read new item from sbuffer (Sensor 103)
+260 2025-04-12 23:36:15 2025-04-12 23:36:15 [DEBUG]  Inserted SensorID 103, TS 1744475775, Value 99.59 into DB
+261 2025-04-12 23:36:16 2025-04-12 23:36:16 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+262 2025-04-12 23:36:16 2025-04-12 23:36:16 [DEBUG]  Processed Sensor ID: 104, Value: 100.98, Count: 6, Avg: 101.75
+263 2025-04-12 23:36:16 2025-04-12 23:36:16 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+264 2025-04-12 23:36:16 2025-04-12 23:36:16 [DEBUG]  Read new item from sbuffer (Sensor 101)
+265 2025-04-12 23:36:16 2025-04-12 23:36:16 [DEBUG]  Inserted SensorID 101, TS 1744475776, Value 104.13 into DB
+266 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+267 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Processed Sensor ID: 102, Value: 103.03, Count: 14, Avg: 100.80
+268 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+269 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Read new item from sbuffer (Sensor 101)
+270 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Inserted SensorID 101, TS 1744475777, Value 102.37 into DB
+271 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+272 2025-04-12 23:36:17 2025-04-12 23:36:17 [DEBUG]  Processed Sensor ID: 103, Value: 95.87, Count: 11, Avg: 100.19
+273 2025-04-12 23:36:18 2025-04-12 23:36:18 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+274 2025-04-12 23:36:18 2025-04-12 23:36:18 [DEBUG]  Read new item from sbuffer (Sensor 104)
+275 2025-04-12 23:36:18 2025-04-12 23:36:18 [DEBUG]  Inserted SensorID 104, TS 1744475778, Value 99.60 into DB
+276 2025-04-12 23:36:18 2025-04-12 23:36:18 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+277 2025-04-12 23:36:18 2025-04-12 23:36:18 [DEBUG]  Processed Sensor ID: 101, Value: 97.03, Count: 17, Avg: 99.88
+278 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+279 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Read new item from sbuffer (Sensor 102)
+280 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Inserted SensorID 102, TS 1744475779, Value 104.00 into DB
+281 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+282 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Processed Sensor ID: 101, Value: 97.47, Count: 18, Avg: 99.74
+283 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+284 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Read new item from sbuffer (Sensor 103)
+285 2025-04-12 23:36:19 2025-04-12 23:36:19 [DEBUG]  Inserted SensorID 103, TS 1744475779, Value 101.92 into DB
+286 2025-04-12 23:36:20 2025-04-12 23:36:20 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+287 2025-04-12 23:36:20 2025-04-12 23:36:20 [DEBUG]  Processed Sensor ID: 104, Value: 99.66, Count: 7, Avg: 101.46
+288 2025-04-12 23:36:20 2025-04-12 23:36:20 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+289 2025-04-12 23:36:20 2025-04-12 23:36:20 [DEBUG]  Read new item from sbuffer (Sensor 101)
+290 2025-04-12 23:36:20 2025-04-12 23:36:20 [DEBUG]  Inserted SensorID 101, TS 1744475780, Value 98.59 into DB
+291 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+292 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Processed Sensor ID: 102, Value: 98.96, Count: 15, Avg: 100.68
+293 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+294 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Read new item from sbuffer (Sensor 101)
+295 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Inserted SensorID 101, TS 1744475781, Value 102.52 into DB
+296 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+297 2025-04-12 23:36:21 2025-04-12 23:36:21 [DEBUG]  Processed Sensor ID: 103, Value: 102.81, Count: 12, Avg: 100.41
+298 2025-04-12 23:36:22 2025-04-12 23:36:22 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+299 2025-04-12 23:36:22 2025-04-12 23:36:22 [DEBUG]  Read new item from sbuffer (Sensor 104)
+300 2025-04-12 23:36:22 2025-04-12 23:36:22 [DEBUG]  Inserted SensorID 104, TS 1744475782, Value 98.64 into DB
+301 2025-04-12 23:36:22 2025-04-12 23:36:22 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+302 2025-04-12 23:36:22 2025-04-12 23:36:22 [DEBUG]  Processed Sensor ID: 101, Value: 103.95, Count: 19, Avg: 99.96
+303 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+304 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Read new item from sbuffer (Sensor 102)
+305 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Inserted SensorID 102, TS 1744475783, Value 96.91 into DB
+306 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+307 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Processed Sensor ID: 101, Value: 102.66, Count: 20, Avg: 100.10
+308 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+309 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Read new item from sbuffer (Sensor 103)
+310 2025-04-12 23:36:23 2025-04-12 23:36:23 [DEBUG]  Inserted SensorID 103, TS 1744475783, Value 102.86 into DB
+311 2025-04-12 23:36:24 2025-04-12 23:36:24 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+312 2025-04-12 23:36:24 2025-04-12 23:36:24 [DEBUG]  Processed Sensor ID: 104, Value: 95.12, Count: 8, Avg: 100.66
+313 2025-04-12 23:36:24 2025-04-12 23:36:24 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+314 2025-04-12 23:36:24 2025-04-12 23:36:24 [DEBUG]  Read new item from sbuffer (Sensor 101)
+315 2025-04-12 23:36:24 2025-04-12 23:36:24 [DEBUG]  Inserted SensorID 101, TS 1744475784, Value 100.03 into DB
+316 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+317 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Processed Sensor ID: 102, Value: 95.51, Count: 16, Avg: 100.35
+318 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+319 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Read new item from sbuffer (Sensor 101)
+320 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Inserted SensorID 101, TS 1744475785, Value 101.23 into DB
+321 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+322 2025-04-12 23:36:25 2025-04-12 23:36:25 [DEBUG]  Processed Sensor ID: 103, Value: 104.01, Count: 13, Avg: 100.69
+323 2025-04-12 23:36:26 2025-04-12 23:36:26 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+324 2025-04-12 23:36:26 2025-04-12 23:36:26 [DEBUG]  Read new item from sbuffer (Sensor 104)
+325 2025-04-12 23:36:26 2025-04-12 23:36:26 [DEBUG]  Inserted SensorID 104, TS 1744475786, Value 103.26 into DB
+326 2025-04-12 23:36:26 2025-04-12 23:36:26 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+327 2025-04-12 23:36:26 2025-04-12 23:36:26 [DEBUG]  Processed Sensor ID: 101, Value: 98.86, Count: 21, Avg: 100.04
+328 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+329 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Read new item from sbuffer (Sensor 102)
+330 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Inserted SensorID 102, TS 1744475787, Value 96.91 into DB
+331 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+332 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Processed Sensor ID: 101, Value: 97.57, Count: 22, Avg: 99.93
+333 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+334 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Read new item from sbuffer (Sensor 103)
+335 2025-04-12 23:36:27 2025-04-12 23:36:27 [DEBUG]  Inserted SensorID 103, TS 1744475787, Value 101.16 into DB
+336 2025-04-12 23:36:28 2025-04-12 23:36:28 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+337 2025-04-12 23:36:28 2025-04-12 23:36:28 [DEBUG]  Processed Sensor ID: 104, Value: 97.13, Count: 9, Avg: 100.27
+338 2025-04-12 23:36:28 2025-04-12 23:36:28 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+339 2025-04-12 23:36:28 2025-04-12 23:36:28 [DEBUG]  Read new item from sbuffer (Sensor 101)
+340 2025-04-12 23:36:28 2025-04-12 23:36:28 [DEBUG]  Inserted SensorID 101, TS 1744475788, Value 96.74 into DB
+341 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+342 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Processed Sensor ID: 102, Value: 100.78, Count: 17, Avg: 100.38
+343 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+344 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Read new item from sbuffer (Sensor 101)
+345 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Inserted SensorID 101, TS 1744475789, Value 96.51 into DB
+346 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+347 2025-04-12 23:36:29 2025-04-12 23:36:29 [DEBUG]  Processed Sensor ID: 103, Value: 102.02, Count: 14, Avg: 100.78
+348 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+349 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  Read new item from sbuffer (Sensor 104)
+350 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  Inserted SensorID 104, TS 1744475790, Value 99.17 into DB
+351 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+352 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  Processed Sensor ID: 101, Value: 95.14, Count: 23, Avg: 99.72
+353 2025-04-12 23:36:30 2025-04-12 23:36:30 [DEBUG]  CPU usage monitor: First call, storing initial values.
+354 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+355 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Read new item from sbuffer (Sensor 102)
+356 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Inserted SensorID 102, TS 1744475791, Value 99.77 into DB
+357 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+358 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Processed Sensor ID: 101, Value: 103.02, Count: 24, Avg: 99.86
+359 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+360 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Read new item from sbuffer (Sensor 103)
+361 2025-04-12 23:36:31 2025-04-12 23:36:31 [DEBUG]  Inserted SensorID 103, TS 1744475791, Value 98.34 into DB
+362 2025-04-12 23:36:32 2025-04-12 23:36:32 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+363 2025-04-12 23:36:32 2025-04-12 23:36:32 [DEBUG]  Processed Sensor ID: 104, Value: 95.33, Count: 10, Avg: 99.78
+364 2025-04-12 23:36:32 2025-04-12 23:36:32 [DEBUG]  Read new item from sbuffer (Sensor 101)
+365 2025-04-12 23:36:32 2025-04-12 23:36:32 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+366 2025-04-12 23:36:32 2025-04-12 23:36:32 [DEBUG]  Inserted SensorID 101, TS 1744475792, Value 103.17 into DB
+367 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+368 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Processed Sensor ID: 102, Value: 101.78, Count: 18, Avg: 100.46
+369 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+370 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Read new item from sbuffer (Sensor 101)
+371 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Inserted SensorID 101, TS 1744475793, Value 97.04 into DB
+372 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+373 2025-04-12 23:36:33 2025-04-12 23:36:33 [DEBUG]  Processed Sensor ID: 103, Value: 103.00, Count: 15, Avg: 100.93
+374 2025-04-12 23:36:34 2025-04-12 23:36:34 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+375 2025-04-12 23:36:34 2025-04-12 23:36:34 [DEBUG]  Read new item from sbuffer (Sensor 104)
+376 2025-04-12 23:36:34 2025-04-12 23:36:34 [DEBUG]  Inserted SensorID 104, TS 1744475794, Value 97.10 into DB
+377 2025-04-12 23:36:34 2025-04-12 23:36:34 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+378 2025-04-12 23:36:34 2025-04-12 23:36:34 [DEBUG]  Processed Sensor ID: 101, Value: 97.37, Count: 25, Avg: 99.76
+379 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+380 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Read new item from sbuffer (Sensor 102)
+381 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Inserted SensorID 102, TS 1744475795, Value 96.93 into DB
+382 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+383 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Processed Sensor ID: 101, Value: 103.51, Count: 26, Avg: 99.90
+384 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+385 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Read new item from sbuffer (Sensor 103)
+386 2025-04-12 23:36:35 2025-04-12 23:36:35 [DEBUG]  Inserted SensorID 103, TS 1744475795, Value 102.73 into DB
+387 2025-04-12 23:36:36 2025-04-12 23:36:36 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+388 2025-04-12 23:36:36 2025-04-12 23:36:36 [DEBUG]  Processed Sensor ID: 104, Value: 95.88, Count: 11, Avg: 99.42
+389 2025-04-12 23:36:36 2025-04-12 23:36:36 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+390 2025-04-12 23:36:36 2025-04-12 23:36:36 [DEBUG]  Read new item from sbuffer (Sensor 101)
+391 2025-04-12 23:36:36 2025-04-12 23:36:36 [DEBUG]  Inserted SensorID 101, TS 1744475796, Value 101.44 into DB
+392 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+393 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Processed Sensor ID: 102, Value: 96.43, Count: 19, Avg: 100.24
+394 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+395 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Read new item from sbuffer (Sensor 101)
+396 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Inserted SensorID 101, TS 1744475797, Value 101.23 into DB
+397 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+398 2025-04-12 23:36:37 2025-04-12 23:36:37 [DEBUG]  Processed Sensor ID: 103, Value: 95.07, Count: 16, Avg: 100.56
+399 2025-04-12 23:36:38 2025-04-12 23:36:38 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+400 2025-04-12 23:36:38 2025-04-12 23:36:38 [DEBUG]  Read new item from sbuffer (Sensor 104)
+401 2025-04-12 23:36:38 2025-04-12 23:36:38 [DEBUG]  Inserted SensorID 104, TS 1744475798, Value 103.57 into DB
+402 2025-04-12 23:36:38 2025-04-12 23:36:38 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+403 2025-04-12 23:36:38 2025-04-12 23:36:38 [DEBUG]  Processed Sensor ID: 101, Value: 99.55, Count: 27, Avg: 99.89
+404 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+405 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Read new item from sbuffer (Sensor 102)
+406 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Inserted SensorID 102, TS 1744475799, Value 95.93 into DB
+407 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+408 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Processed Sensor ID: 101, Value: 102.42, Count: 28, Avg: 99.98
+409 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+410 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Read new item from sbuffer (Sensor 103)
+411 2025-04-12 23:36:39 2025-04-12 23:36:39 [DEBUG]  Inserted SensorID 103, TS 1744475799, Value 101.11 into DB
+412 2025-04-12 23:36:40 2025-04-12 23:36:40 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+413 2025-04-12 23:36:40 2025-04-12 23:36:40 [DEBUG]  Processed Sensor ID: 104, Value: 99.07, Count: 12, Avg: 99.39
+414 2025-04-12 23:36:40 2025-04-12 23:36:40 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+415 2025-04-12 23:36:40 2025-04-12 23:36:40 [DEBUG]  Read new item from sbuffer (Sensor 101)
+416 2025-04-12 23:36:40 2025-04-12 23:36:40 [DEBUG]  Inserted SensorID 101, TS 1744475800, Value 99.16 into DB
+417 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+418 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Processed Sensor ID: 102, Value: 104.24, Count: 20, Avg: 100.44
+419 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+420 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Read new item from sbuffer (Sensor 101)
+421 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Inserted SensorID 101, TS 1744475801, Value 99.28 into DB
+422 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+423 2025-04-12 23:36:41 2025-04-12 23:36:41 [DEBUG]  Processed Sensor ID: 103, Value: 101.81, Count: 17, Avg: 100.64
+424 2025-04-12 23:36:42 2025-04-12 23:36:42 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+425 2025-04-12 23:36:42 2025-04-12 23:36:42 [DEBUG]  Read new item from sbuffer (Sensor 104)
+426 2025-04-12 23:36:42 2025-04-12 23:36:42 [DEBUG]  Inserted SensorID 104, TS 1744475802, Value 95.74 into DB
+427 2025-04-12 23:36:42 2025-04-12 23:36:42 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+428 2025-04-12 23:36:42 2025-04-12 23:36:42 [DEBUG]  Processed Sensor ID: 101, Value: 95.93, Count: 29, Avg: 99.84
+429 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+430 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Read new item from sbuffer (Sensor 102)
+431 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Inserted SensorID 102, TS 1744475803, Value 95.21 into DB
+432 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+433 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Processed Sensor ID: 101, Value: 101.57, Count: 30, Avg: 99.90
+434 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+435 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Read new item from sbuffer (Sensor 103)
+436 2025-04-12 23:36:43 2025-04-12 23:36:43 [DEBUG]  Inserted SensorID 103, TS 1744475803, Value 95.12 into DB
+437 2025-04-12 23:36:44 2025-04-12 23:36:44 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+438 2025-04-12 23:36:44 2025-04-12 23:36:44 [DEBUG]  Processed Sensor ID: 104, Value: 103.25, Count: 13, Avg: 99.69
+439 2025-04-12 23:36:44 2025-04-12 23:36:44 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+440 2025-04-12 23:36:44 2025-04-12 23:36:44 [DEBUG]  Read new item from sbuffer (Sensor 101)
+441 2025-04-12 23:36:44 2025-04-12 23:36:44 [DEBUG]  Inserted SensorID 101, TS 1744475804, Value 103.23 into DB
+442 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+443 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Processed Sensor ID: 102, Value: 102.54, Count: 21, Avg: 100.54
+444 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+445 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Read new item from sbuffer (Sensor 101)
+446 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Inserted SensorID 101, TS 1744475805, Value 101.52 into DB
+447 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+448 2025-04-12 23:36:45 2025-04-12 23:36:45 [DEBUG]  Processed Sensor ID: 103, Value: 102.44, Count: 18, Avg: 100.74
+449 2025-04-12 23:36:46 2025-04-12 23:36:46 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+450 2025-04-12 23:36:46 2025-04-12 23:36:46 [DEBUG]  Read new item from sbuffer (Sensor 104)
+451 2025-04-12 23:36:46 2025-04-12 23:36:46 [DEBUG]  Inserted SensorID 104, TS 1744475806, Value 98.09 into DB
+452 2025-04-12 23:36:46 2025-04-12 23:36:46 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+453 2025-04-12 23:36:46 2025-04-12 23:36:46 [DEBUG]  Processed Sensor ID: 101, Value: 104.70, Count: 31, Avg: 100.05
+454 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+455 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Read new item from sbuffer (Sensor 102)
+456 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Inserted SensorID 102, TS 1744475807, Value 103.36 into DB
+457 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+458 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Processed Sensor ID: 101, Value: 102.36, Count: 32, Avg: 100.12
+459 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+460 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Read new item from sbuffer (Sensor 103)
+461 2025-04-12 23:36:47 2025-04-12 23:36:47 [DEBUG]  Inserted SensorID 103, TS 1744475807, Value 95.18 into DB
+462 2025-04-12 23:36:48 2025-04-12 23:36:48 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+463 2025-04-12 23:36:48 2025-04-12 23:36:48 [DEBUG]  Processed Sensor ID: 104, Value: 101.21, Count: 14, Avg: 99.80
+464 2025-04-12 23:36:48 2025-04-12 23:36:48 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+465 2025-04-12 23:36:48 2025-04-12 23:36:48 [DEBUG]  Read new item from sbuffer (Sensor 101)
+466 2025-04-12 23:36:48 2025-04-12 23:36:48 [DEBUG]  Inserted SensorID 101, TS 1744475808, Value 98.89 into DB
+467 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+468 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Processed Sensor ID: 102, Value: 101.25, Count: 22, Avg: 100.58
+469 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+470 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Read new item from sbuffer (Sensor 101)
+471 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Inserted SensorID 101, TS 1744475809, Value 96.73 into DB
+472 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+473 2025-04-12 23:36:49 2025-04-12 23:36:49 [DEBUG]  Processed Sensor ID: 103, Value: 99.29, Count: 19, Avg: 100.66
+474 2025-04-12 23:36:50 2025-04-12 23:36:50 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+475 2025-04-12 23:36:50 2025-04-12 23:36:50 [DEBUG]  Read new item from sbuffer (Sensor 104)
+476 2025-04-12 23:36:50 2025-04-12 23:36:50 [DEBUG]  Inserted SensorID 104, TS 1744475810, Value 104.57 into DB
+477 2025-04-12 23:36:50 2025-04-12 23:36:50 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+478 2025-04-12 23:36:50 2025-04-12 23:36:50 [DEBUG]  Processed Sensor ID: 101, Value: 104.83, Count: 33, Avg: 100.27
+479 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+480 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Read new item from sbuffer (Sensor 102)
+481 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Inserted SensorID 102, TS 1744475811, Value 99.06 into DB
+482 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+483 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Processed Sensor ID: 101, Value: 102.48, Count: 34, Avg: 100.33
+484 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+485 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Read new item from sbuffer (Sensor 103)
+486 2025-04-12 23:36:51 2025-04-12 23:36:51 [DEBUG]  Inserted SensorID 103, TS 1744475811, Value 97.51 into DB
+487 2025-04-12 23:36:52 2025-04-12 23:36:52 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+488 2025-04-12 23:36:52 2025-04-12 23:36:52 [DEBUG]  Processed Sensor ID: 104, Value: 95.07, Count: 15, Avg: 99.48
+489 2025-04-12 23:36:52 2025-04-12 23:36:52 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+490 2025-04-12 23:36:52 2025-04-12 23:36:52 [DEBUG]  Read new item from sbuffer (Sensor 101)
+491 2025-04-12 23:36:52 2025-04-12 23:36:52 [DEBUG]  Inserted SensorID 101, TS 1744475812, Value 104.26 into DB
+492 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+493 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Processed Sensor ID: 102, Value: 97.09, Count: 23, Avg: 100.43
+494 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+495 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Read new item from sbuffer (Sensor 101)
+496 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Inserted SensorID 101, TS 1744475813, Value 103.79 into DB
+497 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+498 2025-04-12 23:36:53 2025-04-12 23:36:53 [DEBUG]  Processed Sensor ID: 103, Value: 102.17, Count: 20, Avg: 100.74
+499 2025-04-12 23:36:54 2025-04-12 23:36:54 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+500 2025-04-12 23:36:54 2025-04-12 23:36:54 [DEBUG]  Read new item from sbuffer (Sensor 104)
+501 2025-04-12 23:36:54 2025-04-12 23:36:54 [DEBUG]  Inserted SensorID 104, TS 1744475814, Value 98.05 into DB
+502 2025-04-12 23:36:54 2025-04-12 23:36:54 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+503 2025-04-12 23:36:54 2025-04-12 23:36:54 [DEBUG]  Processed Sensor ID: 101, Value: 100.14, Count: 35, Avg: 100.33
+504 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+505 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Read new item from sbuffer (Sensor 102)
+506 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Inserted SensorID 102, TS 1744475815, Value 102.43 into DB
+507 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+508 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Processed Sensor ID: 101, Value: 99.29, Count: 36, Avg: 100.30
+509 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+510 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Read new item from sbuffer (Sensor 103)
+511 2025-04-12 23:36:55 2025-04-12 23:36:55 [DEBUG]  Inserted SensorID 103, TS 1744475815, Value 95.93 into DB
+512 2025-04-12 23:36:56 2025-04-12 23:36:56 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+513 2025-04-12 23:36:56 2025-04-12 23:36:56 [DEBUG]  Processed Sensor ID: 104, Value: 95.15, Count: 16, Avg: 99.21
+514 2025-04-12 23:36:56 2025-04-12 23:36:56 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+515 2025-04-12 23:36:56 2025-04-12 23:36:56 [DEBUG]  Read new item from sbuffer (Sensor 101)
+516 2025-04-12 23:36:56 2025-04-12 23:36:56 [DEBUG]  Inserted SensorID 101, TS 1744475816, Value 100.01 into DB
+517 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+518 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Processed Sensor ID: 102, Value: 96.69, Count: 24, Avg: 100.27
+519 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+520 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Read new item from sbuffer (Sensor 101)
+521 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Inserted SensorID 101, TS 1744475817, Value 104.00 into DB
+522 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+523 2025-04-12 23:36:57 2025-04-12 23:36:57 [DEBUG]  Processed Sensor ID: 103, Value: 95.51, Count: 21, Avg: 100.49
+524 2025-04-12 23:36:58 2025-04-12 23:36:58 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+525 2025-04-12 23:36:58 2025-04-12 23:36:58 [DEBUG]  Read new item from sbuffer (Sensor 104)
+526 2025-04-12 23:36:58 2025-04-12 23:36:58 [DEBUG]  Inserted SensorID 104, TS 1744475818, Value 98.59 into DB
+527 2025-04-12 23:36:58 2025-04-12 23:36:58 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+528 2025-04-12 23:36:58 2025-04-12 23:36:58 [DEBUG]  Processed Sensor ID: 101, Value: 101.86, Count: 37, Avg: 100.34
+529 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+530 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Read new item from sbuffer (Sensor 102)
+531 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Inserted SensorID 102, TS 1744475819, Value 95.24 into DB
+532 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+533 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Processed Sensor ID: 101, Value: 101.75, Count: 38, Avg: 100.38
+534 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+535 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Read new item from sbuffer (Sensor 103)
+536 2025-04-12 23:36:59 2025-04-12 23:36:59 [DEBUG]  Inserted SensorID 103, TS 1744475819, Value 98.71 into DB
+537 2025-04-12 23:37:00 2025-04-12 23:37:00 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+538 2025-04-12 23:37:00 2025-04-12 23:37:00 [DEBUG]  Processed Sensor ID: 104, Value: 98.76, Count: 17, Avg: 99.19
+539 2025-04-12 23:37:00 2025-04-12 23:37:00 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+540 2025-04-12 23:37:00 2025-04-12 23:37:00 [DEBUG]  Read new item from sbuffer (Sensor 101)
+541 2025-04-12 23:37:00 2025-04-12 23:37:00 [DEBUG]  Inserted SensorID 101, TS 1744475820, Value 95.50 into DB
+542 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+543 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Processed Sensor ID: 102, Value: 101.39, Count: 25, Avg: 100.31
+544 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+545 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Read new item from sbuffer (Sensor 101)
+546 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Inserted SensorID 101, TS 1744475821, Value 102.00 into DB
+547 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+548 2025-04-12 23:37:01 2025-04-12 23:37:01 [DEBUG]  Processed Sensor ID: 103, Value: 104.32, Count: 22, Avg: 100.66
+549 2025-04-12 23:37:02 2025-04-12 23:37:02 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+550 2025-04-12 23:37:02 2025-04-12 23:37:02 [DEBUG]  Read new item from sbuffer (Sensor 104)
+551 2025-04-12 23:37:02 2025-04-12 23:37:02 [DEBUG]  Inserted SensorID 104, TS 1744475822, Value 103.87 into DB
+552 2025-04-12 23:37:02 2025-04-12 23:37:02 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+553 2025-04-12 23:37:02 2025-04-12 23:37:02 [DEBUG]  Processed Sensor ID: 101, Value: 99.77, Count: 39, Avg: 100.36
+554 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+555 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Read new item from sbuffer (Sensor 102)
+556 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Inserted SensorID 102, TS 1744475823, Value 103.11 into DB
+557 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+558 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Processed Sensor ID: 101, Value: 103.67, Count: 40, Avg: 100.44
+559 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+560 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Read new item from sbuffer (Sensor 103)
+561 2025-04-12 23:37:03 2025-04-12 23:37:03 [DEBUG]  Inserted SensorID 103, TS 1744475823, Value 96.48 into DB
+562 2025-04-12 23:37:04 2025-04-12 23:37:04 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+563 2025-04-12 23:37:04 2025-04-12 23:37:04 [DEBUG]  Processed Sensor ID: 104, Value: 103.90, Count: 18, Avg: 99.45
+564 2025-04-12 23:37:04 2025-04-12 23:37:04 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+565 2025-04-12 23:37:04 2025-04-12 23:37:04 [DEBUG]  Read new item from sbuffer (Sensor 101)
+566 2025-04-12 23:37:04 2025-04-12 23:37:04 [DEBUG]  Inserted SensorID 101, TS 1744475824, Value 104.04 into DB
+567 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+568 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Processed Sensor ID: 102, Value: 103.11, Count: 26, Avg: 100.42
+569 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+570 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Read new item from sbuffer (Sensor 101)
+571 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Inserted SensorID 101, TS 1744475825, Value 102.14 into DB
+572 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+573 2025-04-12 23:37:05 2025-04-12 23:37:05 [DEBUG]  Processed Sensor ID: 103, Value: 100.93, Count: 23, Avg: 100.67
+574 2025-04-12 23:37:06 2025-04-12 23:37:06 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+575 2025-04-12 23:37:06 2025-04-12 23:37:06 [DEBUG]  Read new item from sbuffer (Sensor 104)
+576 2025-04-12 23:37:06 2025-04-12 23:37:06 [DEBUG]  Inserted SensorID 104, TS 1744475826, Value 104.12 into DB
+577 2025-04-12 23:37:06 2025-04-12 23:37:06 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+578 2025-04-12 23:37:06 2025-04-12 23:37:06 [DEBUG]  Processed Sensor ID: 101, Value: 102.19, Count: 41, Avg: 100.49
+579 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+580 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Read new item from sbuffer (Sensor 102)
+581 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Inserted SensorID 102, TS 1744475827, Value 95.67 into DB
+582 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+583 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Processed Sensor ID: 101, Value: 100.48, Count: 42, Avg: 100.49
+584 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+585 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Read new item from sbuffer (Sensor 103)
+586 2025-04-12 23:37:07 2025-04-12 23:37:07 [DEBUG]  Inserted SensorID 103, TS 1744475827, Value 98.11 into DB
+587 2025-04-12 23:37:08 2025-04-12 23:37:08 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+588 2025-04-12 23:37:08 2025-04-12 23:37:08 [DEBUG]  Processed Sensor ID: 104, Value: 101.27, Count: 19, Avg: 99.54
+589 2025-04-12 23:37:08 2025-04-12 23:37:08 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+590 2025-04-12 23:37:08 2025-04-12 23:37:08 [DEBUG]  Read new item from sbuffer (Sensor 101)
+591 2025-04-12 23:37:08 2025-04-12 23:37:08 [DEBUG]  Inserted SensorID 101, TS 1744475828, Value 98.37 into DB
+592 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+593 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Processed Sensor ID: 102, Value: 101.59, Count: 27, Avg: 100.46
+594 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+595 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Read new item from sbuffer (Sensor 101)
+596 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Inserted SensorID 101, TS 1744475829, Value 96.74 into DB
+597 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+598 2025-04-12 23:37:09 2025-04-12 23:37:09 [DEBUG]  Processed Sensor ID: 103, Value: 100.05, Count: 24, Avg: 100.65
+599 2025-04-12 23:37:10 2025-04-12 23:37:10 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+600 2025-04-12 23:37:10 2025-04-12 23:37:10 [DEBUG]  Read new item from sbuffer (Sensor 104)
+601 2025-04-12 23:37:10 2025-04-12 23:37:10 [DEBUG]  Inserted SensorID 104, TS 1744475830, Value 101.85 into DB
+602 2025-04-12 23:37:10 2025-04-12 23:37:10 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+603 2025-04-12 23:37:10 2025-04-12 23:37:10 [DEBUG]  Processed Sensor ID: 101, Value: 97.90, Count: 43, Avg: 100.43
+604 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+605 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Read new item from sbuffer (Sensor 102)
+606 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Inserted SensorID 102, TS 1744475831, Value 98.64 into DB
+607 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+608 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Processed Sensor ID: 101, Value: 102.52, Count: 44, Avg: 100.47
+609 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+610 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Read new item from sbuffer (Sensor 103)
+611 2025-04-12 23:37:11 2025-04-12 23:37:11 [DEBUG]  Inserted SensorID 103, TS 1744475831, Value 100.24 into DB
+612 2025-04-12 23:37:12 2025-04-12 23:37:12 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+613 2025-04-12 23:37:12 2025-04-12 23:37:12 [DEBUG]  Processed Sensor ID: 104, Value: 104.28, Count: 20, Avg: 99.78
+614 2025-04-12 23:37:12 2025-04-12 23:37:12 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+615 2025-04-12 23:37:12 2025-04-12 23:37:12 [DEBUG]  Read new item from sbuffer (Sensor 101)
+616 2025-04-12 23:37:12 2025-04-12 23:37:12 [DEBUG]  Inserted SensorID 101, TS 1744475832, Value 101.02 into DB
+617 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+618 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Processed Sensor ID: 102, Value: 100.68, Count: 28, Avg: 100.47
+619 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+620 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Read new item from sbuffer (Sensor 101)
+621 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Inserted SensorID 101, TS 1744475833, Value 98.83 into DB
+622 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+623 2025-04-12 23:37:13 2025-04-12 23:37:13 [DEBUG]  Processed Sensor ID: 103, Value: 104.16, Count: 25, Avg: 100.79
+624 2025-04-12 23:37:14 2025-04-12 23:37:14 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+625 2025-04-12 23:37:14 2025-04-12 23:37:14 [DEBUG]  Read new item from sbuffer (Sensor 104)
+626 2025-04-12 23:37:14 2025-04-12 23:37:14 [DEBUG]  Inserted SensorID 104, TS 1744475834, Value 100.27 into DB
+627 2025-04-12 23:37:14 2025-04-12 23:37:14 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+628 2025-04-12 23:37:14 2025-04-12 23:37:14 [DEBUG]  Processed Sensor ID: 101, Value: 99.10, Count: 45, Avg: 100.44
+629 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+630 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Read new item from sbuffer (Sensor 102)
+631 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Inserted SensorID 102, TS 1744475835, Value 103.46 into DB
+632 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+633 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Processed Sensor ID: 101, Value: 99.24, Count: 46, Avg: 100.42
+634 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+635 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Read new item from sbuffer (Sensor 103)
+636 2025-04-12 23:37:15 2025-04-12 23:37:15 [DEBUG]  Inserted SensorID 103, TS 1744475835, Value 99.42 into DB
+637 2025-04-12 23:37:16 2025-04-12 23:37:16 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+638 2025-04-12 23:37:16 2025-04-12 23:37:16 [DEBUG]  Processed Sensor ID: 104, Value: 95.83, Count: 21, Avg: 99.59
+639 2025-04-12 23:37:16 2025-04-12 23:37:16 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+640 2025-04-12 23:37:16 2025-04-12 23:37:16 [DEBUG]  Read new item from sbuffer (Sensor 101)
+641 2025-04-12 23:37:16 2025-04-12 23:37:16 [DEBUG]  Inserted SensorID 101, TS 1744475836, Value 95.35 into DB
+642 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+643 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Processed Sensor ID: 102, Value: 101.20, Count: 29, Avg: 100.50
+644 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+645 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Read new item from sbuffer (Sensor 101)
+646 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Inserted SensorID 101, TS 1744475837, Value 98.80 into DB
+647 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+648 2025-04-12 23:37:17 2025-04-12 23:37:17 [DEBUG]  Processed Sensor ID: 103, Value: 104.83, Count: 26, Avg: 100.94
+649 2025-04-12 23:37:18 2025-04-12 23:37:18 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+650 2025-04-12 23:37:18 2025-04-12 23:37:18 [DEBUG]  Read new item from sbuffer (Sensor 104)
+651 2025-04-12 23:37:18 2025-04-12 23:37:18 [DEBUG]  Inserted SensorID 104, TS 1744475838, Value 100.26 into DB
+652 2025-04-12 23:37:18 2025-04-12 23:37:18 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+653 2025-04-12 23:37:18 2025-04-12 23:37:18 [DEBUG]  Processed Sensor ID: 101, Value: 96.60, Count: 47, Avg: 100.34
+654 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+655 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Read new item from sbuffer (Sensor 102)
+656 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Inserted SensorID 102, TS 1744475839, Value 98.71 into DB
+657 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+658 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Processed Sensor ID: 101, Value: 99.24, Count: 48, Avg: 100.31
+659 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+660 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Read new item from sbuffer (Sensor 103)
+661 2025-04-12 23:37:19 2025-04-12 23:37:19 [DEBUG]  Inserted SensorID 103, TS 1744475839, Value 95.02 into DB
+662 2025-04-12 23:37:20 2025-04-12 23:37:20 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+663 2025-04-12 23:37:20 2025-04-12 23:37:20 [DEBUG]  Processed Sensor ID: 104, Value: 104.87, Count: 22, Avg: 99.83
+664 2025-04-12 23:37:20 2025-04-12 23:37:20 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+665 2025-04-12 23:37:20 2025-04-12 23:37:20 [DEBUG]  Read new item from sbuffer (Sensor 101)
+666 2025-04-12 23:37:20 2025-04-12 23:37:20 [DEBUG]  Inserted SensorID 101, TS 1744475840, Value 100.54 into DB
+667 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+668 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Processed Sensor ID: 102, Value: 102.46, Count: 30, Avg: 100.56
+669 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+670 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Read new item from sbuffer (Sensor 101)
+671 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Inserted SensorID 101, TS 1744475841, Value 96.44 into DB
+672 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+673 2025-04-12 23:37:21 2025-04-12 23:37:21 [DEBUG]  Processed Sensor ID: 103, Value: 96.34, Count: 27, Avg: 100.77
+674 2025-04-12 23:37:22 2025-04-12 23:37:22 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+675 2025-04-12 23:37:22 2025-04-12 23:37:22 [DEBUG]  Read new item from sbuffer (Sensor 104)
+676 2025-04-12 23:37:22 2025-04-12 23:37:22 [DEBUG]  Inserted SensorID 104, TS 1744475842, Value 100.49 into DB
+677 2025-04-12 23:37:22 2025-04-12 23:37:22 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+678 2025-04-12 23:37:22 2025-04-12 23:37:22 [DEBUG]  Processed Sensor ID: 101, Value: 96.72, Count: 49, Avg: 100.24
+679 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+680 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Read new item from sbuffer (Sensor 102)
+681 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Inserted SensorID 102, TS 1744475843, Value 95.17 into DB
+682 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+683 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Processed Sensor ID: 101, Value: 99.79, Count: 50, Avg: 100.23
+684 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+685 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Read new item from sbuffer (Sensor 103)
+686 2025-04-12 23:37:23 2025-04-12 23:37:23 [DEBUG]  Inserted SensorID 103, TS 1744475843, Value 102.64 into DB
+687 2025-04-12 23:37:24 2025-04-12 23:37:24 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+688 2025-04-12 23:37:24 2025-04-12 23:37:24 [DEBUG]  Processed Sensor ID: 104, Value: 103.90, Count: 23, Avg: 100.01
+689 2025-04-12 23:37:24 2025-04-12 23:37:24 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+690 2025-04-12 23:37:24 2025-04-12 23:37:24 [DEBUG]  Read new item from sbuffer (Sensor 101)
+691 2025-04-12 23:37:24 2025-04-12 23:37:24 [DEBUG]  Inserted SensorID 101, TS 1744475844, Value 95.22 into DB
+692 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+693 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Processed Sensor ID: 102, Value: 100.61, Count: 31, Avg: 100.56
+694 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+695 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Read new item from sbuffer (Sensor 101)
+696 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Inserted SensorID 101, TS 1744475845, Value 101.86 into DB
+697 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+698 2025-04-12 23:37:25 2025-04-12 23:37:25 [DEBUG]  Processed Sensor ID: 103, Value: 102.89, Count: 28, Avg: 100.85
+699 2025-04-12 23:37:26 2025-04-12 23:37:26 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+700 2025-04-12 23:37:26 2025-04-12 23:37:26 [DEBUG]  Read new item from sbuffer (Sensor 104)
+701 2025-04-12 23:37:26 2025-04-12 23:37:26 [DEBUG]  Inserted SensorID 104, TS 1744475846, Value 104.99 into DB
+702 2025-04-12 23:37:26 2025-04-12 23:37:26 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+703 2025-04-12 23:37:26 2025-04-12 23:37:26 [DEBUG]  Processed Sensor ID: 101, Value: 104.08, Count: 51, Avg: 100.31
+704 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+705 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Read new item from sbuffer (Sensor 102)
+706 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Inserted SensorID 102, TS 1744475847, Value 102.97 into DB
+707 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+708 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Processed Sensor ID: 101, Value: 100.23, Count: 52, Avg: 100.31
+709 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+710 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Read new item from sbuffer (Sensor 103)
+711 2025-04-12 23:37:27 2025-04-12 23:37:27 [DEBUG]  Inserted SensorID 103, TS 1744475847, Value 95.36 into DB
+712 2025-04-12 23:37:28 2025-04-12 23:37:28 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+713 2025-04-12 23:37:28 2025-04-12 23:37:28 [DEBUG]  Processed Sensor ID: 104, Value: 98.75, Count: 24, Avg: 99.96
+714 2025-04-12 23:37:28 2025-04-12 23:37:28 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+715 2025-04-12 23:37:28 2025-04-12 23:37:28 [DEBUG]  Read new item from sbuffer (Sensor 101)
+716 2025-04-12 23:37:28 2025-04-12 23:37:28 [DEBUG]  Inserted SensorID 101, TS 1744475848, Value 100.85 into DB
+717 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+718 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Processed Sensor ID: 102, Value: 97.08, Count: 32, Avg: 100.46
+719 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+720 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Read new item from sbuffer (Sensor 101)
+721 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Inserted SensorID 101, TS 1744475849, Value 100.94 into DB
+722 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+723 2025-04-12 23:37:29 2025-04-12 23:37:29 [DEBUG]  Processed Sensor ID: 103, Value: 98.80, Count: 29, Avg: 100.78
+724 2025-04-12 23:37:30 2025-04-12 23:37:30 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+725 2025-04-12 23:37:30 2025-04-12 23:37:30 [DEBUG]  Read new item from sbuffer (Sensor 104)
+726 2025-04-12 23:37:30 2025-04-12 23:37:30 [DEBUG]  Inserted SensorID 104, TS 1744475850, Value 96.04 into DB
+727 2025-04-12 23:37:30 2025-04-12 23:37:30 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+728 2025-04-12 23:37:30 2025-04-12 23:37:30 [DEBUG]  Processed Sensor ID: 101, Value: 96.98, Count: 53, Avg: 100.24
+729 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+730 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Read new item from sbuffer (Sensor 102)
+731 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Inserted SensorID 102, TS 1744475851, Value 96.39 into DB
+732 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+733 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Processed Sensor ID: 101, Value: 101.36, Count: 54, Avg: 100.26
+734 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+735 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Read new item from sbuffer (Sensor 103)
+736 2025-04-12 23:37:31 2025-04-12 23:37:31 [DEBUG]  Inserted SensorID 103, TS 1744475851, Value 99.91 into DB
+737 2025-04-12 23:37:32 2025-04-12 23:37:32 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+738 2025-04-12 23:37:32 2025-04-12 23:37:32 [DEBUG]  Processed Sensor ID: 104, Value: 99.17, Count: 25, Avg: 99.93
+739 2025-04-12 23:37:32 2025-04-12 23:37:32 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+740 2025-04-12 23:37:32 2025-04-12 23:37:32 [DEBUG]  Read new item from sbuffer (Sensor 101)
+741 2025-04-12 23:37:32 2025-04-12 23:37:32 [DEBUG]  Inserted SensorID 101, TS 1744475852, Value 97.94 into DB
+742 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+743 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Processed Sensor ID: 102, Value: 97.74, Count: 33, Avg: 100.37
+744 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+745 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Read new item from sbuffer (Sensor 101)
+746 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Inserted SensorID 101, TS 1744475853, Value 101.75 into DB
+747 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+748 2025-04-12 23:37:33 2025-04-12 23:37:33 [DEBUG]  Processed Sensor ID: 103, Value: 98.70, Count: 30, Avg: 100.71
+749 2025-04-12 23:37:34 2025-04-12 23:37:34 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+750 2025-04-12 23:37:34 2025-04-12 23:37:34 [DEBUG]  Read new item from sbuffer (Sensor 104)
+751 2025-04-12 23:37:34 2025-04-12 23:37:34 [DEBUG]  Inserted SensorID 104, TS 1744475854, Value 99.08 into DB
+752 2025-04-12 23:37:34 2025-04-12 23:37:34 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+753 2025-04-12 23:37:34 2025-04-12 23:37:34 [DEBUG]  Processed Sensor ID: 101, Value: 100.03, Count: 55, Avg: 100.26
+754 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+755 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Read new item from sbuffer (Sensor 102)
+756 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Inserted SensorID 102, TS 1744475855, Value 103.86 into DB
+757 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+758 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Processed Sensor ID: 101, Value: 96.99, Count: 56, Avg: 100.20
+759 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+760 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Read new item from sbuffer (Sensor 103)
+761 2025-04-12 23:37:35 2025-04-12 23:37:35 [DEBUG]  Inserted SensorID 103, TS 1744475855, Value 96.79 into DB
+762 2025-04-12 23:37:36 2025-04-12 23:37:36 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+763 2025-04-12 23:37:36 2025-04-12 23:37:36 [DEBUG]  Processed Sensor ID: 104, Value: 98.14, Count: 26, Avg: 99.86
+764 2025-04-12 23:37:36 2025-04-12 23:37:36 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+765 2025-04-12 23:37:36 2025-04-12 23:37:36 [DEBUG]  Read new item from sbuffer (Sensor 101)
+766 2025-04-12 23:37:36 2025-04-12 23:37:36 [DEBUG]  Inserted SensorID 101, TS 1744475856, Value 98.89 into DB
+767 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+768 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Processed Sensor ID: 102, Value: 98.32, Count: 34, Avg: 100.31
+769 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+770 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Read new item from sbuffer (Sensor 101)
+771 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Inserted SensorID 101, TS 1744475857, Value 97.22 into DB
+772 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+773 2025-04-12 23:37:37 2025-04-12 23:37:37 [DEBUG]  Processed Sensor ID: 103, Value: 97.63, Count: 31, Avg: 100.61
+774 2025-04-12 23:37:38 2025-04-12 23:37:38 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+775 2025-04-12 23:37:38 2025-04-12 23:37:38 [DEBUG]  Read new item from sbuffer (Sensor 104)
+776 2025-04-12 23:37:38 2025-04-12 23:37:38 [DEBUG]  Inserted SensorID 104, TS 1744475858, Value 100.05 into DB
+777 2025-04-12 23:37:38 2025-04-12 23:37:38 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+778 2025-04-12 23:37:38 2025-04-12 23:37:38 [DEBUG]  Processed Sensor ID: 101, Value: 102.47, Count: 57, Avg: 100.24
+779 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+780 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Read new item from sbuffer (Sensor 102)
+781 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Inserted SensorID 102, TS 1744475859, Value 99.17 into DB
+782 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+783 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Processed Sensor ID: 101, Value: 102.25, Count: 58, Avg: 100.27
+784 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+785 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Read new item from sbuffer (Sensor 103)
+786 2025-04-12 23:37:39 2025-04-12 23:37:39 [DEBUG]  Inserted SensorID 103, TS 1744475859, Value 98.77 into DB
+787 2025-04-12 23:37:40 2025-04-12 23:37:40 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+788 2025-04-12 23:37:40 2025-04-12 23:37:40 [DEBUG]  Processed Sensor ID: 104, Value: 97.65, Count: 27, Avg: 99.77
+789 2025-04-12 23:37:40 2025-04-12 23:37:40 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+790 2025-04-12 23:37:40 2025-04-12 23:37:40 [DEBUG]  Read new item from sbuffer (Sensor 101)
+791 2025-04-12 23:37:40 2025-04-12 23:37:40 [DEBUG]  Inserted SensorID 101, TS 1744475860, Value 98.95 into DB
+792 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+793 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Processed Sensor ID: 102, Value: 104.79, Count: 35, Avg: 100.44
+794 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+795 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Read new item from sbuffer (Sensor 101)
+796 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Inserted SensorID 101, TS 1744475861, Value 95.37 into DB
+797 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+798 2025-04-12 23:37:41 2025-04-12 23:37:41 [DEBUG]  Processed Sensor ID: 103, Value: 102.90, Count: 32, Avg: 100.68
+799 2025-04-12 23:37:42 2025-04-12 23:37:42 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+800 2025-04-12 23:37:42 2025-04-12 23:37:42 [DEBUG]  Read new item from sbuffer (Sensor 104)
+801 2025-04-12 23:37:42 2025-04-12 23:37:42 [DEBUG]  Inserted SensorID 104, TS 1744475862, Value 102.20 into DB
+802 2025-04-12 23:37:42 2025-04-12 23:37:42 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+803 2025-04-12 23:37:42 2025-04-12 23:37:42 [DEBUG]  Processed Sensor ID: 101, Value: 99.78, Count: 59, Avg: 100.27
+804 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+805 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Read new item from sbuffer (Sensor 102)
+806 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Inserted SensorID 102, TS 1744475863, Value 97.55 into DB
+807 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+808 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Processed Sensor ID: 101, Value: 104.97, Count: 60, Avg: 100.34
+809 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+810 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Read new item from sbuffer (Sensor 103)
+811 2025-04-12 23:37:43 2025-04-12 23:37:43 [DEBUG]  Inserted SensorID 103, TS 1744475863, Value 104.44 into DB
+812 2025-04-12 23:37:44 2025-04-12 23:37:44 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+813 2025-04-12 23:37:44 2025-04-12 23:37:44 [DEBUG]  Processed Sensor ID: 104, Value: 100.79, Count: 28, Avg: 99.81
+814 2025-04-12 23:37:44 2025-04-12 23:37:44 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+815 2025-04-12 23:37:44 2025-04-12 23:37:44 [DEBUG]  Read new item from sbuffer (Sensor 101)
+816 2025-04-12 23:37:44 2025-04-12 23:37:44 [DEBUG]  Inserted SensorID 101, TS 1744475864, Value 99.20 into DB
+817 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+818 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Processed Sensor ID: 102, Value: 99.38, Count: 36, Avg: 100.41
+819 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+820 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Read new item from sbuffer (Sensor 101)
+821 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Inserted SensorID 101, TS 1744475865, Value 103.88 into DB
+822 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+823 2025-04-12 23:37:45 2025-04-12 23:37:45 [DEBUG]  Processed Sensor ID: 103, Value: 98.89, Count: 33, Avg: 100.63
+824 2025-04-12 23:37:46 2025-04-12 23:37:46 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+825 2025-04-12 23:37:46 2025-04-12 23:37:46 [DEBUG]  Read new item from sbuffer (Sensor 104)
+826 2025-04-12 23:37:46 2025-04-12 23:37:46 [DEBUG]  Inserted SensorID 104, TS 1744475866, Value 95.89 into DB
+827 2025-04-12 23:37:46 2025-04-12 23:37:46 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+828 2025-04-12 23:37:46 2025-04-12 23:37:46 [DEBUG]  Processed Sensor ID: 101, Value: 99.21, Count: 61, Avg: 100.33
+829 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+830 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Read new item from sbuffer (Sensor 102)
+831 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Inserted SensorID 102, TS 1744475867, Value 102.33 into DB
+832 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+833 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Processed Sensor ID: 101, Value: 99.55, Count: 62, Avg: 100.31
+834 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+835 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Read new item from sbuffer (Sensor 103)
+836 2025-04-12 23:37:47 2025-04-12 23:37:47 [DEBUG]  Inserted SensorID 103, TS 1744475867, Value 100.35 into DB
+837 2025-04-12 23:37:48 2025-04-12 23:37:48 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+838 2025-04-12 23:37:48 2025-04-12 23:37:48 [DEBUG]  Processed Sensor ID: 104, Value: 95.30, Count: 29, Avg: 99.66
+839 2025-04-12 23:37:48 2025-04-12 23:37:48 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+840 2025-04-12 23:37:48 2025-04-12 23:37:48 [DEBUG]  Read new item from sbuffer (Sensor 101)
+841 2025-04-12 23:37:48 2025-04-12 23:37:48 [DEBUG]  Inserted SensorID 101, TS 1744475868, Value 97.68 into DB
+842 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+843 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Processed Sensor ID: 102, Value: 95.91, Count: 37, Avg: 100.29
+844 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+845 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Read new item from sbuffer (Sensor 101)
+846 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Inserted SensorID 101, TS 1744475869, Value 100.82 into DB
+847 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+848 2025-04-12 23:37:49 2025-04-12 23:37:49 [DEBUG]  Processed Sensor ID: 103, Value: 104.63, Count: 34, Avg: 100.74
+849 2025-04-12 23:37:50 2025-04-12 23:37:50 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+850 2025-04-12 23:37:50 2025-04-12 23:37:50 [DEBUG]  Read new item from sbuffer (Sensor 104)
+851 2025-04-12 23:37:50 2025-04-12 23:37:50 [DEBUG]  Inserted SensorID 104, TS 1744475870, Value 97.00 into DB
+852 2025-04-12 23:37:50 2025-04-12 23:37:50 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+853 2025-04-12 23:37:50 2025-04-12 23:37:50 [DEBUG]  Processed Sensor ID: 101, Value: 103.79, Count: 63, Avg: 100.37
+854 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+855 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Read new item from sbuffer (Sensor 102)
+856 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Inserted SensorID 102, TS 1744475871, Value 95.64 into DB
+857 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+858 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Processed Sensor ID: 101, Value: 103.21, Count: 64, Avg: 100.41
+859 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+860 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Read new item from sbuffer (Sensor 103)
+861 2025-04-12 23:37:51 2025-04-12 23:37:51 [DEBUG]  Inserted SensorID 103, TS 1744475871, Value 103.18 into DB
+862 2025-04-12 23:37:52 2025-04-12 23:37:52 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+863 2025-04-12 23:37:52 2025-04-12 23:37:52 [DEBUG]  Processed Sensor ID: 104, Value: 95.46, Count: 30, Avg: 99.52
+864 2025-04-12 23:37:52 2025-04-12 23:37:52 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+865 2025-04-12 23:37:52 2025-04-12 23:37:52 [DEBUG]  Read new item from sbuffer (Sensor 101)
+866 2025-04-12 23:37:52 2025-04-12 23:37:52 [DEBUG]  Inserted SensorID 101, TS 1744475872, Value 102.25 into DB
+867 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+868 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Processed Sensor ID: 102, Value: 96.40, Count: 38, Avg: 100.19
+869 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+870 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Read new item from sbuffer (Sensor 101)
+871 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Inserted SensorID 101, TS 1744475873, Value 95.50 into DB
+872 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+873 2025-04-12 23:37:53 2025-04-12 23:37:53 [DEBUG]  Processed Sensor ID: 103, Value: 102.86, Count: 35, Avg: 100.80
+874 2025-04-12 23:37:54 2025-04-12 23:37:54 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+875 2025-04-12 23:37:54 2025-04-12 23:37:54 [DEBUG]  Read new item from sbuffer (Sensor 104)
+876 2025-04-12 23:37:54 2025-04-12 23:37:54 [DEBUG]  Inserted SensorID 104, TS 1744475874, Value 95.37 into DB
+877 2025-04-12 23:37:54 2025-04-12 23:37:54 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+878 2025-04-12 23:37:54 2025-04-12 23:37:54 [DEBUG]  Processed Sensor ID: 101, Value: 98.00, Count: 65, Avg: 100.38
+879 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+880 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Read new item from sbuffer (Sensor 102)
+881 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Inserted SensorID 102, TS 1744475875, Value 98.00 into DB
+882 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+883 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Processed Sensor ID: 101, Value: 102.47, Count: 66, Avg: 100.41
+884 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+885 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Read new item from sbuffer (Sensor 103)
+886 2025-04-12 23:37:55 2025-04-12 23:37:55 [DEBUG]  Inserted SensorID 103, TS 1744475875, Value 101.80 into DB
+887 2025-04-12 23:37:56 2025-04-12 23:37:56 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+888 2025-04-12 23:37:56 2025-04-12 23:37:56 [DEBUG]  Processed Sensor ID: 104, Value: 100.06, Count: 31, Avg: 99.53
+889 2025-04-12 23:37:56 2025-04-12 23:37:56 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+890 2025-04-12 23:37:56 2025-04-12 23:37:56 [DEBUG]  Read new item from sbuffer (Sensor 101)
+891 2025-04-12 23:37:56 2025-04-12 23:37:56 [DEBUG]  Inserted SensorID 101, TS 1744475876, Value 102.36 into DB
+892 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+893 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Processed Sensor ID: 102, Value: 103.07, Count: 39, Avg: 100.26
+894 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+895 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Read new item from sbuffer (Sensor 101)
+896 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Inserted SensorID 101, TS 1744475877, Value 97.09 into DB
+897 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+898 2025-04-12 23:37:57 2025-04-12 23:37:57 [DEBUG]  Processed Sensor ID: 103, Value: 104.11, Count: 36, Avg: 100.90
+899 2025-04-12 23:37:58 2025-04-12 23:37:58 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+900 2025-04-12 23:37:58 2025-04-12 23:37:58 [DEBUG]  Read new item from sbuffer (Sensor 104)
+901 2025-04-12 23:37:58 2025-04-12 23:37:58 [DEBUG]  Inserted SensorID 104, TS 1744475878, Value 95.61 into DB
+902 2025-04-12 23:37:58 2025-04-12 23:37:58 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+903 2025-04-12 23:37:58 2025-04-12 23:37:58 [DEBUG]  Processed Sensor ID: 101, Value: 97.71, Count: 67, Avg: 100.37
+904 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+905 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Read new item from sbuffer (Sensor 102)
+906 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Inserted SensorID 102, TS 1744475879, Value 98.09 into DB
+907 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+908 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Processed Sensor ID: 101, Value: 98.21, Count: 68, Avg: 100.34
+909 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+910 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Read new item from sbuffer (Sensor 103)
+911 2025-04-12 23:37:59 2025-04-12 23:37:59 [DEBUG]  Inserted SensorID 103, TS 1744475879, Value 103.37 into DB
+912 2025-04-12 23:38:00 2025-04-12 23:38:00 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+913 2025-04-12 23:38:00 2025-04-12 23:38:00 [DEBUG]  Processed Sensor ID: 104, Value: 98.96, Count: 32, Avg: 99.51
+914 2025-04-12 23:38:00 2025-04-12 23:38:00 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+915 2025-04-12 23:38:00 2025-04-12 23:38:00 [DEBUG]  Read new item from sbuffer (Sensor 101)
+916 2025-04-12 23:38:00 2025-04-12 23:38:00 [DEBUG]  Inserted SensorID 101, TS 1744475880, Value 103.03 into DB
+917 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+918 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Processed Sensor ID: 102, Value: 98.24, Count: 40, Avg: 100.21
+919 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+920 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Read new item from sbuffer (Sensor 101)
+921 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Inserted SensorID 101, TS 1744475881, Value 99.69 into DB
+922 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+923 2025-04-12 23:38:01 2025-04-12 23:38:01 [DEBUG]  Processed Sensor ID: 103, Value: 95.51, Count: 37, Avg: 100.75
+924 2025-04-12 23:38:02 2025-04-12 23:38:02 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+925 2025-04-12 23:38:02 2025-04-12 23:38:02 [DEBUG]  Read new item from sbuffer (Sensor 104)
+926 2025-04-12 23:38:02 2025-04-12 23:38:02 [DEBUG]  Inserted SensorID 104, TS 1744475882, Value 103.81 into DB
+927 2025-04-12 23:38:02 2025-04-12 23:38:02 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+928 2025-04-12 23:38:02 2025-04-12 23:38:02 [DEBUG]  Processed Sensor ID: 101, Value: 104.57, Count: 69, Avg: 100.40
+929 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+930 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Read new item from sbuffer (Sensor 102)
+931 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Inserted SensorID 102, TS 1744475883, Value 99.46 into DB
+932 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+933 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Processed Sensor ID: 101, Value: 95.97, Count: 70, Avg: 100.33
+934 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+935 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Read new item from sbuffer (Sensor 103)
+936 2025-04-12 23:38:03 2025-04-12 23:38:03 [DEBUG]  Inserted SensorID 103, TS 1744475883, Value 103.43 into DB
+937 2025-04-12 23:38:04 2025-04-12 23:38:04 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+938 2025-04-12 23:38:04 2025-04-12 23:38:04 [DEBUG]  Processed Sensor ID: 104, Value: 104.48, Count: 33, Avg: 99.67
+939 2025-04-12 23:38:04 2025-04-12 23:38:04 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+940 2025-04-12 23:38:04 2025-04-12 23:38:04 [DEBUG]  Read new item from sbuffer (Sensor 101)
+941 2025-04-12 23:38:04 2025-04-12 23:38:04 [DEBUG]  Inserted SensorID 101, TS 1744475884, Value 96.44 into DB
+942 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+943 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Processed Sensor ID: 102, Value: 96.20, Count: 41, Avg: 100.11
+944 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+945 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Read new item from sbuffer (Sensor 101)
+946 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Inserted SensorID 101, TS 1744475885, Value 99.60 into DB
+947 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+948 2025-04-12 23:38:05 2025-04-12 23:38:05 [DEBUG]  Processed Sensor ID: 103, Value: 104.84, Count: 38, Avg: 100.86
+949 2025-04-12 23:38:06 2025-04-12 23:38:06 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+950 2025-04-12 23:38:06 2025-04-12 23:38:06 [DEBUG]  Read new item from sbuffer (Sensor 104)
+951 2025-04-12 23:38:06 2025-04-12 23:38:06 [DEBUG]  Inserted SensorID 104, TS 1744475886, Value 97.86 into DB
+952 2025-04-12 23:38:06 2025-04-12 23:38:06 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+953 2025-04-12 23:38:06 2025-04-12 23:38:06 [DEBUG]  Processed Sensor ID: 101, Value: 97.96, Count: 71, Avg: 100.30
+954 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+955 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Read new item from sbuffer (Sensor 102)
+956 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Inserted SensorID 102, TS 1744475887, Value 96.35 into DB
+957 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+958 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Processed Sensor ID: 101, Value: 100.32, Count: 72, Avg: 100.30
+959 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+960 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Read new item from sbuffer (Sensor 103)
+961 2025-04-12 23:38:07 2025-04-12 23:38:07 [DEBUG]  Inserted SensorID 103, TS 1744475887, Value 101.44 into DB
+962 2025-04-12 23:38:08 2025-04-12 23:38:08 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+963 2025-04-12 23:38:08 2025-04-12 23:38:08 [DEBUG]  Processed Sensor ID: 104, Value: 102.93, Count: 34, Avg: 99.76
+964 2025-04-12 23:38:08 2025-04-12 23:38:08 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+965 2025-04-12 23:38:08 2025-04-12 23:38:08 [DEBUG]  Read new item from sbuffer (Sensor 101)
+966 2025-04-12 23:38:08 2025-04-12 23:38:08 [DEBUG]  Inserted SensorID 101, TS 1744475888, Value 101.82 into DB
+967 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+968 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Processed Sensor ID: 102, Value: 100.13, Count: 42, Avg: 100.11
+969 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+970 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Read new item from sbuffer (Sensor 101)
+971 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Inserted SensorID 101, TS 1744475889, Value 95.42 into DB
+972 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+973 2025-04-12 23:38:09 2025-04-12 23:38:09 [DEBUG]  Processed Sensor ID: 103, Value: 96.54, Count: 39, Avg: 100.75
+974 2025-04-12 23:38:10 2025-04-12 23:38:10 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+975 2025-04-12 23:38:10 2025-04-12 23:38:10 [DEBUG]  Read new item from sbuffer (Sensor 104)
+976 2025-04-12 23:38:10 2025-04-12 23:38:10 [DEBUG]  Inserted SensorID 104, TS 1744475890, Value 100.75 into DB
+977 2025-04-12 23:38:10 2025-04-12 23:38:10 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+978 2025-04-12 23:38:10 2025-04-12 23:38:10 [DEBUG]  Processed Sensor ID: 101, Value: 97.58, Count: 73, Avg: 100.26
+979 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+980 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Read new item from sbuffer (Sensor 102)
+981 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Inserted SensorID 102, TS 1744475891, Value 102.79 into DB
+982 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+983 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Processed Sensor ID: 101, Value: 95.77, Count: 74, Avg: 100.20
+984 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+985 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Read new item from sbuffer (Sensor 103)
+986 2025-04-12 23:38:11 2025-04-12 23:38:11 [DEBUG]  Inserted SensorID 103, TS 1744475891, Value 99.89 into DB
+987 2025-04-12 23:38:12 2025-04-12 23:38:12 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+988 2025-04-12 23:38:12 2025-04-12 23:38:12 [DEBUG]  Processed Sensor ID: 104, Value: 104.71, Count: 35, Avg: 99.90
+989 2025-04-12 23:38:12 2025-04-12 23:38:12 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+990 2025-04-12 23:38:12 2025-04-12 23:38:12 [DEBUG]  Read new item from sbuffer (Sensor 101)
+991 2025-04-12 23:38:12 2025-04-12 23:38:12 [DEBUG]  Inserted SensorID 101, TS 1744475892, Value 95.79 into DB
+992 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+993 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Processed Sensor ID: 102, Value: 99.99, Count: 43, Avg: 100.11
+994 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+995 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Read new item from sbuffer (Sensor 101)
+996 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Inserted SensorID 101, TS 1744475893, Value 102.36 into DB
+997 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+998 2025-04-12 23:38:13 2025-04-12 23:38:13 [DEBUG]  Processed Sensor ID: 103, Value: 96.68, Count: 40, Avg: 100.65
+999 2025-04-12 23:38:14 2025-04-12 23:38:14 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1000 2025-04-12 23:38:14 2025-04-12 23:38:14 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1001 2025-04-12 23:38:14 2025-04-12 23:38:14 [DEBUG]  Inserted SensorID 104, TS 1744475894, Value 102.21 into DB
+1002 2025-04-12 23:38:14 2025-04-12 23:38:14 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1003 2025-04-12 23:38:14 2025-04-12 23:38:14 [DEBUG]  Processed Sensor ID: 101, Value: 95.75, Count: 75, Avg: 100.14
+1004 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1005 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1006 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Inserted SensorID 102, TS 1744475895, Value 95.81 into DB
+1007 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1008 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Processed Sensor ID: 101, Value: 100.00, Count: 76, Avg: 100.14
+1009 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1010 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1011 2025-04-12 23:38:15 2025-04-12 23:38:15 [DEBUG]  Inserted SensorID 103, TS 1744475895, Value 95.69 into DB
+1012 2025-04-12 23:38:16 2025-04-12 23:38:16 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1013 2025-04-12 23:38:16 2025-04-12 23:38:16 [DEBUG]  Processed Sensor ID: 104, Value: 96.02, Count: 36, Avg: 99.79
+1014 2025-04-12 23:38:16 2025-04-12 23:38:16 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1015 2025-04-12 23:38:16 2025-04-12 23:38:16 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1016 2025-04-12 23:38:16 2025-04-12 23:38:16 [DEBUG]  Inserted SensorID 101, TS 1744475896, Value 101.23 into DB
+1017 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1018 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Processed Sensor ID: 102, Value: 101.25, Count: 44, Avg: 100.14
+1019 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1020 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1021 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Inserted SensorID 101, TS 1744475897, Value 99.96 into DB
+1022 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1023 2025-04-12 23:38:17 2025-04-12 23:38:17 [DEBUG]  Processed Sensor ID: 103, Value: 104.31, Count: 41, Avg: 100.74
+1024 2025-04-12 23:38:18 2025-04-12 23:38:18 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1025 2025-04-12 23:38:18 2025-04-12 23:38:18 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1026 2025-04-12 23:38:18 2025-04-12 23:38:18 [DEBUG]  Inserted SensorID 104, TS 1744475898, Value 95.53 into DB
+1027 2025-04-12 23:38:18 2025-04-12 23:38:18 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1028 2025-04-12 23:38:18 2025-04-12 23:38:18 [DEBUG]  Processed Sensor ID: 101, Value: 104.55, Count: 77, Avg: 100.20
+1029 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1030 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1031 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Inserted SensorID 102, TS 1744475899, Value 96.19 into DB
+1032 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1033 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Processed Sensor ID: 101, Value: 103.91, Count: 78, Avg: 100.25
+1034 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1035 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1036 2025-04-12 23:38:19 2025-04-12 23:38:19 [DEBUG]  Inserted SensorID 103, TS 1744475899, Value 96.51 into DB
+1037 2025-04-12 23:38:20 2025-04-12 23:38:20 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1038 2025-04-12 23:38:20 2025-04-12 23:38:20 [DEBUG]  Processed Sensor ID: 104, Value: 97.47, Count: 37, Avg: 99.73
+1039 2025-04-12 23:38:20 2025-04-12 23:38:20 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1040 2025-04-12 23:38:20 2025-04-12 23:38:20 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1041 2025-04-12 23:38:20 2025-04-12 23:38:20 [DEBUG]  Inserted SensorID 101, TS 1744475900, Value 95.78 into DB
+1042 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1043 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Processed Sensor ID: 102, Value: 99.51, Count: 45, Avg: 100.12
+1044 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1045 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1046 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Inserted SensorID 101, TS 1744475901, Value 103.34 into DB
+1047 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1048 2025-04-12 23:38:21 2025-04-12 23:38:21 [DEBUG]  Processed Sensor ID: 103, Value: 95.72, Count: 42, Avg: 100.62
+1049 2025-04-12 23:38:22 2025-04-12 23:38:22 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1050 2025-04-12 23:38:22 2025-04-12 23:38:22 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1051 2025-04-12 23:38:22 2025-04-12 23:38:22 [DEBUG]  Inserted SensorID 104, TS 1744475902, Value 95.89 into DB
+1052 2025-04-12 23:38:22 2025-04-12 23:38:22 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1053 2025-04-12 23:38:22 2025-04-12 23:38:22 [DEBUG]  Processed Sensor ID: 101, Value: 102.12, Count: 79, Avg: 100.27
+1054 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1055 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1056 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Inserted SensorID 102, TS 1744475903, Value 98.71 into DB
+1057 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1058 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Processed Sensor ID: 101, Value: 103.03, Count: 80, Avg: 100.30
+1059 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1060 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1061 2025-04-12 23:38:23 2025-04-12 23:38:23 [DEBUG]  Inserted SensorID 103, TS 1744475903, Value 95.65 into DB
+1062 2025-04-12 23:38:24 2025-04-12 23:38:24 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1063 2025-04-12 23:38:24 2025-04-12 23:38:24 [DEBUG]  Processed Sensor ID: 104, Value: 101.02, Count: 38, Avg: 99.77
+1064 2025-04-12 23:38:24 2025-04-12 23:38:24 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1065 2025-04-12 23:38:24 2025-04-12 23:38:24 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1066 2025-04-12 23:38:24 2025-04-12 23:38:24 [DEBUG]  Inserted SensorID 101, TS 1744475904, Value 103.84 into DB
+1067 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1068 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Processed Sensor ID: 102, Value: 96.36, Count: 46, Avg: 100.04
+1069 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1070 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1071 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Inserted SensorID 101, TS 1744475905, Value 95.12 into DB
+1072 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1073 2025-04-12 23:38:25 2025-04-12 23:38:25 [DEBUG]  Processed Sensor ID: 103, Value: 104.15, Count: 43, Avg: 100.70
+1074 2025-04-12 23:38:26 2025-04-12 23:38:26 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1075 2025-04-12 23:38:26 2025-04-12 23:38:26 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1076 2025-04-12 23:38:26 2025-04-12 23:38:26 [DEBUG]  Inserted SensorID 104, TS 1744475906, Value 96.37 into DB
+1077 2025-04-12 23:38:26 2025-04-12 23:38:26 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1078 2025-04-12 23:38:26 2025-04-12 23:38:26 [DEBUG]  Processed Sensor ID: 101, Value: 100.50, Count: 81, Avg: 100.31
+1079 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1080 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1081 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Inserted SensorID 102, TS 1744475907, Value 95.12 into DB
+1082 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1083 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Processed Sensor ID: 101, Value: 101.20, Count: 82, Avg: 100.32
+1084 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1085 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1086 2025-04-12 23:38:27 2025-04-12 23:38:27 [DEBUG]  Inserted SensorID 103, TS 1744475907, Value 103.61 into DB
+1087 2025-04-12 23:38:28 2025-04-12 23:38:28 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1088 2025-04-12 23:38:28 2025-04-12 23:38:28 [DEBUG]  Processed Sensor ID: 104, Value: 95.88, Count: 39, Avg: 99.67
+1089 2025-04-12 23:38:28 2025-04-12 23:38:28 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1090 2025-04-12 23:38:28 2025-04-12 23:38:28 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1091 2025-04-12 23:38:28 2025-04-12 23:38:28 [DEBUG]  Inserted SensorID 101, TS 1744475908, Value 97.21 into DB
+1092 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1093 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Processed Sensor ID: 102, Value: 96.68, Count: 47, Avg: 99.97
+1094 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1095 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1096 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Inserted SensorID 101, TS 1744475909, Value 103.21 into DB
+1097 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1098 2025-04-12 23:38:29 2025-04-12 23:38:29 [DEBUG]  Processed Sensor ID: 103, Value: 96.01, Count: 44, Avg: 100.59
+1099 2025-04-12 23:38:30 2025-04-12 23:38:30 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1100 2025-04-12 23:38:30 2025-04-12 23:38:30 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1101 2025-04-12 23:38:30 2025-04-12 23:38:30 [DEBUG]  Inserted SensorID 104, TS 1744475910, Value 104.77 into DB
+1102 2025-04-12 23:38:30 2025-04-12 23:38:30 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1103 2025-04-12 23:38:30 2025-04-12 23:38:30 [DEBUG]  Processed Sensor ID: 101, Value: 104.42, Count: 83, Avg: 100.37
+1104 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1105 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1106 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Inserted SensorID 102, TS 1744475911, Value 98.44 into DB
+1107 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1108 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Processed Sensor ID: 101, Value: 95.24, Count: 84, Avg: 100.31
+1109 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1110 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1111 2025-04-12 23:38:31 2025-04-12 23:38:31 [DEBUG]  Inserted SensorID 103, TS 1744475911, Value 97.95 into DB
+1112 2025-04-12 23:38:32 2025-04-12 23:38:32 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1113 2025-04-12 23:38:32 2025-04-12 23:38:32 [DEBUG]  Processed Sensor ID: 104, Value: 97.41, Count: 40, Avg: 99.61
+1114 2025-04-12 23:38:32 2025-04-12 23:38:32 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1115 2025-04-12 23:38:32 2025-04-12 23:38:32 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1116 2025-04-12 23:38:32 2025-04-12 23:38:32 [DEBUG]  Inserted SensorID 101, TS 1744475912, Value 97.90 into DB
+1117 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1118 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Processed Sensor ID: 102, Value: 96.51, Count: 48, Avg: 99.90
+1119 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1120 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1121 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Inserted SensorID 101, TS 1744475913, Value 103.99 into DB
+1122 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1123 2025-04-12 23:38:33 2025-04-12 23:38:33 [DEBUG]  Processed Sensor ID: 103, Value: 98.51, Count: 45, Avg: 100.55
+1124 2025-04-12 23:38:34 2025-04-12 23:38:34 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1125 2025-04-12 23:38:34 2025-04-12 23:38:34 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1126 2025-04-12 23:38:34 2025-04-12 23:38:34 [DEBUG]  Inserted SensorID 104, TS 1744475914, Value 100.05 into DB
+1127 2025-04-12 23:38:34 2025-04-12 23:38:34 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1128 2025-04-12 23:38:34 2025-04-12 23:38:34 [DEBUG]  Processed Sensor ID: 101, Value: 96.21, Count: 85, Avg: 100.26
+1129 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1130 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1131 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Inserted SensorID 102, TS 1744475915, Value 99.42 into DB
+1132 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1133 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Processed Sensor ID: 101, Value: 99.33, Count: 86, Avg: 100.25
+1134 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1135 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1136 2025-04-12 23:38:35 2025-04-12 23:38:35 [DEBUG]  Inserted SensorID 103, TS 1744475915, Value 99.71 into DB
+1137 2025-04-12 23:38:36 2025-04-12 23:38:36 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1138 2025-04-12 23:38:36 2025-04-12 23:38:36 [DEBUG]  Processed Sensor ID: 104, Value: 98.85, Count: 41, Avg: 99.59
+1139 2025-04-12 23:38:36 2025-04-12 23:38:36 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1140 2025-04-12 23:38:36 2025-04-12 23:38:36 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1141 2025-04-12 23:38:36 2025-04-12 23:38:36 [DEBUG]  Inserted SensorID 101, TS 1744475916, Value 98.59 into DB
+1142 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1143 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Processed Sensor ID: 102, Value: 97.30, Count: 49, Avg: 99.84
+1144 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1145 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1146 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Inserted SensorID 101, TS 1744475917, Value 99.17 into DB
+1147 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1148 2025-04-12 23:38:37 2025-04-12 23:38:37 [DEBUG]  Processed Sensor ID: 103, Value: 99.74, Count: 46, Avg: 100.53
+1149 2025-04-12 23:38:38 2025-04-12 23:38:38 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1150 2025-04-12 23:38:38 2025-04-12 23:38:38 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1151 2025-04-12 23:38:38 2025-04-12 23:38:38 [DEBUG]  Inserted SensorID 104, TS 1744475918, Value 100.54 into DB
+1152 2025-04-12 23:38:38 2025-04-12 23:38:38 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1153 2025-04-12 23:38:38 2025-04-12 23:38:38 [DEBUG]  Processed Sensor ID: 101, Value: 104.66, Count: 87, Avg: 100.30
+1154 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1155 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1156 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Inserted SensorID 102, TS 1744475919, Value 99.83 into DB
+1157 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1158 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Processed Sensor ID: 101, Value: 95.41, Count: 88, Avg: 100.24
+1159 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1160 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1161 2025-04-12 23:38:39 2025-04-12 23:38:39 [DEBUG]  Inserted SensorID 103, TS 1744475919, Value 101.15 into DB
+1162 2025-04-12 23:38:40 2025-04-12 23:38:40 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1163 2025-04-12 23:38:40 2025-04-12 23:38:40 [DEBUG]  Processed Sensor ID: 104, Value: 95.10, Count: 42, Avg: 99.48
+1164 2025-04-12 23:38:40 2025-04-12 23:38:40 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1165 2025-04-12 23:38:40 2025-04-12 23:38:40 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1166 2025-04-12 23:38:40 2025-04-12 23:38:40 [DEBUG]  Inserted SensorID 101, TS 1744475920, Value 99.59 into DB
+1167 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1168 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Processed Sensor ID: 102, Value: 103.60, Count: 50, Avg: 99.92
+1169 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1170 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1171 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Inserted SensorID 101, TS 1744475921, Value 97.23 into DB
+1172 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1173 2025-04-12 23:38:41 2025-04-12 23:38:41 [DEBUG]  Processed Sensor ID: 103, Value: 103.48, Count: 47, Avg: 100.59
+1174 2025-04-12 23:38:42 2025-04-12 23:38:42 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1175 2025-04-12 23:38:42 2025-04-12 23:38:42 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1176 2025-04-12 23:38:42 2025-04-12 23:38:42 [DEBUG]  Inserted SensorID 104, TS 1744475922, Value 101.50 into DB
+1177 2025-04-12 23:38:42 2025-04-12 23:38:42 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1178 2025-04-12 23:38:42 2025-04-12 23:38:42 [DEBUG]  Processed Sensor ID: 101, Value: 96.19, Count: 89, Avg: 100.20
+1179 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1180 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1181 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Inserted SensorID 102, TS 1744475923, Value 97.08 into DB
+1182 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1183 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Processed Sensor ID: 101, Value: 100.38, Count: 90, Avg: 100.20
+1184 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1185 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1186 2025-04-12 23:38:43 2025-04-12 23:38:43 [DEBUG]  Inserted SensorID 103, TS 1744475923, Value 97.64 into DB
+1187 2025-04-12 23:38:44 2025-04-12 23:38:44 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1188 2025-04-12 23:38:44 2025-04-12 23:38:44 [DEBUG]  Processed Sensor ID: 104, Value: 97.75, Count: 43, Avg: 99.44
+1189 2025-04-12 23:38:44 2025-04-12 23:38:44 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1190 2025-04-12 23:38:44 2025-04-12 23:38:44 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1191 2025-04-12 23:38:44 2025-04-12 23:38:44 [DEBUG]  Inserted SensorID 101, TS 1744475924, Value 104.59 into DB
+1192 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1193 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Processed Sensor ID: 102, Value: 102.38, Count: 51, Avg: 99.97
+1194 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1195 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1196 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Inserted SensorID 101, TS 1744475925, Value 96.93 into DB
+1197 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1198 2025-04-12 23:38:45 2025-04-12 23:38:45 [DEBUG]  Processed Sensor ID: 103, Value: 100.59, Count: 48, Avg: 100.59
+1199 2025-04-12 23:38:46 2025-04-12 23:38:46 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1200 2025-04-12 23:38:46 2025-04-12 23:38:46 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1201 2025-04-12 23:38:46 2025-04-12 23:38:46 [DEBUG]  Inserted SensorID 104, TS 1744475926, Value 100.89 into DB
+1202 2025-04-12 23:38:46 2025-04-12 23:38:46 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1203 2025-04-12 23:38:46 2025-04-12 23:38:46 [DEBUG]  Processed Sensor ID: 101, Value: 95.38, Count: 91, Avg: 100.15
+1204 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1205 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1206 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Inserted SensorID 102, TS 1744475927, Value 97.98 into DB
+1207 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1208 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Processed Sensor ID: 101, Value: 100.82, Count: 92, Avg: 100.15
+1209 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1210 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1211 2025-04-12 23:38:47 2025-04-12 23:38:47 [DEBUG]  Inserted SensorID 103, TS 1744475927, Value 97.37 into DB
+1212 2025-04-12 23:38:48 2025-04-12 23:38:48 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1213 2025-04-12 23:38:48 2025-04-12 23:38:48 [DEBUG]  Processed Sensor ID: 104, Value: 102.39, Count: 44, Avg: 99.51
+1214 2025-04-12 23:38:48 2025-04-12 23:38:48 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1215 2025-04-12 23:38:48 2025-04-12 23:38:48 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1216 2025-04-12 23:38:48 2025-04-12 23:38:48 [DEBUG]  Inserted SensorID 101, TS 1744475928, Value 101.89 into DB
+1217 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1218 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Processed Sensor ID: 102, Value: 104.41, Count: 52, Avg: 100.05
+1219 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1220 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1221 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Inserted SensorID 101, TS 1744475929, Value 104.93 into DB
+1222 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1223 2025-04-12 23:38:49 2025-04-12 23:38:49 [DEBUG]  Processed Sensor ID: 103, Value: 102.99, Count: 49, Avg: 100.64
+1224 2025-04-12 23:38:50 2025-04-12 23:38:50 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1225 2025-04-12 23:38:50 2025-04-12 23:38:50 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1226 2025-04-12 23:38:50 2025-04-12 23:38:50 [DEBUG]  Inserted SensorID 104, TS 1744475930, Value 98.04 into DB
+1227 2025-04-12 23:38:50 2025-04-12 23:38:50 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1228 2025-04-12 23:38:50 2025-04-12 23:38:50 [DEBUG]  Processed Sensor ID: 101, Value: 99.72, Count: 93, Avg: 100.15
+1229 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1230 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1231 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Inserted SensorID 102, TS 1744475931, Value 103.30 into DB
+1232 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1233 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Processed Sensor ID: 101, Value: 102.67, Count: 94, Avg: 100.18
+1234 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1235 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1236 2025-04-12 23:38:51 2025-04-12 23:38:51 [DEBUG]  Inserted SensorID 103, TS 1744475931, Value 100.22 into DB
+1237 2025-04-12 23:38:52 2025-04-12 23:38:52 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1238 2025-04-12 23:38:52 2025-04-12 23:38:52 [DEBUG]  Processed Sensor ID: 104, Value: 102.90, Count: 45, Avg: 99.59
+1239 2025-04-12 23:38:52 2025-04-12 23:38:52 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1240 2025-04-12 23:38:52 2025-04-12 23:38:52 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1241 2025-04-12 23:38:52 2025-04-12 23:38:52 [DEBUG]  Inserted SensorID 101, TS 1744475932, Value 103.26 into DB
+1242 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1243 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Processed Sensor ID: 102, Value: 98.62, Count: 53, Avg: 100.03
+1244 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1245 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1246 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Inserted SensorID 101, TS 1744475933, Value 96.84 into DB
+1247 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1248 2025-04-12 23:38:53 2025-04-12 23:38:53 [DEBUG]  Processed Sensor ID: 103, Value: 95.55, Count: 50, Avg: 100.54
+1249 2025-04-12 23:38:54 2025-04-12 23:38:54 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1250 2025-04-12 23:38:54 2025-04-12 23:38:54 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1251 2025-04-12 23:38:54 2025-04-12 23:38:54 [DEBUG]  Inserted SensorID 104, TS 1744475934, Value 102.85 into DB
+1252 2025-04-12 23:38:54 2025-04-12 23:38:54 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1253 2025-04-12 23:38:54 2025-04-12 23:38:54 [DEBUG]  Processed Sensor ID: 101, Value: 100.70, Count: 95, Avg: 100.18
+1254 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1255 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1256 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Inserted SensorID 102, TS 1744475935, Value 95.81 into DB
+1257 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1258 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Processed Sensor ID: 101, Value: 102.10, Count: 96, Avg: 100.20
+1259 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1260 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1261 2025-04-12 23:38:55 2025-04-12 23:38:55 [DEBUG]  Inserted SensorID 103, TS 1744475935, Value 100.85 into DB
+1262 2025-04-12 23:38:56 2025-04-12 23:38:56 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1263 2025-04-12 23:38:56 2025-04-12 23:38:56 [DEBUG]  Processed Sensor ID: 104, Value: 98.41, Count: 46, Avg: 99.56
+1264 2025-04-12 23:38:56 2025-04-12 23:38:56 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1265 2025-04-12 23:38:56 2025-04-12 23:38:56 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1266 2025-04-12 23:38:56 2025-04-12 23:38:56 [DEBUG]  Inserted SensorID 101, TS 1744475936, Value 96.97 into DB
+1267 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1268 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Processed Sensor ID: 102, Value: 96.30, Count: 54, Avg: 99.96
+1269 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1270 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1271 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Inserted SensorID 101, TS 1744475937, Value 96.21 into DB
+1272 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1273 2025-04-12 23:38:57 2025-04-12 23:38:57 [DEBUG]  Processed Sensor ID: 103, Value: 97.02, Count: 51, Avg: 100.47
+1274 2025-04-12 23:38:58 2025-04-12 23:38:58 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1275 2025-04-12 23:38:58 2025-04-12 23:38:58 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1276 2025-04-12 23:38:58 2025-04-12 23:38:58 [DEBUG]  Inserted SensorID 104, TS 1744475938, Value 97.95 into DB
+1277 2025-04-12 23:38:58 2025-04-12 23:38:58 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1278 2025-04-12 23:38:58 2025-04-12 23:38:58 [DEBUG]  Processed Sensor ID: 101, Value: 98.30, Count: 97, Avg: 100.18
+1279 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1280 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1281 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Inserted SensorID 102, TS 1744475939, Value 96.69 into DB
+1282 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1283 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Processed Sensor ID: 101, Value: 99.18, Count: 98, Avg: 100.17
+1284 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1285 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1286 2025-04-12 23:38:59 2025-04-12 23:38:59 [DEBUG]  Inserted SensorID 103, TS 1744475939, Value 104.66 into DB
+1287 2025-04-12 23:39:00 2025-04-12 23:39:00 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1288 2025-04-12 23:39:00 2025-04-12 23:39:00 [DEBUG]  Processed Sensor ID: 104, Value: 103.47, Count: 47, Avg: 99.64
+1289 2025-04-12 23:39:00 2025-04-12 23:39:00 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1290 2025-04-12 23:39:00 2025-04-12 23:39:00 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1291 2025-04-12 23:39:00 2025-04-12 23:39:00 [DEBUG]  Inserted SensorID 101, TS 1744475940, Value 104.42 into DB
+1292 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1293 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Processed Sensor ID: 102, Value: 98.90, Count: 55, Avg: 99.94
+1294 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1295 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1296 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Inserted SensorID 101, TS 1744475941, Value 97.72 into DB
+1297 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1298 2025-04-12 23:39:01 2025-04-12 23:39:01 [DEBUG]  Processed Sensor ID: 103, Value: 99.21, Count: 52, Avg: 100.44
+1299 2025-04-12 23:39:02 2025-04-12 23:39:02 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1300 2025-04-12 23:39:02 2025-04-12 23:39:02 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1301 2025-04-12 23:39:02 2025-04-12 23:39:02 [DEBUG]  Inserted SensorID 104, TS 1744475942, Value 102.37 into DB
+1302 2025-04-12 23:39:02 2025-04-12 23:39:02 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1303 2025-04-12 23:39:02 2025-04-12 23:39:02 [DEBUG]  Processed Sensor ID: 101, Value: 99.42, Count: 99, Avg: 100.16
+1304 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1305 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1306 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Inserted SensorID 102, TS 1744475943, Value 99.54 into DB
+1307 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1308 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Processed Sensor ID: 101, Value: 97.31, Count: 100, Avg: 100.14
+1309 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1310 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1311 2025-04-12 23:39:03 2025-04-12 23:39:03 [DEBUG]  Inserted SensorID 103, TS 1744475943, Value 97.53 into DB
+1312 2025-04-12 23:39:04 2025-04-12 23:39:04 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1313 2025-04-12 23:39:04 2025-04-12 23:39:04 [DEBUG]  Processed Sensor ID: 104, Value: 96.77, Count: 48, Avg: 99.58
+1314 2025-04-12 23:39:04 2025-04-12 23:39:04 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1315 2025-04-12 23:39:04 2025-04-12 23:39:04 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1316 2025-04-12 23:39:04 2025-04-12 23:39:04 [DEBUG]  Inserted SensorID 101, TS 1744475944, Value 96.71 into DB
+1317 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1318 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Processed Sensor ID: 102, Value: 101.15, Count: 56, Avg: 99.96
+1319 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1320 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1321 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Inserted SensorID 101, TS 1744475945, Value 100.63 into DB
+1322 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1323 2025-04-12 23:39:05 2025-04-12 23:39:05 [DEBUG]  Processed Sensor ID: 103, Value: 103.09, Count: 53, Avg: 100.49
+1324 2025-04-12 23:39:06 2025-04-12 23:39:06 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1325 2025-04-12 23:39:06 2025-04-12 23:39:06 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1326 2025-04-12 23:39:06 2025-04-12 23:39:06 [DEBUG]  Inserted SensorID 104, TS 1744475946, Value 102.95 into DB
+1327 2025-04-12 23:39:06 2025-04-12 23:39:06 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1328 2025-04-12 23:39:06 2025-04-12 23:39:06 [DEBUG]  Processed Sensor ID: 101, Value: 101.64, Count: 101, Avg: 100.15
+1329 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1330 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1331 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Inserted SensorID 102, TS 1744475947, Value 100.10 into DB
+1332 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1333 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Processed Sensor ID: 101, Value: 100.30, Count: 102, Avg: 100.15
+1334 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1335 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1336 2025-04-12 23:39:07 2025-04-12 23:39:07 [DEBUG]  Inserted SensorID 103, TS 1744475947, Value 99.06 into DB
+1337 2025-04-12 23:39:08 2025-04-12 23:39:08 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1338 2025-04-12 23:39:08 2025-04-12 23:39:08 [DEBUG]  Processed Sensor ID: 104, Value: 95.23, Count: 49, Avg: 99.49
+1339 2025-04-12 23:39:08 2025-04-12 23:39:08 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1340 2025-04-12 23:39:08 2025-04-12 23:39:08 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1341 2025-04-12 23:39:08 2025-04-12 23:39:08 [DEBUG]  Inserted SensorID 101, TS 1744475948, Value 104.79 into DB
+1342 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1343 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Processed Sensor ID: 102, Value: 100.89, Count: 57, Avg: 99.98
+1344 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1345 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1346 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Inserted SensorID 101, TS 1744475949, Value 101.30 into DB
+1347 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1348 2025-04-12 23:39:09 2025-04-12 23:39:09 [DEBUG]  Processed Sensor ID: 103, Value: 103.97, Count: 54, Avg: 100.56
+1349 2025-04-12 23:39:10 2025-04-12 23:39:10 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1350 2025-04-12 23:39:10 2025-04-12 23:39:10 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1351 2025-04-12 23:39:10 2025-04-12 23:39:10 [DEBUG]  Inserted SensorID 104, TS 1744475950, Value 104.70 into DB
+1352 2025-04-12 23:39:10 2025-04-12 23:39:10 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1353 2025-04-12 23:39:10 2025-04-12 23:39:10 [DEBUG]  Processed Sensor ID: 101, Value: 100.71, Count: 103, Avg: 100.16
+1354 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1355 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1356 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Inserted SensorID 102, TS 1744475951, Value 96.28 into DB
+1357 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1358 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Processed Sensor ID: 101, Value: 99.39, Count: 104, Avg: 100.15
+1359 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1360 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1361 2025-04-12 23:39:11 2025-04-12 23:39:11 [DEBUG]  Inserted SensorID 103, TS 1744475951, Value 104.63 into DB
+1362 2025-04-12 23:39:12 2025-04-12 23:39:12 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1363 2025-04-12 23:39:12 2025-04-12 23:39:12 [DEBUG]  Processed Sensor ID: 104, Value: 98.70, Count: 50, Avg: 99.48
+1364 2025-04-12 23:39:12 2025-04-12 23:39:12 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1365 2025-04-12 23:39:12 2025-04-12 23:39:12 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1366 2025-04-12 23:39:12 2025-04-12 23:39:12 [DEBUG]  Inserted SensorID 101, TS 1744475952, Value 103.53 into DB
+1367 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1368 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Processed Sensor ID: 102, Value: 97.89, Count: 58, Avg: 99.94
+1369 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1370 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1371 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Inserted SensorID 101, TS 1744475953, Value 101.90 into DB
+1372 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1373 2025-04-12 23:39:13 2025-04-12 23:39:13 [DEBUG]  Processed Sensor ID: 103, Value: 103.95, Count: 55, Avg: 100.62
+1374 2025-04-12 23:39:14 2025-04-12 23:39:14 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1375 2025-04-12 23:39:14 2025-04-12 23:39:14 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1376 2025-04-12 23:39:14 2025-04-12 23:39:14 [DEBUG]  Inserted SensorID 104, TS 1744475954, Value 104.94 into DB
+1377 2025-04-12 23:39:14 2025-04-12 23:39:14 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1378 2025-04-12 23:39:14 2025-04-12 23:39:14 [DEBUG]  Processed Sensor ID: 101, Value: 104.77, Count: 105, Avg: 100.19
+1379 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1380 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1381 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Inserted SensorID 102, TS 1744475955, Value 95.87 into DB
+1382 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1383 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Processed Sensor ID: 101, Value: 103.12, Count: 106, Avg: 100.22
+1384 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1385 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1386 2025-04-12 23:39:15 2025-04-12 23:39:15 [DEBUG]  Inserted SensorID 103, TS 1744475955, Value 95.66 into DB
+1387 2025-04-12 23:39:16 2025-04-12 23:39:16 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1388 2025-04-12 23:39:16 2025-04-12 23:39:16 [DEBUG]  Processed Sensor ID: 104, Value: 101.91, Count: 51, Avg: 99.53
+1389 2025-04-12 23:39:16 2025-04-12 23:39:16 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1390 2025-04-12 23:39:16 2025-04-12 23:39:16 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1391 2025-04-12 23:39:16 2025-04-12 23:39:16 [DEBUG]  Inserted SensorID 101, TS 1744475956, Value 103.83 into DB
+1392 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1393 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Processed Sensor ID: 102, Value: 97.09, Count: 59, Avg: 99.89
+1394 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1395 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1396 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Inserted SensorID 101, TS 1744475957, Value 95.15 into DB
+1397 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1398 2025-04-12 23:39:17 2025-04-12 23:39:17 [DEBUG]  Processed Sensor ID: 103, Value: 95.32, Count: 56, Avg: 100.53
+1399 2025-04-12 23:39:18 2025-04-12 23:39:18 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1400 2025-04-12 23:39:18 2025-04-12 23:39:18 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1401 2025-04-12 23:39:18 2025-04-12 23:39:18 [DEBUG]  Inserted SensorID 104, TS 1744475958, Value 99.72 into DB
+1402 2025-04-12 23:39:18 2025-04-12 23:39:18 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1403 2025-04-12 23:39:18 2025-04-12 23:39:18 [DEBUG]  Processed Sensor ID: 101, Value: 98.94, Count: 107, Avg: 100.21
+1404 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1405 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1406 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Inserted SensorID 102, TS 1744475959, Value 104.15 into DB
+1407 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1408 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Processed Sensor ID: 101, Value: 100.72, Count: 108, Avg: 100.21
+1409 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1410 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1411 2025-04-12 23:39:19 2025-04-12 23:39:19 [DEBUG]  Inserted SensorID 103, TS 1744475959, Value 103.26 into DB
+1412 2025-04-12 23:39:20 2025-04-12 23:39:20 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1413 2025-04-12 23:39:20 2025-04-12 23:39:20 [DEBUG]  Processed Sensor ID: 104, Value: 95.47, Count: 52, Avg: 99.45
+1414 2025-04-12 23:39:20 2025-04-12 23:39:20 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1415 2025-04-12 23:39:20 2025-04-12 23:39:20 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1416 2025-04-12 23:39:20 2025-04-12 23:39:20 [DEBUG]  Inserted SensorID 101, TS 1744475960, Value 95.08 into DB
+1417 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1418 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Processed Sensor ID: 102, Value: 97.06, Count: 60, Avg: 99.84
+1419 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1420 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1421 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Inserted SensorID 101, TS 1744475961, Value 103.66 into DB
+1422 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1423 2025-04-12 23:39:21 2025-04-12 23:39:21 [DEBUG]  Processed Sensor ID: 103, Value: 97.17, Count: 57, Avg: 100.47
+1424 2025-04-12 23:39:22 2025-04-12 23:39:22 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1425 2025-04-12 23:39:22 2025-04-12 23:39:22 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1426 2025-04-12 23:39:22 2025-04-12 23:39:22 [DEBUG]  Inserted SensorID 104, TS 1744475962, Value 104.38 into DB
+1427 2025-04-12 23:39:22 2025-04-12 23:39:22 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1428 2025-04-12 23:39:22 2025-04-12 23:39:22 [DEBUG]  Processed Sensor ID: 101, Value: 98.39, Count: 109, Avg: 100.20
+1429 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1430 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1431 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Inserted SensorID 102, TS 1744475963, Value 101.60 into DB
+1432 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1433 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Processed Sensor ID: 101, Value: 103.34, Count: 110, Avg: 100.23
+1434 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1435 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1436 2025-04-12 23:39:23 2025-04-12 23:39:23 [DEBUG]  Inserted SensorID 103, TS 1744475963, Value 96.04 into DB
+1437 2025-04-12 23:39:24 2025-04-12 23:39:24 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1438 2025-04-12 23:39:24 2025-04-12 23:39:24 [DEBUG]  Processed Sensor ID: 104, Value: 100.61, Count: 53, Avg: 99.47
+1439 2025-04-12 23:39:24 2025-04-12 23:39:24 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1440 2025-04-12 23:39:24 2025-04-12 23:39:24 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1441 2025-04-12 23:39:24 2025-04-12 23:39:24 [DEBUG]  Inserted SensorID 101, TS 1744475964, Value 95.50 into DB
+1442 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1443 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Processed Sensor ID: 102, Value: 97.86, Count: 61, Avg: 99.81
+1444 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1445 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1446 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Inserted SensorID 101, TS 1744475965, Value 104.09 into DB
+1447 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1448 2025-04-12 23:39:25 2025-04-12 23:39:25 [DEBUG]  Processed Sensor ID: 103, Value: 103.91, Count: 58, Avg: 100.53
+1449 2025-04-12 23:39:26 2025-04-12 23:39:26 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1450 2025-04-12 23:39:26 2025-04-12 23:39:26 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1451 2025-04-12 23:39:26 2025-04-12 23:39:26 [DEBUG]  Inserted SensorID 104, TS 1744475966, Value 101.49 into DB
+1452 2025-04-12 23:39:26 2025-04-12 23:39:26 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1453 2025-04-12 23:39:26 2025-04-12 23:39:26 [DEBUG]  Processed Sensor ID: 101, Value: 100.44, Count: 111, Avg: 100.23
+1454 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1455 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1456 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Inserted SensorID 102, TS 1744475967, Value 98.42 into DB
+1457 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1458 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Processed Sensor ID: 101, Value: 97.47, Count: 112, Avg: 100.20
+1459 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1460 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1461 2025-04-12 23:39:27 2025-04-12 23:39:27 [DEBUG]  Inserted SensorID 103, TS 1744475967, Value 96.32 into DB
+1462 2025-04-12 23:39:28 2025-04-12 23:39:28 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1463 2025-04-12 23:39:28 2025-04-12 23:39:28 [DEBUG]  Processed Sensor ID: 104, Value: 95.75, Count: 54, Avg: 99.40
+1464 2025-04-12 23:39:28 2025-04-12 23:39:28 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1465 2025-04-12 23:39:28 2025-04-12 23:39:28 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1466 2025-04-12 23:39:28 2025-04-12 23:39:28 [DEBUG]  Inserted SensorID 101, TS 1744475968, Value 95.30 into DB
+1467 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1468 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Processed Sensor ID: 102, Value: 101.72, Count: 62, Avg: 99.84
+1469 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1470 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1471 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Inserted SensorID 101, TS 1744475969, Value 103.75 into DB
+1472 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1473 2025-04-12 23:39:29 2025-04-12 23:39:29 [DEBUG]  Processed Sensor ID: 103, Value: 104.65, Count: 59, Avg: 100.60
+1474 2025-04-12 23:39:30 2025-04-12 23:39:30 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1475 2025-04-12 23:39:30 2025-04-12 23:39:30 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1476 2025-04-12 23:39:30 2025-04-12 23:39:30 [DEBUG]  Inserted SensorID 104, TS 1744475970, Value 101.49 into DB
+1477 2025-04-12 23:39:30 2025-04-12 23:39:30 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1478 2025-04-12 23:39:30 2025-04-12 23:39:30 [DEBUG]  Processed Sensor ID: 101, Value: 101.65, Count: 113, Avg: 100.22
+1479 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1480 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1481 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Inserted SensorID 102, TS 1744475971, Value 99.54 into DB
+1482 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1483 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Processed Sensor ID: 101, Value: 104.72, Count: 114, Avg: 100.26
+1484 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1485 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1486 2025-04-12 23:39:31 2025-04-12 23:39:31 [DEBUG]  Inserted SensorID 103, TS 1744475971, Value 104.92 into DB
+1487 2025-04-12 23:39:32 2025-04-12 23:39:32 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1488 2025-04-12 23:39:32 2025-04-12 23:39:32 [DEBUG]  Processed Sensor ID: 104, Value: 101.27, Count: 55, Avg: 99.44
+1489 2025-04-12 23:39:32 2025-04-12 23:39:32 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1490 2025-04-12 23:39:32 2025-04-12 23:39:32 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1491 2025-04-12 23:39:32 2025-04-12 23:39:32 [DEBUG]  Inserted SensorID 101, TS 1744475972, Value 96.47 into DB
+1492 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1493 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Processed Sensor ID: 102, Value: 101.86, Count: 63, Avg: 99.87
+1494 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1495 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1496 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Inserted SensorID 101, TS 1744475973, Value 96.07 into DB
+1497 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1498 2025-04-12 23:39:33 2025-04-12 23:39:33 [DEBUG]  Processed Sensor ID: 103, Value: 99.27, Count: 60, Avg: 100.57
+1499 2025-04-12 23:39:34 2025-04-12 23:39:34 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1500 2025-04-12 23:39:34 2025-04-12 23:39:34 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1501 2025-04-12 23:39:34 2025-04-12 23:39:34 [DEBUG]  Inserted SensorID 104, TS 1744475974, Value 98.15 into DB
+1502 2025-04-12 23:39:34 2025-04-12 23:39:34 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1503 2025-04-12 23:39:34 2025-04-12 23:39:34 [DEBUG]  Processed Sensor ID: 101, Value: 97.03, Count: 115, Avg: 100.23
+1504 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1505 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1506 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Inserted SensorID 102, TS 1744475975, Value 103.24 into DB
+1507 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1508 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Processed Sensor ID: 101, Value: 98.18, Count: 116, Avg: 100.21
+1509 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1510 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1511 2025-04-12 23:39:35 2025-04-12 23:39:35 [DEBUG]  Inserted SensorID 103, TS 1744475975, Value 98.16 into DB
+1512 2025-04-12 23:39:36 2025-04-12 23:39:36 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1513 2025-04-12 23:39:36 2025-04-12 23:39:36 [DEBUG]  Processed Sensor ID: 104, Value: 96.54, Count: 56, Avg: 99.38
+1514 2025-04-12 23:39:36 2025-04-12 23:39:36 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1515 2025-04-12 23:39:36 2025-04-12 23:39:36 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1516 2025-04-12 23:39:36 2025-04-12 23:39:36 [DEBUG]  Inserted SensorID 101, TS 1744475976, Value 101.69 into DB
+1517 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1518 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Processed Sensor ID: 102, Value: 103.96, Count: 64, Avg: 99.94
+1519 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1520 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1521 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Inserted SensorID 101, TS 1744475977, Value 103.67 into DB
+1522 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1523 2025-04-12 23:39:37 2025-04-12 23:39:37 [DEBUG]  Processed Sensor ID: 103, Value: 99.63, Count: 61, Avg: 100.56
+1524 2025-04-12 23:39:38 2025-04-12 23:39:38 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1525 2025-04-12 23:39:38 2025-04-12 23:39:38 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1526 2025-04-12 23:39:38 2025-04-12 23:39:38 [DEBUG]  Inserted SensorID 104, TS 1744475978, Value 95.12 into DB
+1527 2025-04-12 23:39:38 2025-04-12 23:39:38 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1528 2025-04-12 23:39:38 2025-04-12 23:39:38 [DEBUG]  Processed Sensor ID: 101, Value: 103.48, Count: 117, Avg: 100.24
+1529 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1530 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1531 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Inserted SensorID 102, TS 1744475979, Value 104.15 into DB
+1532 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1533 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Processed Sensor ID: 101, Value: 101.49, Count: 118, Avg: 100.25
+1534 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1535 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1536 2025-04-12 23:39:39 2025-04-12 23:39:39 [DEBUG]  Inserted SensorID 103, TS 1744475979, Value 104.01 into DB
+1537 2025-04-12 23:39:40 2025-04-12 23:39:40 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1538 2025-04-12 23:39:40 2025-04-12 23:39:40 [DEBUG]  Processed Sensor ID: 104, Value: 103.69, Count: 57, Avg: 99.46
+1539 2025-04-12 23:39:40 2025-04-12 23:39:40 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1540 2025-04-12 23:39:40 2025-04-12 23:39:40 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1541 2025-04-12 23:39:40 2025-04-12 23:39:40 [DEBUG]  Inserted SensorID 101, TS 1744475980, Value 99.97 into DB
+1542 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1543 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Processed Sensor ID: 102, Value: 98.07, Count: 65, Avg: 99.91
+1544 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1545 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1546 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Inserted SensorID 101, TS 1744475981, Value 99.19 into DB
+1547 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1548 2025-04-12 23:39:41 2025-04-12 23:39:41 [DEBUG]  Processed Sensor ID: 103, Value: 104.31, Count: 62, Avg: 100.62
+1549 2025-04-12 23:39:42 2025-04-12 23:39:42 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1550 2025-04-12 23:39:42 2025-04-12 23:39:42 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1551 2025-04-12 23:39:42 2025-04-12 23:39:42 [DEBUG]  Inserted SensorID 104, TS 1744475982, Value 96.65 into DB
+1552 2025-04-12 23:39:42 2025-04-12 23:39:42 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1553 2025-04-12 23:39:42 2025-04-12 23:39:42 [DEBUG]  Processed Sensor ID: 101, Value: 95.87, Count: 119, Avg: 100.21
+1554 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1555 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1556 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Inserted SensorID 102, TS 1744475983, Value 102.56 into DB
+1557 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1558 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Processed Sensor ID: 101, Value: 98.50, Count: 120, Avg: 100.20
+1559 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1560 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Read new item from sbuffer (Sensor 103)
+1561 2025-04-12 23:39:43 2025-04-12 23:39:43 [DEBUG]  Inserted SensorID 103, TS 1744475983, Value 98.12 into DB
+1562 2025-04-12 23:39:44 2025-04-12 23:39:44 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1563 2025-04-12 23:39:44 2025-04-12 23:39:44 [DEBUG]  Processed Sensor ID: 104, Value: 101.62, Count: 58, Avg: 99.50
+1564 2025-04-12 23:39:44 2025-04-12 23:39:44 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1565 2025-04-12 23:39:44 2025-04-12 23:39:44 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1566 2025-04-12 23:39:44 2025-04-12 23:39:44 [DEBUG]  Inserted SensorID 101, TS 1744475984, Value 96.08 into DB
+1567 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1568 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Processed Sensor ID: 102, Value: 96.24, Count: 66, Avg: 99.85
+1569 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1570 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Read new item from sbuffer (Sensor 101)
+1571 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Inserted SensorID 101, TS 1744475985, Value 95.64 into DB
+1572 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Sensor 103 data inserted into buffer (socket 12)
+1573 2025-04-12 23:39:45 2025-04-12 23:39:45 [DEBUG]  Processed Sensor ID: 103, Value: 96.65, Count: 63, Avg: 100.56
+1574 2025-04-12 23:39:46 2025-04-12 23:39:46 [DEBUG]  Sensor 104 data inserted into buffer (socket 13)
+1575 2025-04-12 23:39:46 2025-04-12 23:39:46 [DEBUG]  Read new item from sbuffer (Sensor 104)
+1576 2025-04-12 23:39:46 2025-04-12 23:39:46 [DEBUG]  Inserted SensorID 104, TS 1744475986, Value 96.44 into DB
+1577 2025-04-12 23:39:46 2025-04-12 23:39:46 [DEBUG]  Sensor 101 data inserted into buffer (socket 11)
+1578 2025-04-12 23:39:46 2025-04-12 23:39:46 [DEBUG]  Processed Sensor ID: 101, Value: 96.62, Count: 121, Avg: 100.17
+1579 2025-04-12 23:39:47 2025-04-12 23:39:47 [DEBUG]  Sensor 102 data inserted into buffer (socket 10)
+1580 2025-04-12 23:39:47 2025-04-12 23:39:47 [DEBUG]  Read new item from sbuffer (Sensor 102)
+1581 2025-04-12 23:39:47 2025-04-12 23:39:47 [DEBUG]  Inserted SensorID 102, TS 1744475987, Value 95.45 into DB
+1582 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Main thread received shutdown signal (Interrupt). Initiating shutdown...
+1583 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Main process initiating cleanup sequence...
+1584 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Initiating Connection Manager shutdown sequence...
+1585 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing server socket to stop new connections.
+1586 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Shutdown signal sent to Connection Manager thread via pipe.
+1587 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Data Manager stop requested (flag will be checked in loop).
+1588 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Storage Manager stop requested.
+1589 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Shutdown signal received via pipe. Stopping connection manager loop.
+1590 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Connection manager shutting down...
+1591 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing remaining client connections...
+1592 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing connection for sensor 102 (socket 10) during shutdown.
+1593 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Signaling shared buffer shutdown...
+1594 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Joining threads after signaling stop...
+1595 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Data manager received shutdown signal from sbuffer. Exiting loop.
+1596 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Data manager thread shutting down...
+1597 2025-04-12 23:39:47 2025-04-12 23:39:47 [DEBUG]  Freed sensor stats list memory.
+1598 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Data manager finished cleanup.
+1599 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing connection for sensor 101 (socket 11) during shutdown.
+1600 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing connection for sensor 103 (socket 12) during shutdown.
+1601 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Closing connection for sensor 104 (socket 13) during shutdown.
+1602 2025-04-12 23:39:47 2025-04-12 23:39:47 [DEBUG]  Shutdown pipe closed during cleanup.
+1603 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Connection manager finished cleanup.
+1604 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Storage manager received shutdown signal from sbuffer. Exiting loop.
+1605 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Storage manager thread shutting down...
+1606 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Disconnected from SQL server.
+1607 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Local retry queue freed.
+1608 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Storage manager finished cleanup.
+1609 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Command Interface thread joined.
+1610 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Storage Manager thread joined.
+1611 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Data Manager thread joined.
+1612 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Connection Manager thread joined.
+1613 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Finished joining manager threads.
+1614 2025-04-12 23:39:47 2025-04-12 23:39:47 [INFO]   Shared buffer freed.
+1615 2025-04-12 23:39:47 Log process finished.

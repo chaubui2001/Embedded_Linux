@@ -146,7 +146,27 @@ Follow these steps to run the system:
     ./build/out/cmd_client status
     ```
     ```bash
+    /* Sent command: status */
+    /* --- Gateway Response --- */
+    --- System Status ---
+    Active Connections: 4
+    CPU Usage: 0.05 %
+    RAM Usage: 17.08 % (1380340 / 8082148 KB used)
+    /* --- End of Response --- */
+    ```
+
+    ```bash
     ./build/out/cmd_client stats
+    ```
+    ```bash
+    /* Sent command: stats */
+    /* --- Gateway Response --- */
+    --- Active Connections (4) ---
+    Sensor ID: 102   | IP: 127.0.0.1       | Port: 59016 | Socket: 10  | Connected: 00:01:08
+    Sensor ID: 101   | IP: 127.0.0.1       | Port: 44022 | Socket: 11  | Connected: 00:01:01
+    Sensor ID: 103   | IP: 127.0.0.1       | Port: 44354 | Socket: 12  | Connected: 00:00:54
+    Sensor ID: 104   | IP: 127.0.0.1       | Port: 44360 | Socket: 13  | Connected: 00:00:45
+    /* --- End of Response --- */
     ```
 
 ## Testing
